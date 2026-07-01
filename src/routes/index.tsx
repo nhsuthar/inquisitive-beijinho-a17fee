@@ -1474,7 +1474,7 @@ function PhilosophySection() {
 
 // ─── Leadership Section ───────────────────────────────────────────────────────
 
-const LEADERS = [
+const MINDS_BEHIND = [
   {
     name: 'Manuela Di Guevara Fabbri',
     role: 'Founder & Chairman',
@@ -1487,11 +1487,14 @@ const LEADERS = [
     bio: 'Former partner at Foster + Partners and advisor to sovereign wealth funds, Alia joined Mariva in 2015 and now leads strategic direction across all global divisions.',
     img: IMG.coo,
   },
+]
+
+const EXECUTIVE_TEAM = [
   {
-    name: 'Francesco Merola',
-    role: 'Chief Investment Officer',
-    bio: 'With deep expertise in cross-border capital allocation from Goldman Sachs and KKR, Francesco oversees the group\'s investment strategy and global partnerships.',
-    img: IMG.cfo,
+    name: 'Julietta',
+    role: 'Director Sales & Marketing',
+    bio: 'Independent property developer/trader, specializing in land acquisition and resale to major groups such as Kaufman & Broad, Constructa, or Nexity.',
+    img: IMG.julietta,
   },
   {
     name: 'Faisal Iftikhar',
@@ -1500,10 +1503,10 @@ const LEADERS = [
     img: IMG.faisal,
   },
   {
-    name: 'Julietta',
-    role: 'Director Sales & Marketing',
-    bio: 'Independent property developer/trader, specializing in land acquisition and resale to major groups such as Kaufman & Broad, Constructa, or Nexity.',
-    img: IMG.julietta,
+    name: 'Francesco Merola',
+    role: 'Chief Investment Officer',
+    bio: 'With deep expertise in cross-border capital allocation from Goldman Sachs and KKR, Francesco oversees the group\'s investment strategy and global partnerships.',
+    img: IMG.cfo,
   },
 ]
 
@@ -1535,14 +1538,17 @@ function LeadershipSection() {
           </h2>
         </div>
 
+        {/* Primary Founders */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(5, 1fr)',
-            gap: 'clamp(32px, 4vw, 56px)',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gap: 'clamp(32px, 5vw, 80px)',
+            maxWidth: '1000px',
+            margin: '0 auto',
           }}
         >
-          {LEADERS.map((leader, i) => (
+          {MINDS_BEHIND.map((leader, i) => (
             <div
               key={leader.name}
               className={`reveal reveal-d${i + 1}`}
@@ -1607,6 +1613,106 @@ function LeadershipSection() {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Executive Management Team */}
+        <div
+          style={{
+            marginTop: 'clamp(64px, 8vw, 110px)',
+            borderTop: '1px solid rgba(201,164,106,0.15)',
+            paddingTop: 'clamp(48px, 6vw, 80px)',
+          }}
+        >
+          <div style={{ marginBottom: 'clamp(32px, 5vw, 56px)' }}>
+            <p className="section-label reveal" style={{ color: '#C9A46A', marginBottom: '16px' }}>
+              Executive Board
+            </p>
+            <h3
+              className="font-display reveal reveal-d1"
+              style={{
+                fontSize: 'clamp(1.8rem, 3vw, 3rem)',
+                fontWeight: 300,
+                color: '#0A0A0A',
+                margin: 0,
+              }}
+            >
+              Management & Operations
+            </h3>
+          </div>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: 'clamp(24px, 3.5vw, 48px)',
+            }}
+          >
+            {EXECUTIVE_TEAM.map((leader, i) => (
+              <div
+                key={leader.name}
+                className={`reveal reveal-d${i + 1}`}
+              >
+                {/* Portrait */}
+                <div
+                  className="img-zoom"
+                  style={{
+                    aspectRatio: '3/4',
+                    marginBottom: '20px',
+                    position: 'relative',
+                  }}
+                >
+                  <img
+                    src={leader.img}
+                    alt={leader.name}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      display: 'block',
+                      filter: 'grayscale(15%)',
+                    }}
+                    loading="lazy"
+                  />
+                  <div
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      background:
+                        'linear-gradient(to top, rgba(10,10,10,0.2) 0%, transparent 60%)',
+                    }}
+                  />
+                </div>
+                {/* Info */}
+                <span className="gold-line" style={{ marginBottom: '12px' }} />
+                <p className="section-label" style={{ color: '#C9A46A', marginBottom: '4px', fontSize: '0.52rem' }}>
+                  {leader.role}
+                </p>
+                <h4
+                  className="font-display"
+                  style={{
+                    fontSize: '1.4rem',
+                    fontWeight: 400,
+                    color: '#0A0A0A',
+                    margin: '0 0 10px',
+                    lineHeight: 1.25,
+                  }}
+                >
+                  {leader.name}
+                </h4>
+                <p
+                  style={{
+                    fontSize: '0.78rem',
+                    lineHeight: 1.7,
+                    color: '#6B6560',
+                    fontWeight: 300,
+                    margin: 0,
+                  }}
+                >
+                  {leader.bio}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
