@@ -28,6 +28,7 @@ const IMG = {
   coo: '/alia-minhas.jpg',
   cfo: '/francesco-merola.jpg',
   faisal: '/faisal-iftikhar.jpg',
+  julietta: '/julietta.jpg',
 }
 
 // ─── Hooks ────────────────────────────────────────────────────────────────────
@@ -1498,6 +1499,12 @@ const LEADERS = [
     bio: 'With over two decades of leading luxury residential and commercial developments globally, Faisal directs Mariva\'s architectural master planning and construction delivery.',
     img: IMG.faisal,
   },
+  {
+    name: 'Julietta',
+    role: 'Director Sales & Marketing',
+    bio: 'With a reputation for executing high-value residential transactions and brand campaigns, Julietta drives Mariva\'s global sales strategies and luxury marketing initiatives.',
+    img: IMG.julietta,
+  },
 ]
 
 function LeadershipSection() {
@@ -1531,7 +1538,7 @@ function LeadershipSection() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
+            gridTemplateColumns: 'repeat(5, 1fr)',
             gap: 'clamp(32px, 4vw, 56px)',
           }}
         >
