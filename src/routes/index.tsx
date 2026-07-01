@@ -1233,6 +1233,12 @@ const INVESTMENT_DIVISIONS = [
     img: IMG.divAssets,
     tag: '02',
   },
+  {
+    title: 'Asset Tokenisation',
+    description: 'Fractional digital ownership unlocking liquidity in premier global real estate assets.',
+    img: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&q=80',
+    tag: '03',
+  },
 ]
 
 function InvestmentsSection() {
@@ -1267,11 +1273,7 @@ function InvestmentsSection() {
                 margin: 0,
               }}
             >
-              Two Pillars of
-              <br />
-              <em style={{ fontStyle: 'italic', color: 'rgba(248,246,242,0.65)' }}>
-                Global Excellence
-              </em>
+              Investment
             </h2>
           </div>
         </div>
