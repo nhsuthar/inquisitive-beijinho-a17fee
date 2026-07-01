@@ -1391,7 +1391,7 @@ function LeadershipSection() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(4, 1fr)',
             gap: 'clamp(32px, 4vw, 56px)',
           }}
         >
