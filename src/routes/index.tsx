@@ -26,7 +26,7 @@ const IMG = {
   hosInterior: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=900&q=80',
   ceo: '/manuela-di-guevara.jpg',
   coo: '/alia-minhas.jpg',
-  cfo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80',
+  cfo: '/francesco-merola.jpg',
 }
 
 // ─── Hooks ────────────────────────────────────────────────────────────────────
@@ -1346,9 +1346,9 @@ const LEADERS = [
     img: IMG.coo,
   },
   {
-    name: 'James Whitmore',
+    name: 'Francesco Merola',
     role: 'Chief Investment Officer',
-    bio: 'With deep expertise in cross-border capital allocation from Goldman Sachs and KKR, James oversees the group\'s investment strategy and global partnerships.',
+    bio: 'With deep expertise in cross-border capital allocation from Goldman Sachs and KKR, Francesco oversees the group\'s investment strategy and global partnerships.',
     img: IMG.cfo,
   },
 ]
