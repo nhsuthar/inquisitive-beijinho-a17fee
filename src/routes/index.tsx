@@ -25,7 +25,7 @@ const IMG = {
   hosSpa: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=80',
   hosInterior: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=900&q=80',
   ceo: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80',
-  coo: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80',
+  coo: '/alia-minhas.jpg',
   cfo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80',
 }
 
@@ -1342,7 +1342,7 @@ const LEADERS = [
   {
     name: 'Alia Minhas',
     role: 'Chief Executive Officer',
-    bio: 'Former partner at Foster + Partners and advisor to sovereign wealth funds, Layla joined Mariva in 2015 and now leads strategic direction across all global divisions.',
+    bio: 'Former partner at Foster + Partners and advisor to sovereign wealth funds, Alia joined Mariva in 2015 and now leads strategic direction across all global divisions.',
     img: IMG.coo,
   },
   {
