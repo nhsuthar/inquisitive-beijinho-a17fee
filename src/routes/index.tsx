@@ -1222,7 +1222,7 @@ function StatsSection() {
 
 const INVESTMENT_DIVISIONS = [
   {
-    title: 'Investment',
+    title: 'Institutional Investment',
     description: 'Institutional-grade investment vehicles offering access to exceptional real assets.',
     img: IMG.divInvestment,
     tag: '01',
@@ -1234,7 +1234,7 @@ const INVESTMENT_DIVISIONS = [
     tag: '02',
   },
   {
-    title: 'Asset Tokenisation',
+    title: 'Tokenisation',
     description: 'Fractional digital ownership unlocking liquidity in premier global real estate assets.',
     img: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&q=80',
     tag: '03',
