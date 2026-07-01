@@ -27,6 +27,7 @@ const IMG = {
   ceo: '/manuela-di-guevara.jpg',
   coo: '/alia-minhas.jpg',
   cfo: '/francesco-merola.jpg',
+  faisal: '/faisal-iftikhar.jpg',
 }
 
 // ─── Hooks ────────────────────────────────────────────────────────────────────
@@ -1350,6 +1351,12 @@ const LEADERS = [
     role: 'Chief Investment Officer',
     bio: 'With deep expertise in cross-border capital allocation from Goldman Sachs and KKR, Francesco oversees the group\'s investment strategy and global partnerships.',
     img: IMG.cfo,
+  },
+  {
+    name: 'Faisal Iftikhar',
+    role: 'Chief Development Officer',
+    bio: 'With over two decades of leading luxury residential and commercial developments globally, Faisal directs Mariva\'s architectural master planning and construction delivery.',
+    img: IMG.faisal,
   },
 ]
 
