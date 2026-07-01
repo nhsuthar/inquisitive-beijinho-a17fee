@@ -663,7 +663,7 @@ const DIVISIONS = [
   {
     title: 'Sports Stadiums',
     description: 'Iconic athletic venues and multi-purpose arenas hosting premier international sporting events.',
-    img: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80',
+    img: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80',
     tag: '09',
   },
 ]
