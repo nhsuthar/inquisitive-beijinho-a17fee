@@ -1502,7 +1502,7 @@ const LEADERS = [
   {
     name: 'Julietta',
     role: 'Director Sales & Marketing',
-    bio: 'With a reputation for executing high-value residential transactions and brand campaigns, Julietta drives Mariva\'s global sales strategies and luxury marketing initiatives.',
+    bio: 'Independent property developer/trader, specializing in land acquisition and resale to major groups such as Kaufman & Broad, Constructa, or Nexity.',
     img: IMG.julietta,
   },
 ]
