@@ -163,33 +163,36 @@ function Navigation() {
         {/* Logo */}
         <a
           href="#"
-          style={{ textDecoration: 'none', lineHeight: 1.1 }}
+          style={{ display: 'flex', alignItems: 'center', gap: '14px', textDecoration: 'none', lineHeight: 1.1 }}
           onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
         >
-          <div
-            style={{
-              fontSize: '0.72rem',
-              letterSpacing: '0.38em',
-              color: '#F8F6F2',
-              fontWeight: 400,
-              fontFamily: 'Inter, sans-serif',
-              textTransform: 'uppercase',
-            }}
-          >
-            MARIVA
-          </div>
-          <div
-            style={{
-              fontSize: '0.58rem',
-              letterSpacing: '0.48em',
-              color: '#C9A46A',
-              fontWeight: 400,
-              fontFamily: 'Inter, sans-serif',
-              textTransform: 'uppercase',
-              marginTop: '2px',
-            }}
-          >
-            GLOBAL
+          <img src="/logo.png" alt="Mariva Global Logo" style={{ height: '36px', width: 'auto', display: 'block' }} />
+          <div>
+            <div
+              style={{
+                fontSize: '0.72rem',
+                letterSpacing: '0.38em',
+                color: '#F8F6F2',
+                fontWeight: 400,
+                fontFamily: 'Inter, sans-serif',
+                textTransform: 'uppercase',
+              }}
+            >
+              MARIVA
+            </div>
+            <div
+              style={{
+                fontSize: '0.58rem',
+                letterSpacing: '0.48em',
+                color: '#C9A46A',
+                fontWeight: 400,
+                fontFamily: 'Inter, sans-serif',
+                textTransform: 'uppercase',
+                marginTop: '2px',
+              }}
+            >
+              GLOBAL
+            </div>
           </div>
         </a>
 
@@ -271,7 +274,8 @@ function Navigation() {
 
       {/* Mobile overlay menu */}
       <div className={`mobile-nav-overlay ${menuOpen ? 'open' : 'closed'}`}>
-        <div style={{ marginBottom: '60px' }}>
+        <div style={{ marginBottom: '60px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <img src="/logo.png" alt="Mariva Global Logo" style={{ height: '32px', width: 'auto' }} />
           <div style={{ fontSize: '0.6rem', letterSpacing: '0.4em', color: '#C9A46A', fontFamily: 'Inter, sans-serif', textTransform: 'uppercase' }}>
             MARIVA GLOBAL
           </div>
@@ -2501,31 +2505,34 @@ function SiteFooter() {
         >
           {/* Brand */}
           <div style={{ gridColumn: 'span 1' }}>
-            <div style={{ marginBottom: '24px' }}>
-              <div
-                style={{
-                  fontSize: '0.8rem',
-                  letterSpacing: '0.38em',
-                  color: '#F8F6F2',
-                  fontWeight: 400,
-                  fontFamily: 'Inter, sans-serif',
-                  textTransform: 'uppercase',
-                }}
-              >
-                MARIVA
-              </div>
-              <div
-                style={{
-                  fontSize: '0.65rem',
-                  letterSpacing: '0.48em',
-                  color: '#C9A46A',
-                  fontWeight: 400,
-                  fontFamily: 'Inter, sans-serif',
-                  textTransform: 'uppercase',
-                  marginTop: '2px',
-                }}
-              >
-                GLOBAL
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '24px' }}>
+              <img src="/logo.png" alt="Mariva Global Logo" style={{ height: '36px', width: 'auto' }} />
+              <div>
+                <div
+                  style={{
+                    fontSize: '0.8rem',
+                    letterSpacing: '0.38em',
+                    color: '#F8F6F2',
+                    fontWeight: 400,
+                    fontFamily: 'Inter, sans-serif',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  MARIVA
+                </div>
+                <div
+                  style={{
+                    fontSize: '0.65rem',
+                    letterSpacing: '0.48em',
+                    color: '#C9A46A',
+                    fontWeight: 400,
+                    fontFamily: 'Inter, sans-serif',
+                    textTransform: 'uppercase',
+                    marginTop: '2px',
+                  }}
+                >
+                  GLOBAL
+                </div>
               </div>
             </div>
             <p
