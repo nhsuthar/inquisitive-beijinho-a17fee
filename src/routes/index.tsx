@@ -8,7 +8,7 @@ export const Route = createFileRoute('/')({
 // ─── Curated image collection ─────────────────────────────────────────────────
 const IMG = {
   hero: '/imh.png',
-  about: 'https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=1200&q=85',
+  about: '/about-group.jpg',
   divPropDev: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80',
   divHotels: 'https://images.unsplash.com/photo-1455587734955-081b22074882?auto=format&fit=crop&w=800&q=80',
   divResorts: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80',
