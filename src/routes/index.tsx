@@ -602,34 +602,7 @@ function AboutSection() {
               pointerEvents: 'none',
             }}
           />
-          {/* Caption */}
-          <div
-            style={{
-              position: 'absolute',
-              bottom: '24px',
-              left: '24px',
-              background: 'rgba(10,10,10,0.82)',
-              backdropFilter: 'blur(8px)',
-              padding: '16px 24px',
-            }}
-          >
-            <p
-              className="section-label"
-              style={{ color: '#C9A46A', marginBottom: '4px', fontSize: '0.55rem' }}
-            >
-              Mariva Tower — Dubai
-            </p>
-            <p
-              style={{
-                color: '#F8F6F2',
-                fontSize: '0.78rem',
-                fontWeight: 300,
-                margin: 0,
-              }}
-            >
-              Completed 2023
-            </p>
-          </div>
+
         </div>
       </div>
     </section>
