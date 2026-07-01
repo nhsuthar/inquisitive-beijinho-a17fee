@@ -636,6 +636,36 @@ const DIVISIONS = [
     img: IMG.divCommercial,
     tag: '04',
   },
+  {
+    title: 'Infrastructure',
+    description: 'Modern transportation, energy, and civic infrastructure projects driving sustainable development.',
+    img: 'https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?auto=format&fit=crop&w=800&q=80',
+    tag: '05',
+  },
+  {
+    title: 'Hospitals',
+    description: 'State-of-the-art medical and healthcare facilities designed for wellness and clinical excellence.',
+    img: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80',
+    tag: '06',
+  },
+  {
+    title: 'Yacht Clubs',
+    description: 'Exclusive private marinas and premium waterfront clubhouse destinations for elite yachting.',
+    img: 'https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=800&q=80',
+    tag: '07',
+  },
+  {
+    title: 'Golf Clubs',
+    description: 'Championship-grade golf courses and premium country clubs crafted by world-class designers.',
+    img: 'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=800&q=80',
+    tag: '08',
+  },
+  {
+    title: 'Sports Stadiums',
+    description: 'Iconic athletic venues and multi-purpose arenas hosting premier international sporting events.',
+    img: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80',
+    tag: '09',
+  },
 ]
 
 function DivisionsSection() {
@@ -670,7 +700,7 @@ function DivisionsSection() {
                 margin: 0,
               }}
             >
-              Four Pillars of
+              Nine Pillars of
               <br />
               <em style={{ fontStyle: 'italic', color: 'rgba(248,246,242,0.65)' }}>
                 Global Excellence
