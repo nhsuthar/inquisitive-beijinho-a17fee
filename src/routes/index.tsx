@@ -135,7 +135,7 @@ function Navigation() {
     { label: 'Divisions', href: '#divisions' },
     { label: 'Projects', href: '#projects' },
     { label: 'Hospitality', href: '#hospitality' },
-    { label: 'Investments', href: '#stats' },
+    { label: 'Investments', href: '#investments' },
     { label: 'Contact', href: '#contact' },
   ]
 
@@ -636,18 +636,6 @@ const DIVISIONS = [
     img: IMG.divCommercial,
     tag: '04',
   },
-  {
-    title: 'Investment',
-    description: 'Institutional-grade investment vehicles offering access to exceptional real assets.',
-    img: IMG.divInvestment,
-    tag: '05',
-  },
-  {
-    title: 'Asset Management',
-    description: 'Active portfolio management maximising long-term value across our global holdings.',
-    img: IMG.divAssets,
-    tag: '06',
-  },
 ]
 
 function DivisionsSection() {
@@ -682,7 +670,7 @@ function DivisionsSection() {
                 margin: 0,
               }}
             >
-              Six Pillars of
+              Four Pillars of
               <br />
               <em style={{ fontStyle: 'italic', color: 'rgba(248,246,242,0.65)' }}>
                 Global Excellence
@@ -1225,6 +1213,153 @@ function StatsSection() {
             margin: 'clamp(56px, 7vw, 96px) 0 0',
           }}
         />
+      </div>
+    </section>
+  )
+}
+
+// ─── Investments Section ──────────────────────────────────────────────────────
+
+const INVESTMENT_DIVISIONS = [
+  {
+    title: 'Investment',
+    description: 'Institutional-grade investment vehicles offering access to exceptional real assets.',
+    img: IMG.divInvestment,
+    tag: '01',
+  },
+  {
+    title: 'Asset Management',
+    description: 'Active portfolio management maximising long-term value across our global holdings.',
+    img: IMG.divAssets,
+    tag: '02',
+  },
+]
+
+function InvestmentsSection() {
+  return (
+    <section
+      id="investments"
+      style={{ background: '#0A0A0A', padding: 'clamp(80px, 10vw, 140px) 7vw' }}
+    >
+      <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'flex-end',
+            justifyContent: 'space-between',
+            marginBottom: 'clamp(48px, 6vw, 80px)',
+            flexWrap: 'wrap',
+            gap: '24px',
+          }}
+        >
+          <div>
+            <p className="section-label reveal" style={{ color: '#C9A46A', marginBottom: '20px' }}>
+              Capital Management
+            </p>
+            <h2
+              className="font-display reveal reveal-d1"
+              style={{
+                fontSize: 'clamp(2.4rem, 4vw, 4.5rem)',
+                fontWeight: 300,
+                color: '#F8F6F2',
+                lineHeight: 1.1,
+                letterSpacing: '-0.01em',
+                margin: 0,
+              }}
+            >
+              Two Pillars of
+              <br />
+              <em style={{ fontStyle: 'italic', color: 'rgba(248,246,242,0.65)' }}>
+                Global Excellence
+              </em>
+            </h2>
+          </div>
+        </div>
+
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+            gap: '2px',
+          }}
+        >
+          {INVESTMENT_DIVISIONS.map((div, i) => (
+            <div
+              key={div.tag}
+              className={`division-card reveal reveal-d${Math.min(i + 1, 6)}`}
+              style={{ aspectRatio: '4/5' }}
+            >
+              <img
+                src={div.img}
+                alt={div.title}
+                className="card-img"
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  display: 'block',
+                }}
+                loading="lazy"
+              />
+              {/* Dark overlay */}
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  background:
+                    'linear-gradient(to top, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.3) 55%, rgba(10,10,10,0.1) 100%)',
+                }}
+              />
+              {/* Content */}
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  padding: '28px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  zIndex: 10,
+                }}
+              >
+                <span
+                  className="section-label"
+                  style={{ color: 'rgba(201, 164, 106, 0.7)', fontSize: '0.55rem' }}
+                >
+                  {div.tag}
+                </span>
+                <div>
+                  <span className="gold-line" style={{ marginBottom: '16px' }} />
+                  <h3
+                    className="font-display"
+                    style={{
+                      fontSize: '1.6rem',
+                      fontWeight: 400,
+                      color: '#F8F6F2',
+                      lineHeight: 1.15,
+                      margin: '0 0 12px',
+                    }}
+                  >
+                    {div.title}
+                  </h3>
+                  <p
+                    style={{
+                      fontSize: '0.78rem',
+                      color: 'rgba(248, 246, 242, 0.6)',
+                      fontWeight: 300,
+                      lineHeight: 1.65,
+                      margin: 0,
+                    }}
+                  >
+                    {div.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )
@@ -2449,6 +2584,7 @@ function MarivaGlobal() {
       <ProjectsSection />
       <HospitalitySection />
       <StatsSection />
+      <InvestmentsSection />
       <PhilosophySection />
       <LeadershipSection />
       <SustainabilitySection />
