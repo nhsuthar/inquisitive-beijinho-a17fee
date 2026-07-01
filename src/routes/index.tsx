@@ -150,7 +150,7 @@ function Navigation() {
           right: 0,
           zIndex: 100,
           padding: '0 5vw',
-          height: '72px',
+          height: '100px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -166,7 +166,7 @@ function Navigation() {
           style={{ display: 'flex', alignItems: 'center', gap: '14px', textDecoration: 'none', lineHeight: 1.1 }}
           onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
         >
-          <img src="/logo.png" alt="Mariva Global Logo" style={{ height: '36px', width: 'auto', display: 'block' }} />
+          <img src="/logo.png" alt="Mariva Global Logo" style={{ height: '75px', width: 'auto', display: 'block' }} />
           <div>
             <div
               style={{
@@ -275,7 +275,7 @@ function Navigation() {
       {/* Mobile overlay menu */}
       <div className={`mobile-nav-overlay ${menuOpen ? 'open' : 'closed'}`}>
         <div style={{ marginBottom: '60px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <img src="/logo.png" alt="Mariva Global Logo" style={{ height: '32px', width: 'auto' }} />
+          <img src="/logo.png" alt="Mariva Global Logo" style={{ height: '75px', width: 'auto' }} />
           <div style={{ fontSize: '0.6rem', letterSpacing: '0.4em', color: '#C9A46A', fontFamily: 'Inter, sans-serif', textTransform: 'uppercase' }}>
             MARIVA GLOBAL
           </div>
@@ -2506,7 +2506,7 @@ function SiteFooter() {
           {/* Brand */}
           <div style={{ gridColumn: 'span 1' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '24px' }}>
-              <img src="/logo.png" alt="Mariva Global Logo" style={{ height: '36px', width: 'auto' }} />
+              <img src="/logo.png" alt="Mariva Global Logo" style={{ height: '75px', width: 'auto' }} />
               <div>
                 <div
                   style={{
