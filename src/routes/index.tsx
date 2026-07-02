@@ -1480,16 +1480,16 @@ function PhilosophySection() {
 
 const MINDS_BEHIND = [
   {
-    name: 'Manuela Di Guevara Fabbri',
-    role: 'Founder & Chairman',
-    bio: 'A visionary entrepreneur with 25 years at the forefront of international real estate, Manuela founded Mariva Global in 2004 with a mandate to develop places of enduring beauty and value.',
-    img: IMG.ceo,
-  },
-  {
     name: 'Alia Minhas',
     role: 'Chief Executive Officer',
     bio: 'Former partner at Foster + Partners and advisor to sovereign wealth funds, Alia joined Mariva in 2015 and now leads strategic direction across all global divisions.',
     img: IMG.coo,
+  },
+  {
+    name: 'Manuela Di Guevara Fabbri',
+    role: 'Founder & Chairman',
+    bio: 'A visionary entrepreneur with 25 years at the forefront of international real estate, Manuela founded Mariva Global in 2004 with a mandate to develop places of enduring beauty and value.',
+    img: IMG.ceo,
   },
 ]
 
