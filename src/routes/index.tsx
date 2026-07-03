@@ -1481,7 +1481,7 @@ function PhilosophySection() {
 const MINDS_BEHIND = [
   {
     name: 'Alia Minhas',
-    role: 'Chief Executive Officer',
+    role: 'Co-founder, Co-CEO and CIO',
     bio: 'Former partner at Foster + Partners and advisor to sovereign wealth funds, Alia joined Mariva in 2015 and now leads strategic direction across all global divisions.',
     img: IMG.coo,
   },
