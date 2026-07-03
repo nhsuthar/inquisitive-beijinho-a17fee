@@ -29,6 +29,7 @@ const IMG = {
   cfo: '/francesco-merola.jpg',
   faisal: '/faisal-iftikhar.jpg',
   julietta: '/julietta.jpg',
+  eduart: '/eduart-lacaj.jpg',
 }
 
 // ─── Hooks ────────────────────────────────────────────────────────────────────
@@ -1512,6 +1513,12 @@ const EXECUTIVE_TEAM = [
     bio: 'With deep expertise in cross-border capital allocation from Goldman Sachs and KKR, Francesco oversees the group\'s investment strategy and global partnerships.',
     img: IMG.cfo,
   },
+  {
+    name: 'Eduart Lacaj',
+    role: 'Managing Director & Global Head of Construction',
+    bio: 'Eduart Lacaj is a construction executive with over 15 years of industry experience. He leads a team of more than 100 professionals and has delivered over 2,000 projects, he oversees construction, project delivery, quality, and operational excellence across Mariva Global\'s international portfolio.',
+    img: IMG.eduart,
+  },
 ]
 
 function LeadershipSection() {
@@ -1647,7 +1654,7 @@ function LeadershipSection() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
+              gridTemplateColumns: 'repeat(4, 1fr)',
               gap: 'clamp(24px, 3.5vw, 48px)',
             }}
           >
