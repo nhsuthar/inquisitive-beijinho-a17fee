@@ -381,7 +381,7 @@ function HeroSection() {
           className="section-label hero-label"
           style={{ color: '#C9A46A', marginBottom: '28px' }}
         >
-          Mariva Global · Est. 2004
+          Mariva Global · Est. 2026
         </p>
 
         <h1
