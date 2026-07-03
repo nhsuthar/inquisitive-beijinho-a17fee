@@ -60,11 +60,13 @@ function StatCounter({
   suffix = '+',
   label,
   prefix = '',
+  staticVal,
 }: {
-  target: number
+  target?: number
   suffix?: string
   label: string
   prefix?: string
+  staticVal?: string
 }) {
   const [count, setCount] = useState(0)
   const [started, setStarted] = useState(false)
@@ -80,7 +82,7 @@ function StatCounter({
   }, [started])
 
   useEffect(() => {
-    if (!started) return
+    if (!started || target === undefined) return
     let startTime: number | null = null
     const duration = 2400
     const animate = (ts: number) => {
@@ -94,19 +96,31 @@ function StatCounter({
   }, [started, target])
 
   return (
-    <div ref={ref} style={{ textAlign: 'center' }}>
+    <div
+      ref={ref}
+      style={{
+        textAlign: 'center',
+        flex: '1 1 260px',
+        maxWidth: '340px',
+        margin: '0 auto',
+      }}
+    >
       <div
         className="font-display"
         style={{
-          fontSize: 'clamp(3.5rem, 6vw, 5.5rem)',
+          fontSize: staticVal ? 'clamp(1.8rem, 3.2vw, 2.8rem)' : 'clamp(3.5rem, 6vw, 5.5rem)',
           fontWeight: 300,
           color: '#0A0A0A',
-          lineHeight: 1,
+          lineHeight: 1.1,
           letterSpacing: '-0.02em',
           marginBottom: '12px',
+          height: 'clamp(3.5rem, 6vw, 5.5rem)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}
       >
-        {prefix}{count}{suffix}
+        {staticVal ? staticVal : `${prefix}${count.toLocaleString()}${suffix}`}
       </div>
       <span className="section-label" style={{ color: '#C9A46A' }}>
         {label}
@@ -150,49 +164,45 @@ function Navigation() {
           left: 0,
           right: 0,
           zIndex: 100,
-          padding: '0 5vw',
-          height: '100px',
+          padding: scrolled ? '12px 5vw' : '20px 5vw',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
           background: scrolled ? 'rgba(10, 10, 10, 0.97)' : 'transparent',
           backdropFilter: scrolled ? 'blur(12px)' : 'none',
           borderBottom: scrolled ? '1px solid rgba(201, 164, 106, 0.12)' : 'none',
-          transition: 'background 0.5s ease, border-color 0.5s ease, backdrop-filter 0.5s ease',
+          transition: 'background 0.5s ease, border-color 0.5s ease, backdrop-filter 0.5s ease, padding 0.5s ease',
         }}
       >
         {/* Logo */}
         <a
           href="#"
-          style={{ display: 'flex', alignItems: 'center', gap: '14px', textDecoration: 'none', lineHeight: 1.1 }}
+          style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px', textDecoration: 'none', lineHeight: 1.1 }}
           onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
         >
-          <img src="/logo.png" alt="Mariva Global Logo" style={{ height: '75px', width: 'auto', display: 'block' }} />
-          <div>
+          <img
+            src="/logo.png"
+            alt="Mariva Global Logo"
+            style={{
+              height: 'clamp(50px, 8vw, 75px)',
+              width: 'auto',
+              display: 'block',
+            }}
+          />
+          <div style={{ textAlign: 'center' }}>
             <div
               style={{
-                fontSize: '0.72rem',
-                letterSpacing: '0.38em',
-                color: '#F8F6F2',
-                fontWeight: 400,
-                fontFamily: 'Inter, sans-serif',
-                textTransform: 'uppercase',
-              }}
-            >
-              MARIVA
-            </div>
-            <div
-              style={{
-                fontSize: '0.58rem',
-                letterSpacing: '0.48em',
+                fontSize: 'clamp(0.6rem, 1vw, 0.72rem)',
+                letterSpacing: '0.35em',
                 color: '#C9A46A',
-                fontWeight: 400,
+                fontWeight: 500,
                 fontFamily: 'Inter, sans-serif',
                 textTransform: 'uppercase',
-                marginTop: '2px',
+                marginTop: '4px',
+                whiteSpace: 'nowrap',
               }}
             >
-              GLOBAL
+              MARIVA GLOBAL
             </div>
           </div>
         </a>
@@ -459,9 +469,9 @@ function AboutSection() {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
           gap: 'clamp(48px, 6vw, 100px)',
-          alignItems: 'center',
+          alignItems: 'stretch',
           maxWidth: '1400px',
           margin: '0 auto',
         }}
@@ -486,22 +496,25 @@ function AboutSection() {
             A Legacy of Architectural&nbsp;
             <em style={{ fontStyle: 'italic' }}>Ambition</em>
           </h2>
-          <p
+
+          {/* Sub-heading / Lead */}
+          <h3
             className="reveal reveal-d3"
             style={{
-              fontSize: '0.9rem',
-              lineHeight: 1.9,
+              fontSize: 'clamp(0.95rem, 1.4vw, 1.15rem)',
+              lineHeight: 1.6,
               color: '#6B6560',
+              fontWeight: 400,
               marginBottom: '24px',
-              fontWeight: 300,
-              maxWidth: '520px',
+              maxWidth: '560px',
             }}
           >
-            Founded with a singular vision, Mariva Global has grown into one of the
-            region's most respected diversified investment and development groups. We
-            create places that endure — properties that define skylines, resorts that
-            redefine hospitality, and commercial spaces that inspire.
-          </p>
+            Building Exceptional Places Through Intelligence, Capital and Design.
+            <br />
+            <span style={{ color: '#C9A46A' }}>Where Technology, Capital and Construction Converge.</span>
+          </h3>
+
+          {/* Description */}
           <p
             className="reveal reveal-d4"
             style={{
@@ -510,70 +523,124 @@ function AboutSection() {
               color: '#6B6560',
               marginBottom: '48px',
               fontWeight: 300,
-              maxWidth: '520px',
+              maxWidth: '560px',
             }}
           >
-            Our portfolio spans property development, luxury hotels and resorts, mixed-use
-            developments, commercial real estate, and strategic global partnerships — united
-            by an uncompromising standard of quality.
+            Founded on the belief that exceptional developments emerge when vision, capital, and execution work as one, Mariva Global creates places designed to inspire, endure, and generate lasting value.
           </p>
 
+          {/* Our Philosophy & Our Legacy Columns */}
           <div
-            className="reveal reveal-d5"
             style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '12px 32px',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+              gap: '32px',
               marginBottom: '48px',
             }}
           >
-            {[
-              'Property Development',
-              'Luxury Hotels & Resorts',
-              'Mixed-use Developments',
-              'Commercial Real Estate',
-              'Investment Opportunities',
-              'Asset Management',
-              'Global Partnerships',
-            ].map((item) => (
-              <span
-                key={item}
+            {/* Our Philosophy */}
+            <div className="reveal reveal-d5">
+              <p
                 style={{
                   fontSize: '0.72rem',
-                  letterSpacing: '0.08em',
-                  color: '#2B2B2B',
-                  fontWeight: 400,
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '8px',
+                  fontWeight: 600,
+                  color: '#C9A46A',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.15em',
+                  margin: '0 0 12px',
+                  fontFamily: 'Inter, sans-serif',
                 }}
               >
-                <span
-                  style={{
-                    width: '4px',
-                    height: '4px',
-                    background: '#C9A46A',
-                    borderRadius: '50%',
-                    flexShrink: 0,
-                  }}
-                />
-                {item}
-              </span>
-            ))}
+                Our Philosophy
+              </p>
+              <h4
+                className="font-display"
+                style={{
+                  fontSize: '1.15rem',
+                  color: '#0A0A0A',
+                  margin: '0 0 16px',
+                  lineHeight: 1.4,
+                  fontWeight: 400,
+                }}
+              >
+                The most enduring projects are built on three foundations:
+              </h4>
+              <ul
+                style={{
+                  paddingLeft: '20px',
+                  margin: 0,
+                  fontSize: '0.88rem',
+                  lineHeight: 1.8,
+                  color: '#6B6560',
+                  fontWeight: 300,
+                  listStyleType: 'disc',
+                }}
+              >
+                <li style={{ marginBottom: '8px' }}>
+                  <strong style={{ color: '#0A0A0A', fontWeight: 500 }}>Intelligence</strong> to imagine what is possible.
+                </li>
+                <li style={{ marginBottom: '8px' }}>
+                  <strong style={{ color: '#0A0A0A', fontWeight: 500 }}>Capital</strong> to transform vision into reality.
+                </li>
+                <li>
+                  <strong style={{ color: '#0A0A0A', fontWeight: 500 }}>Execution</strong> to deliver lasting impact.
+                </li>
+              </ul>
+            </div>
+
+            {/* Our Legacy */}
+            <div className="reveal reveal-d6">
+              <p
+                style={{
+                  fontSize: '0.72rem',
+                  fontWeight: 600,
+                  color: '#C9A46A',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.15em',
+                  margin: '0 0 12px',
+                  fontFamily: 'Inter, sans-serif',
+                }}
+              >
+                Our Legacy
+              </p>
+              <h4
+                className="font-display"
+                style={{
+                  fontSize: '1.15rem',
+                  color: '#0A0A0A',
+                  margin: '0 0 16px',
+                  lineHeight: 1.4,
+                  fontWeight: 400,
+                }}
+              >
+                We are not simply building properties.
+              </h4>
+              <p
+                style={{
+                  fontSize: '0.88rem',
+                  lineHeight: 1.8,
+                  color: '#6B6560',
+                  fontWeight: 300,
+                  margin: 0,
+                }}
+              >
+                We are creating exceptional places, enabling new models of ownership, and shaping assets designed to stand the test of time.
+              </p>
+            </div>
           </div>
 
-          <a href="#divisions" className="btn-outline-dark reveal reveal-d6">
+          <a href="#divisions" className="btn-outline-dark reveal reveal-d7">
             Our Divisions
           </a>
         </div>
 
         {/* Right: image */}
-        <div className="reveal-right" style={{ position: 'relative' }}>
+        <div className="reveal-right" style={{ position: 'relative', height: '100%' }}>
           <div
             className="img-zoom"
             style={{
-              aspectRatio: '4/5',
-              maxHeight: '680px',
+              height: '100%',
+              minHeight: '480px',
             }}
           >
             <img
@@ -583,7 +650,7 @@ function AboutSection() {
               loading="lazy"
             />
           </div>
-          {/* Gold corner accent */}
+          {/* Gold corner accents */}
           <div
             style={{
               position: 'absolute',
@@ -1219,25 +1286,25 @@ function StatsSection() {
               letterSpacing: '-0.01em',
               margin: '0 auto 24px',
               maxWidth: '640px',
+              textTransform: 'uppercase',
             }}
           >
-            Numbers That Speak
-            <br />
-            <em style={{ fontStyle: 'italic', color: '#6B6560' }}>to Our Scale</em>
+            Our Experience
           </h2>
         </div>
 
         <div
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
             gap: 'clamp(48px, 6vw, 80px)',
           }}
         >
-          <StatCounter target={20} suffix="+" label="Years of Excellence" />
-          <StatCounter target={100} suffix="+" label="Projects Delivered" />
-          <StatCounter target={5} suffix="+" label="Countries" />
-          <StatCounter target={47} prefix="" suffix="M+" label="Sq Ft Developed" />
+          <StatCounter target={80} suffix="+" label="Combined Leadership Experience" />
+          <StatCounter target={2200} suffix="+" label="Projects Delivered" />
+          <StatCounter target={300} suffix="+" label="Professionals Led" />
+          <StatCounter staticVal="Global Network" label="of Investors, Developers & Operators" />
         </div>
 
         {/* Horizontal rule */}
@@ -1411,7 +1478,6 @@ function PhilosophySection() {
       style={{
         background: '#0A0A0A',
         padding: 'clamp(80px, 12vw, 160px) 7vw',
-        textAlign: 'center',
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -1431,47 +1497,99 @@ function PhilosophySection() {
         style={{
           position: 'relative',
           zIndex: 1,
-          maxWidth: '900px',
+          maxWidth: '1400px',
           margin: '0 auto',
         }}
       >
         <span className="gold-line reveal" style={{ margin: '0 auto 48px', display: 'block' }} />
-        <blockquote
-          className="font-display reveal reveal-d1"
+
+        <div
           style={{
-            fontSize: 'clamp(2rem, 4.5vw, 5rem)',
-            fontWeight: 300,
-            color: '#F8F6F2',
-            lineHeight: 1.2,
-            letterSpacing: '-0.01em',
-            margin: '0 0 32px',
-            fontStyle: 'italic',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: 'clamp(48px, 6vw, 96px)',
+            alignItems: 'stretch',
+            textAlign: 'left',
           }}
         >
-          "We don't simply construct buildings.
-          <br />
-          We create destinations that inspire generations."
-        </blockquote>
-        <p
-          className="section-label reveal reveal-d2"
-          style={{ color: '#C9A46A', marginBottom: '8px' }}
-        >
-          Manuela Di Guevara Fabbri
-        </p>
-        <p
-          className="reveal reveal-d3"
-          style={{
-            fontSize: '0.78rem',
-            color: 'rgba(248,246,242,0.4)',
-            fontWeight: 300,
-            margin: 0,
-            letterSpacing: '0.06em',
-            fontFamily: 'Inter, sans-serif',
-          }}
-        >
-          Founder & Chairman, Mariva Global
-        </p>
-        <span className="gold-line reveal reveal-d4" style={{ margin: '48px auto 0', display: 'block' }} />
+          {/* Quote 1: Alia Minhas */}
+          <div className="reveal reveal-d1" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <blockquote
+              className="font-display"
+              style={{
+                fontSize: 'clamp(1.3rem, 2vw, 1.8rem)',
+                fontWeight: 300,
+                color: '#F8F6F2',
+                lineHeight: 1.6,
+                letterSpacing: '-0.01em',
+                margin: '0 0 32px',
+                fontStyle: 'italic',
+              }}
+            >
+              "The next generation of real assets will be shaped by artificial intelligence, digital ownership, and intelligent infrastructure. Our ambition is to build at the convergence of technology, capital, and the built environment—creating platforms and places designed for the future."
+            </blockquote>
+            <div>
+              <p
+                className="section-label"
+                style={{ color: '#C9A46A', marginBottom: '8px', fontSize: '0.75rem', fontWeight: 600 }}
+              >
+                Alia Minhas
+              </p>
+              <p
+                style={{
+                  fontSize: '0.78rem',
+                  color: 'rgba(248,246,242,0.4)',
+                  fontWeight: 300,
+                  margin: 0,
+                  letterSpacing: '0.06em',
+                  fontFamily: 'Inter, sans-serif',
+                }}
+              >
+                Co-Chief Executive Officer
+              </p>
+            </div>
+          </div>
+
+          {/* Quote 2: Manuela LECCA */}
+          <div className="reveal reveal-d2" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <blockquote
+              className="font-display"
+              style={{
+                fontSize: 'clamp(1.3rem, 2vw, 1.8rem)',
+                fontWeight: 300,
+                color: '#F8F6F2',
+                lineHeight: 1.6,
+                letterSpacing: '-0.01em',
+                margin: '0 0 32px',
+                fontStyle: 'italic',
+              }}
+            >
+              "Great developments are ultimately about people. Through trusted relationships, shared vision, and a commitment to excellence, we create places that inspire communities, attract investment, and endure for generations."
+            </blockquote>
+            <div>
+              <p
+                className="section-label"
+                style={{ color: '#C9A46A', marginBottom: '8px', fontSize: '0.75rem', fontWeight: 600 }}
+              >
+                Manuela LECCA Duca Ducagini di Guevara Suardo Fabbri
+              </p>
+              <p
+                style={{
+                  fontSize: '0.78rem',
+                  color: 'rgba(248,246,242,0.4)',
+                  fontWeight: 300,
+                  margin: 0,
+                  letterSpacing: '0.06em',
+                  fontFamily: 'Inter, sans-serif',
+                }}
+              >
+                Co-Chief Executive Officer
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <span className="gold-line reveal reveal-d3" style={{ margin: '64px auto 0', display: 'block' }} />
       </div>
     </section>
   )
@@ -1482,29 +1600,29 @@ function PhilosophySection() {
 const MINDS_BEHIND = [
   {
     name: 'Alia Minhas',
-    role: 'Co-founder, Co-CEO and CIO',
-    bio: 'Former partner at Foster + Partners and advisor to sovereign wealth funds, Alia joined Mariva in 2015 and now leads strategic direction across all global divisions.',
+    role: 'Co-Chief Executive Officer',
+    bio: 'Entrepreneur, investor, and strategic business leader with experience across finance, technology, life sciences, and venture development. Leads Mariva Global\'s corporate strategy, innovation, investment activities, and long-term growth initiatives.',
     img: IMG.coo,
   },
   {
-    name: 'Manuela Di Guevara Fabbri',
-    role: 'Founder & Chairman',
-    bio: 'A visionary entrepreneur with 25 years at the forefront of international real estate, Manuela founded Mariva Global in 2004 with a mandate to develop places of enduring beauty and value.',
+    name: 'Manuela LECCA Duca Ducagini di Guevara Suardo Fabbri',
+    role: 'Co-Chief Executive Officer',
+    bio: 'International entrepreneur and business executive with extensive experience leading global enterprises and developing strategic partnerships across international markets. Oversees Mariva Global\'s stakeholder relationships, business development, and global expansion strategy.',
     img: IMG.ceo,
   },
 ]
 
 const EXECUTIVE_TEAM = [
   {
-    name: 'Julietta',
-    role: 'Director Sales & Marketing',
-    bio: 'Independent property developer/trader, specializing in land acquisition and resale to major groups such as Kaufman & Broad, Constructa, or Nexity.',
+    name: 'Julietta Passante',
+    role: 'Managing Director, Sales & Marketing',
+    bio: 'International real estate and hospitality executive with extensive experience in development sales, hotel transactions, and investor engagement. Julietta leverages her global network to support Mariva Global\'s growth opportunities. An experienced real estate and hospitality executive, Julietta has built a distinguished career spanning off-plan developments, hotel transactions, and international business development.',
     img: IMG.julietta,
   },
   {
-    name: 'Faisal Iftikhar',
-    role: 'Chief Development Officer',
-    bio: 'With over two decades of leading luxury residential and commercial developments globally, Faisal directs Mariva\'s architectural master planning and construction delivery.',
+    name: 'Faisal Bin Iftikhar',
+    role: 'Managing Director & Global Head of Development',
+    bio: 'Faisal Bin Iftikhar is an experienced developer and entrepreneur who leads a team of more than 200 professionals across international real estate and development projects. At Mariva Global, he leads project origination, strategic partnerships, investment opportunities, and the Group\'s global development pipeline.',
     img: IMG.faisal,
   },
   {
@@ -1791,9 +1909,9 @@ function SustainabilitySection() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
             gap: 'clamp(48px, 6vw, 80px)',
-            alignItems: 'center',
+            alignItems: 'start',
           }}
         >
           <div>
@@ -1808,27 +1926,57 @@ function SustainabilitySection() {
                 color: '#F8F6F2',
                 lineHeight: 1.1,
                 letterSpacing: '-0.01em',
-                margin: '0 0 24px',
+                margin: '0 0 32px',
               }}
             >
-              Building a
+              Creating Legacies,
               <br />
-              <em style={{ fontStyle: 'italic', color: 'rgba(248,246,242,0.55)' }}>Better World</em>
+              <em style={{ fontStyle: 'italic', color: 'rgba(248,246,242,0.55)' }}>Not Just Buildings</em>
             </h2>
+
+            {/* Lead Paragraph */}
             <p
-              className="reveal reveal-d2"
+              className="font-display reveal reveal-d2"
               style={{
-                fontSize: '0.88rem',
-                lineHeight: 1.9,
-                color: 'rgba(248,246,242,0.5)',
+                fontSize: 'clamp(1.1rem, 1.8vw, 1.4rem)',
+                lineHeight: 1.5,
+                color: '#F8F6F2',
                 fontWeight: 300,
-                maxWidth: '440px',
+                marginBottom: '24px',
+                fontStyle: 'italic',
+                maxWidth: '500px',
               }}
             >
-              Environmental responsibility is integral to everything we build. Our net-zero
-              commitment guides every design decision — from materials sourcing to operational
-              carbon across our global portfolio.
+              We believe the most sustainable developments are those that people continue to value, admire, and enjoy for generations.
             </p>
+
+            {/* Body Paragraphs */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', maxWidth: '480px' }}>
+              <p
+                className="reveal reveal-d3"
+                style={{
+                  fontSize: '0.88rem',
+                  lineHeight: 1.8,
+                  color: 'rgba(248,246,242,0.5)',
+                  fontWeight: 300,
+                  margin: 0,
+                }}
+              >
+                At Mariva Global, sustainability is expressed through timeless architecture, intelligent innovation, and a commitment to creating places of enduring significance. Every project is guided by a simple principle: build less for the moment, and more for the future.
+              </p>
+              <p
+                className="reveal reveal-d4"
+                style={{
+                  fontSize: '0.88rem',
+                  lineHeight: 1.8,
+                  color: 'rgba(248,246,242,0.5)',
+                  fontWeight: 300,
+                  margin: 0,
+                }}
+              >
+                By combining thoughtful design, emerging technologies, and responsible development practices, we create exceptional environments that respect their surroundings, elevate everyday experiences, and stand as enduring landmarks for generations to come.
+              </p>
+            </div>
           </div>
 
           <div
@@ -1880,11 +2028,10 @@ function SustainabilitySection() {
 // ─── Global Presence ──────────────────────────────────────────────────────────
 
 const OFFICES = [
-  { city: 'Dubai', country: 'UAE', x: 663, y: 237, primary: true },
-  { city: 'London', country: 'UK', x: 478, y: 130, primary: false },
-  { city: 'Riyadh', country: 'KSA', x: 638, y: 256, primary: false },
-  { city: 'Singapore', country: 'SGP', x: 818, y: 302, primary: false },
-  { city: 'New York', country: 'USA', x: 218, y: 183, primary: false },
+  { city: 'Zug', country: 'SWITZERLAND', x: 495, y: 142, primary: false },
+  { city: 'Jeddah', country: 'SAUDI ARABIA', x: 625, y: 265, primary: false },
+  { city: 'Singapore', country: 'SINGAPORE', x: 818, y: 302, primary: false },
+  { city: 'Cape Town', country: 'SOUTH AFRICA', x: 505, y: 440, primary: false },
 ]
 
 function GlobalPresenceSection() {
@@ -1894,8 +2041,8 @@ function GlobalPresenceSection() {
     >
       <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
         <div style={{ marginBottom: 'clamp(48px, 6vw, 72px)', textAlign: 'center' }}>
-          <p className="section-label reveal" style={{ color: '#C9A46A', marginBottom: '20px' }}>
-            Global Presence
+          <p className="section-label reveal" style={{ color: '#C9A46A', marginBottom: '20px', textTransform: 'uppercase' }}>
+            GLOBAL PRESENCE
           </p>
           <h2
             className="font-display reveal reveal-d1"
@@ -1908,9 +2055,9 @@ function GlobalPresenceSection() {
               margin: 0,
             }}
           >
-            Five Continents.
+            Global Reach.
             <br />
-            <em style={{ fontStyle: 'italic', color: '#6B6560' }}>One Vision.</em>
+            <em style={{ fontStyle: 'italic', color: '#6B6560' }}>Enduring Vision.</em>
           </h2>
         </div>
 
@@ -2033,7 +2180,7 @@ function GlobalPresenceSection() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
             gap: '1px',
             background: 'rgba(201,164,106,0.15)',
             marginTop: '3px',
@@ -2087,36 +2234,42 @@ function GlobalPresenceSection() {
 
 // ─── Testimonials ─────────────────────────────────────────────────────────────
 
-const TESTIMONIALS = [
+// ─── The Mariva Engine ─────────────────────────────────────────────────────────
+
+const ENGINE_PILLARS = [
   {
-    quote:
-      'Mariva Global delivered beyond every expectation. The Mariva One Tower isn\'t just a building — it is a statement about what is possible.',
-    name: 'H.E. Khalid Al-Rashid',
-    title: 'Minister of Urban Development',
+    tag: '01',
+    label: 'Mind',
+    title: 'Technology & Intelligence',
+    description:
+      'Harnessing artificial intelligence, advanced software, data, and emerging technologies to transform how real assets are conceived, developed, financed, and operated.',
   },
   {
-    quote:
-      'The level of craft, the attention to detail, and the sophistication Mariva brings to every project sets them apart entirely from their peers.',
-    name: 'Victoria Chen',
-    title: 'Principal Architect, Zaha Hadid Architects',
+    tag: '02',
+    label: 'Heart',
+    title: 'Capital & Ownership',
+    description:
+      'Connecting opportunity with investment through strategic partnerships, innovative capital structures, and future tokenisation platforms that broaden access to exceptional real-world assets.',
   },
   {
-    quote:
-      'Our investment in the Mariva portfolio has delivered exceptional risk-adjusted returns, underpinned by genuinely world-class assets.',
-    name: 'Richard Ashworth',
-    title: 'Managing Director, Sovereign Capital Partners',
+    tag: '03',
+    label: 'Body',
+    title: 'Design & Delivery',
+    description:
+      'Creating architecturally distinctive developments, luxury hospitality destinations, infrastructure, and strategic assets that combine beauty, functionality, and long-term value.',
   },
 ]
 
-function TestimonialsSection() {
+function MarivaEngineSection() {
   return (
     <section
+      id="engine"
       style={{ background: '#0A0A0A', padding: 'clamp(80px, 10vw, 140px) 7vw' }}
     >
       <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-        <div style={{ textAlign: 'center', marginBottom: 'clamp(48px, 6vw, 80px)' }}>
+        <div style={{ textAlign: 'center', marginBottom: 'clamp(56px, 7vw, 96px)' }}>
           <p className="section-label reveal" style={{ color: '#C9A46A', marginBottom: '20px' }}>
-            Testimonials
+            Strategic Pillars
           </p>
           <h2
             className="font-display reveal reveal-d1"
@@ -2126,79 +2279,110 @@ function TestimonialsSection() {
               color: '#F8F6F2',
               lineHeight: 1.1,
               letterSpacing: '-0.01em',
-              margin: 0,
+              margin: '0 auto 24px',
+              maxWidth: '640px',
+              textTransform: 'uppercase',
             }}
           >
-            Trusted by the World's
-            <br />
-            <em style={{ fontStyle: 'italic', color: 'rgba(248,246,242,0.55)' }}>Most Discerning</em>
+            The Mariva Engine
           </h2>
         </div>
 
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
             gap: 'clamp(32px, 4vw, 56px)',
           }}
         >
-          {TESTIMONIALS.map((t, i) => (
+          {ENGINE_PILLARS.map((pillar, i) => (
             <div
-              key={t.name}
-              className={`testimonial-card reveal reveal-d${i + 1}`}
+              key={pillar.label}
+              className={`reveal reveal-d${i + 1}`}
+              style={{
+                background: 'rgba(255, 255, 255, 0.02)',
+                border: '1px solid rgba(201, 164, 106, 0.12)',
+                padding: 'clamp(32px, 4vw, 48px)',
+                position: 'relative',
+                transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                minHeight: '280px',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = '#C9A46A'
+                e.currentTarget.style.transform = 'translateY(-6px)'
+                e.currentTarget.style.background = 'rgba(201, 164, 106, 0.03)'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(201, 164, 106, 0.12)'
+                e.currentTarget.style.transform = 'none'
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.02)'
+              }}
             >
-              {/* Quote mark */}
+              {/* Massive low-opacity number indicator */}
               <div
                 className="font-display"
                 style={{
-                  fontSize: '5rem',
-                  lineHeight: 0.8,
-                  color: '#C9A46A',
-                  opacity: 0.35,
-                  marginBottom: '24px',
-                  fontStyle: 'italic',
-                }}
-              >
-                &ldquo;
-              </div>
-              <blockquote
-                className="font-display"
-                style={{
-                  fontSize: 'clamp(1.1rem, 1.8vw, 1.5rem)',
+                  position: 'absolute',
+                  top: '20px',
+                  right: '24px',
+                  fontSize: '4.5rem',
                   fontWeight: 300,
-                  color: '#F8F6F2',
-                  lineHeight: 1.5,
-                  margin: '0 0 32px',
-                  fontStyle: 'italic',
+                  color: '#C9A46A',
+                  opacity: 0.08,
+                  userSelect: 'none',
+                  lineHeight: 1,
                 }}
               >
-                {t.quote}
-              </blockquote>
+                {pillar.tag}
+              </div>
+
               <div>
-                <p
-                  style={{
-                    fontSize: '0.78rem',
-                    fontWeight: 500,
-                    color: '#F8F6F2',
-                    margin: '0 0 4px',
-                    letterSpacing: '0.04em',
-                    fontFamily: 'Inter, sans-serif',
-                  }}
-                >
-                  {t.name}
-                </p>
+                {/* Gold Section Label */}
                 <p
                   style={{
                     fontSize: '0.72rem',
-                    color: 'rgba(248,246,242,0.4)',
-                    fontWeight: 300,
-                    margin: 0,
+                    fontWeight: 600,
+                    color: '#C9A46A',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.2em',
+                    margin: '0 0 20px',
                     fontFamily: 'Inter, sans-serif',
                   }}
                 >
-                  {t.title}
+                  {pillar.label}
                 </p>
+
+                {/* Title */}
+                <h3
+                  className="font-display"
+                  style={{
+                    fontSize: 'clamp(1.4rem, 2vw, 1.8rem)',
+                    fontWeight: 300,
+                    color: '#F8F6F2',
+                    margin: '0 0 16px',
+                    lineHeight: 1.3,
+                  }}
+                >
+                  {pillar.title}
+                </h3>
               </div>
+
+              {/* Description */}
+              <p
+                style={{
+                  fontSize: '0.9rem',
+                  lineHeight: 1.8,
+                  color: 'rgba(248, 246, 242, 0.65)',
+                  fontWeight: 300,
+                  margin: 0,
+                  fontFamily: 'Inter, sans-serif',
+                }}
+              >
+                {pillar.description}
+              </p>
             </div>
           ))}
         </div>
@@ -2748,7 +2932,7 @@ function MarivaGlobal() {
       <LeadershipSection />
       <SustainabilitySection />
       <GlobalPresenceSection />
-      <TestimonialsSection />
+      <MarivaEngineSection />
       <ContactSection />
       <SiteFooter />
     </div>
