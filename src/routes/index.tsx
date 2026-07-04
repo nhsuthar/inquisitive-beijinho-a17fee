@@ -1585,8 +1585,8 @@ const EXECUTIVE_TEAM = [
   },
   {
     name: 'Julietta Passante',
-    role: 'Managing Director, Sales & Marketing',
-    bio: 'International real estate and hospitality executive with extensive experience in development sales, hotel transactions, and investor engagement. Julietta leverages her global network to support Mariva Global\'s growth opportunities. An experienced real estate and hospitality executive, Julietta has built a distinguished career spanning off-plan developments, hotel transactions, and international business development.',
+    role: 'Managing Director, Global Partnerships',
+    bio: 'Julietta Passante is an entrepreneur and international business executive with extensive experience across real estate, investments, and business development. At Mariva Global, she leads the Group\'s global partnerships, investor engagement, and stakeholder relationships, leveraging her international network to support strategic opportunities and the Company\'s long-term growth objectives.',
     img: IMG.julietta,
   },
   {
@@ -1723,7 +1723,7 @@ function LeadershipSection() {
                 margin: 0,
               }}
             >
-              Management & Operations
+              Executive Leadership Team
             </h3>
           </div>
 
@@ -1811,7 +1811,7 @@ function LeadershipSection() {
 const SUSTAIN_ITEMS = [
   {
     label: 'Green Development',
-    description: 'LEED Platinum and BREEAM Outstanding certifications across our entire portfolio.',
+    description: 'Responsible design and sustainable development practices incorporated throughout our projects and communities.',
     icon: (
       <svg className="sustain-icon" viewBox="0 0 40 40">
         <path d="M20 4C20 4 8 12 8 22a12 12 0 0024 0C32 12 20 4 20 4z" />
@@ -1823,7 +1823,7 @@ const SUSTAIN_ITEMS = [
   },
   {
     label: 'Smart Buildings',
-    description: 'AI-driven building management systems that reduce energy consumption by up to 40%.',
+    description: 'Innovative technologies and intelligent systems that enhance operational efficiency and occupant experience.',
     icon: (
       <svg className="sustain-icon" viewBox="0 0 40 40">
         <rect x="10" y="6" width="20" height="28" rx="1" />
@@ -1834,8 +1834,8 @@ const SUSTAIN_ITEMS = [
     ),
   },
   {
-    label: 'Renewable Energy',
-    description: 'All Mariva properties powered by 100% renewable energy by 2028.',
+    label: 'Resource Efficiency',
+    description: 'Energy-conscious infrastructure, water stewardship, and sustainable resource management across our developments.',
     icon: (
       <svg className="sustain-icon" viewBox="0 0 40 40">
         <circle cx="20" cy="20" r="6" />
@@ -1844,8 +1844,8 @@ const SUSTAIN_ITEMS = [
     ),
   },
   {
-    label: 'Sustainable Hospitality',
-    description: 'Farm-to-table dining, zero-waste operations, and carbon-neutral resort experiences.',
+    label: 'Responsible Hospitality',
+    description: 'Community-focused destinations that create long-term value while supporting local economies and cultures.',
     icon: (
       <svg className="sustain-icon" viewBox="0 0 40 40">
         <path d="M8 32c0-8 4-16 12-20 8 4 12 12 12 20" />
@@ -1987,7 +1987,8 @@ function SustainabilitySection() {
 
 const OFFICES = [
   { city: 'Zug', country: 'SWITZERLAND', x: 495, y: 142, primary: false },
-  { city: 'Rome', country: 'ITALY', x: 508, y: 155, primary: false },
+  { city: 'London', country: 'UNITED KINGDOM', x: 472, y: 110, primary: false },
+  { city: 'Milano', country: 'ITALY', x: 504, y: 146, primary: false },
   { city: 'Monaco', country: 'MONACO', x: 498, y: 152, primary: false },
   { city: 'Riyadh', country: 'SAUDI ARABIA', x: 638, y: 256, primary: false },
   { city: 'Abu Dhabi', country: 'UAE', x: 672, y: 242, primary: false },
@@ -2140,7 +2141,7 @@ function GlobalPresenceSection() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(6, minmax(130px, 1fr))',
+            gridTemplateColumns: 'repeat(7, minmax(130px, 1fr))',
             gap: '1px',
             background: 'rgba(201,164,106,0.15)',
             marginTop: '3px',
@@ -2789,7 +2790,7 @@ function SiteFooter() {
             },
             {
               title: 'Offices',
-              links: ['Switzerland', 'Italy', 'Monaco', 'Saudi Arabia', 'Abu Dhabi', 'Oman'],
+              links: ['Switzerland', 'United Kingdom', 'Italy', 'Monaco', 'Saudi Arabia', 'Abu Dhabi', 'Oman'],
             },
           ].map((col) => (
             <div key={col.title}>
