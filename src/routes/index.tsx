@@ -2889,13 +2889,13 @@ function MarivaGlobal() {
       <HeroSection />
       <AboutSection />
       <DivisionsSection />
+      <PhilosophySection />
       <LeadershipSection />
       <MarivaEngineSection />
       <ProjectsSection />
       <HospitalitySection />
       <StatsSection />
       <InvestmentsSection />
-      <PhilosophySection />
       <SustainabilitySection />
       <GlobalPresenceSection />
       <ContactSection />
