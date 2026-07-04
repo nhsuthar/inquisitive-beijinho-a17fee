@@ -1586,7 +1586,7 @@ const EXECUTIVE_TEAM = [
   {
     name: 'Julietta Passante',
     role: 'Managing Director, Global Partnerships',
-    bio: 'Julietta Passante is an entrepreneur and international business executive with extensive experience across real estate, investments, and business development. At Mariva Global, she leads the Group\'s global partnerships, investor engagement, and stakeholder relationships, leveraging her international network to support strategic opportunities and the Company\'s long-term growth objectives.',
+    bio: 'Julietta Passante is an entrepreneur and international business executive with extensive experience across real estate, investments, and business development. At Mariva Global, she leads the Group\'s global partnerships, investor engagement, and stakeholder relationships.',
     img: IMG.julietta,
   },
   {
