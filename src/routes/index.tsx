@@ -2890,6 +2890,7 @@ function MarivaGlobal() {
       <AboutSection />
       <DivisionsSection />
       <LeadershipSection />
+      <MarivaEngineSection />
       <ProjectsSection />
       <HospitalitySection />
       <StatsSection />
@@ -2897,7 +2898,6 @@ function MarivaGlobal() {
       <PhilosophySection />
       <SustainabilitySection />
       <GlobalPresenceSection />
-      <MarivaEngineSection />
       <ContactSection />
       <SiteFooter />
     </div>
