@@ -498,21 +498,19 @@ function AboutSection() {
           </h2>
 
           {/* Sub-heading / Lead */}
-          <h3
+          <p
             className="reveal reveal-d3"
             style={{
-              fontSize: 'clamp(0.95rem, 1.4vw, 1.15rem)',
-              lineHeight: 1.6,
+              fontSize: '0.9rem',
+              lineHeight: 1.9,
               color: '#6B6560',
-              fontWeight: 400,
               marginBottom: '24px',
+              fontWeight: 300,
               maxWidth: '560px',
             }}
           >
-            Building Exceptional Places Through Intelligence, Capital and Design.
-            <br />
-            <span style={{ color: '#C9A46A' }}>Where Technology, Capital and Construction Converge.</span>
-          </h3>
+            Building Exceptional Places Through Intelligence, Capital and Design. Where Technology, Capital and Construction Converge.
+          </p>
 
           {/* Description */}
           <p
@@ -540,91 +538,57 @@ function AboutSection() {
           >
             {/* Our Philosophy */}
             <div className="reveal reveal-d5">
-              <p
+              <h4
                 style={{
                   fontSize: '0.72rem',
                   fontWeight: 600,
                   color: '#C9A46A',
                   textTransform: 'uppercase',
                   letterSpacing: '0.15em',
-                  margin: '0 0 12px',
+                  margin: '0 0 16px',
                   fontFamily: 'Inter, sans-serif',
                 }}
               >
                 Our Philosophy
-              </p>
-              <h4
-                className="font-display"
-                style={{
-                  fontSize: '1.15rem',
-                  color: '#0A0A0A',
-                  margin: '0 0 16px',
-                  lineHeight: 1.4,
-                  fontWeight: 400,
-                }}
-              >
-                The most enduring projects are built on three foundations:
               </h4>
-              <ul
+              <p
                 style={{
-                  paddingLeft: '20px',
-                  margin: 0,
-                  fontSize: '0.88rem',
+                  fontSize: '0.9rem',
                   lineHeight: 1.8,
                   color: '#6B6560',
                   fontWeight: 300,
-                  listStyleType: 'disc',
+                  margin: 0,
                 }}
               >
-                <li style={{ marginBottom: '8px' }}>
-                  <strong style={{ color: '#0A0A0A', fontWeight: 500 }}>Intelligence</strong> to imagine what is possible.
-                </li>
-                <li style={{ marginBottom: '8px' }}>
-                  <strong style={{ color: '#0A0A0A', fontWeight: 500 }}>Capital</strong> to transform vision into reality.
-                </li>
-                <li>
-                  <strong style={{ color: '#0A0A0A', fontWeight: 500 }}>Execution</strong> to deliver lasting impact.
-                </li>
-              </ul>
+                The most enduring projects are built on three foundations: Intelligence to imagine what is possible, Capital to transform vision into reality, and Execution to deliver lasting impact.
+              </p>
             </div>
 
             {/* Our Legacy */}
             <div className="reveal reveal-d6">
-              <p
+              <h4
                 style={{
                   fontSize: '0.72rem',
                   fontWeight: 600,
                   color: '#C9A46A',
                   textTransform: 'uppercase',
                   letterSpacing: '0.15em',
-                  margin: '0 0 12px',
+                  margin: '0 0 16px',
                   fontFamily: 'Inter, sans-serif',
                 }}
               >
                 Our Legacy
-              </p>
-              <h4
-                className="font-display"
-                style={{
-                  fontSize: '1.15rem',
-                  color: '#0A0A0A',
-                  margin: '0 0 16px',
-                  lineHeight: 1.4,
-                  fontWeight: 400,
-                }}
-              >
-                We are not simply building properties.
               </h4>
               <p
                 style={{
-                  fontSize: '0.88rem',
+                  fontSize: '0.9rem',
                   lineHeight: 1.8,
                   color: '#6B6560',
                   fontWeight: 300,
                   margin: 0,
                 }}
               >
-                We are creating exceptional places, enabling new models of ownership, and shaping assets designed to stand the test of time.
+                We are not simply building properties. We are creating exceptional places, enabling new models of ownership, and shaping assets designed to stand the test of time.
               </p>
             </div>
           </div>
@@ -773,10 +737,10 @@ function DivisionsSection() {
                 margin: 0,
               }}
             >
-              Nine Pillars of
+              Ambitious
               <br />
               <em style={{ fontStyle: 'italic', color: 'rgba(248,246,242,0.65)' }}>
-                Global Excellence
+                Development Goals
               </em>
             </h2>
           </div>
@@ -1571,7 +1535,7 @@ function PhilosophySection() {
                 className="section-label"
                 style={{ color: '#C9A46A', marginBottom: '8px', fontSize: '0.75rem', fontWeight: 600 }}
               >
-                Manuela LECCA Duca Ducagini di Guevara Suardo Fabbri
+                Manuela Di Guevara Fabbri
               </p>
               <p
                 style={{
@@ -1605,7 +1569,7 @@ const MINDS_BEHIND = [
     img: IMG.coo,
   },
   {
-    name: 'Manuela LECCA Duca Ducagini di Guevara Suardo Fabbri',
+    name: 'Manuela Di Guevara Fabbri',
     role: 'Co-Chief Executive Officer',
     bio: 'International entrepreneur and business executive with extensive experience leading global enterprises and developing strategic partnerships across international markets. Oversees Mariva Global\'s stakeholder relationships, business development, and global expansion strategy.',
     img: IMG.ceo,
@@ -1614,22 +1578,16 @@ const MINDS_BEHIND = [
 
 const EXECUTIVE_TEAM = [
   {
-    name: 'Julietta Passante',
-    role: 'Managing Director, Sales & Marketing',
-    bio: 'International real estate and hospitality executive with extensive experience in development sales, hotel transactions, and investor engagement. Julietta leverages her global network to support Mariva Global\'s growth opportunities. An experienced real estate and hospitality executive, Julietta has built a distinguished career spanning off-plan developments, hotel transactions, and international business development.',
-    img: IMG.julietta,
-  },
-  {
     name: 'Faisal Bin Iftikhar',
     role: 'Managing Director & Global Head of Development',
     bio: 'Faisal Bin Iftikhar is an experienced developer and entrepreneur who leads a team of more than 200 professionals across international real estate and development projects. At Mariva Global, he leads project origination, strategic partnerships, investment opportunities, and the Group\'s global development pipeline.',
     img: IMG.faisal,
   },
   {
-    name: 'Francesco Merola',
-    role: 'Chief Investment Officer',
-    bio: 'With deep expertise in cross-border capital allocation from Goldman Sachs and KKR, Francesco oversees the group\'s investment strategy and global partnerships.',
-    img: IMG.cfo,
+    name: 'Julietta Passante',
+    role: 'Managing Director, Sales & Marketing',
+    bio: 'International real estate and hospitality executive with extensive experience in development sales, hotel transactions, and investor engagement. Julietta leverages her global network to support Mariva Global\'s growth opportunities. An experienced real estate and hospitality executive, Julietta has built a distinguished career spanning off-plan developments, hotel transactions, and international business development.',
+    img: IMG.julietta,
   },
   {
     name: 'Eduart Lacaj',
@@ -1772,7 +1730,7 @@ function LeadershipSection() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
+              gridTemplateColumns: 'repeat(3, 1fr)',
               gap: 'clamp(24px, 3.5vw, 48px)',
             }}
           >
@@ -2029,9 +1987,11 @@ function SustainabilitySection() {
 
 const OFFICES = [
   { city: 'Zug', country: 'SWITZERLAND', x: 495, y: 142, primary: false },
-  { city: 'Jeddah', country: 'SAUDI ARABIA', x: 625, y: 265, primary: false },
-  { city: 'Singapore', country: 'SINGAPORE', x: 818, y: 302, primary: false },
-  { city: 'Cape Town', country: 'SOUTH AFRICA', x: 505, y: 440, primary: false },
+  { city: 'Rome', country: 'ITALY', x: 508, y: 155, primary: false },
+  { city: 'Monaco', country: 'MONACO', x: 498, y: 152, primary: false },
+  { city: 'Riyadh', country: 'SAUDI ARABIA', x: 638, y: 256, primary: false },
+  { city: 'Abu Dhabi', country: 'UAE', x: 672, y: 242, primary: false },
+  { city: 'Muscat', country: 'OMAN', x: 692, y: 260, primary: false },
 ]
 
 function GlobalPresenceSection() {
@@ -2180,10 +2140,12 @@ function GlobalPresenceSection() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gridTemplateColumns: 'repeat(6, minmax(130px, 1fr))',
             gap: '1px',
             background: 'rgba(201,164,106,0.15)',
             marginTop: '3px',
+            overflowX: 'auto',
+            scrollbarWidth: 'none',
           }}
         >
           {OFFICES.map((office, i) => (
@@ -2192,21 +2154,32 @@ function GlobalPresenceSection() {
               className={`reveal reveal-d${i + 1}`}
               style={{
                 background: '#F8F6F2',
-                padding: '28px 24px',
+                padding: '24px clamp(12px, 2vw, 24px)',
                 borderTop: office.primary ? '2px solid #C9A46A' : '2px solid transparent',
               }}
             >
-              <p className="section-label" style={{ color: '#C9A46A', marginBottom: '6px', fontSize: '0.55rem' }}>
-                {office.country}
-              </p>
               <p
                 className="font-display"
                 style={{
-                  fontSize: '1.4rem',
+                  fontSize: 'clamp(0.85rem, 1.2vw, 1.1rem)',
                   fontWeight: 400,
                   color: '#0A0A0A',
-                  margin: 0,
+                  margin: '0 0 6px',
                   lineHeight: 1.2,
+                  letterSpacing: '0.02em',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                {office.country}
+              </p>
+              <p
+                className="section-label"
+                style={{
+                  color: '#C9A46A',
+                  margin: 0,
+                  fontSize: '0.62rem',
+                  letterSpacing: '0.15em',
+                  textTransform: 'uppercase',
                 }}
               >
                 {office.city}
@@ -2696,33 +2669,30 @@ function SiteFooter() {
         >
           {/* Brand */}
           <div style={{ gridColumn: 'span 1' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '24px' }}>
-              <img src="/logo.png" alt="Mariva Global Logo" style={{ height: '75px', width: 'auto' }} />
-              <div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '6px', marginBottom: '24px' }}>
+              <img
+                src="/logo.png"
+                alt="Mariva Global Logo"
+                style={{
+                  height: 'clamp(50px, 8vw, 75px)',
+                  width: 'auto',
+                  display: 'block',
+                }}
+              />
+              <div style={{ textAlign: 'left' }}>
                 <div
                   style={{
-                    fontSize: '0.8rem',
-                    letterSpacing: '0.38em',
-                    color: '#F8F6F2',
-                    fontWeight: 400,
-                    fontFamily: 'Inter, sans-serif',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  MARIVA
-                </div>
-                <div
-                  style={{
-                    fontSize: '0.65rem',
-                    letterSpacing: '0.48em',
+                    fontSize: 'clamp(0.6rem, 1vw, 0.72rem)',
+                    letterSpacing: '0.35em',
                     color: '#C9A46A',
-                    fontWeight: 400,
+                    fontWeight: 500,
                     fontFamily: 'Inter, sans-serif',
                     textTransform: 'uppercase',
-                    marginTop: '2px',
+                    marginTop: '4px',
+                    whiteSpace: 'nowrap',
                   }}
                 >
-                  GLOBAL
+                  MARIVA GLOBAL
                 </div>
               </div>
             </div>
@@ -2738,25 +2708,64 @@ function SiteFooter() {
               Building exceptional places and creating enduring value across five continents.
             </p>
             {/* Social */}
-            <div style={{ display: 'flex', gap: '20px', marginTop: '28px' }}>
-              {['LinkedIn', 'Instagram', 'X'].map((social) => (
+            <div style={{ display: 'flex', gap: '20px', marginTop: '28px', alignItems: 'center' }}>
+              {[
+                {
+                  name: 'LinkedIn',
+                  url: '#',
+                  icon: (
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'block' }}>
+                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                      <rect x="2" y="9" width="4" height="12" />
+                      <circle cx="4" cy="4" r="2" />
+                    </svg>
+                  )
+                },
+                {
+                  name: 'Instagram',
+                  url: '#',
+                  icon: (
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'block' }}>
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
+                  )
+                },
+                {
+                  name: 'X',
+                  url: '#',
+                  icon: (
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'block' }}>
+                      <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
+                      <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+                    </svg>
+                  )
+                }
+              ].map((social) => (
                 <a
-                  key={social}
-                  href="#"
+                  key={social.name}
+                  href={social.url}
+                  aria-label={social.name}
                   style={{
-                    fontSize: '0.62rem',
-                    letterSpacing: '0.14em',
                     color: 'rgba(248,246,242,0.35)',
-                    textDecoration: 'none',
-                    fontFamily: 'Inter, sans-serif',
-                    transition: 'color 0.3s ease',
+                    transition: 'color 0.3s ease, transform 0.3s ease',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                   }}
-                  onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = '#C9A46A')}
-                  onMouseLeave={(e) =>
-                    ((e.target as HTMLAnchorElement).style.color = 'rgba(248,246,242,0.35)')
-                  }
+                  onMouseEnter={(e) => {
+                    const target = e.currentTarget as HTMLAnchorElement;
+                    target.style.color = '#C9A46A';
+                    target.style.transform = 'translateY(-2px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    const target = e.currentTarget as HTMLAnchorElement;
+                    target.style.color = 'rgba(248,246,242,0.35)';
+                    target.style.transform = 'none';
+                  }}
                 >
-                  {social}
+                  {social.icon}
                 </a>
               ))}
             </div>
@@ -2780,7 +2789,7 @@ function SiteFooter() {
             },
             {
               title: 'Offices',
-              links: ['Dubai — HQ', 'London', 'Riyadh', 'Singapore', 'New York'],
+              links: ['Switzerland', 'Italy', 'Monaco', 'Saudi Arabia', 'Abu Dhabi', 'Oman'],
             },
           ].map((col) => (
             <div key={col.title}>
@@ -2814,51 +2823,6 @@ function SiteFooter() {
               </ul>
             </div>
           ))}
-
-          {/* Newsletter */}
-          <div>
-            <p
-              className="section-label"
-              style={{ color: '#C9A46A', marginBottom: '20px', fontSize: '0.55rem' }}
-            >
-              Newsletter
-            </p>
-            <p
-              style={{
-                fontSize: '0.78rem',
-                color: 'rgba(248,246,242,0.4)',
-                fontWeight: 300,
-                lineHeight: 1.7,
-                marginBottom: '20px',
-              }}
-            >
-              Receive our quarterly perspectives on luxury real estate and global markets.
-            </p>
-            <div style={{ display: 'flex', gap: '0' }}>
-              <input
-                type="email"
-                placeholder="Email address"
-                style={{
-                  flex: 1,
-                  background: 'rgba(248,246,242,0.06)',
-                  border: '1px solid rgba(201,164,106,0.2)',
-                  borderRight: 'none',
-                  padding: '11px 14px',
-                  color: '#F8F6F2',
-                  fontSize: '0.72rem',
-                  fontFamily: 'Inter, sans-serif',
-                  outline: 'none',
-                  minWidth: 0,
-                }}
-              />
-              <button
-                className="btn-gold"
-                style={{ padding: '11px 16px', fontSize: '0.6rem', flexShrink: 0 }}
-              >
-                →
-              </button>
-            </div>
-          </div>
         </div>
 
         {/* Bottom bar */}
