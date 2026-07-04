@@ -2892,9 +2892,9 @@ function MarivaGlobal() {
       <PhilosophySection />
       <LeadershipSection />
       <MarivaEngineSection />
+      <StatsSection />
       <ProjectsSection />
       <HospitalitySection />
-      <StatsSection />
       <InvestmentsSection />
       <SustainabilitySection />
       <GlobalPresenceSection />
