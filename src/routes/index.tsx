@@ -2889,12 +2889,12 @@ function MarivaGlobal() {
       <HeroSection />
       <AboutSection />
       <DivisionsSection />
+      <LeadershipSection />
       <ProjectsSection />
       <HospitalitySection />
       <StatsSection />
       <InvestmentsSection />
       <PhilosophySection />
-      <LeadershipSection />
       <SustainabilitySection />
       <GlobalPresenceSection />
       <MarivaEngineSection />
