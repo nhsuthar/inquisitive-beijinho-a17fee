@@ -7,14 +7,14 @@ export const Route = createRootRoute({
     meta: [
       { charSet: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { title: 'Mariva Global — Building Exceptional Places' },
+      { title: 'Dukani Global — Building Exceptional Places' },
       {
         name: 'description',
         content:
-          'Mariva Global develops landmark real estate, luxury hospitality, and global investment opportunities that redefine modern living.',
+          'Dukani Global develops landmark real estate, luxury hospitality, and global investment opportunities that redefine modern living.',
       },
       { name: 'theme-color', content: '#0A0A0A' },
-      { property: 'og:title', content: 'Mariva Global — Building Exceptional Places' },
+      { property: 'og:title', content: 'Dukani Global — Building Exceptional Places' },
       {
         property: 'og:description',
         content:

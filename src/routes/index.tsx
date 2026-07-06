@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { useEffect, useRef, useState } from 'react'
 
 export const Route = createFileRoute('/')({
-  component: MarivaGlobal,
+  component: DukaniGlobal,
 })
 
 // ─── Curated image collection ─────────────────────────────────────────────────
@@ -182,7 +182,7 @@ function Navigation() {
         >
           <img
             src="/logo.png"
-            alt="Mariva Global Logo"
+            alt="Dukani Global Logo"
             style={{
               height: 'clamp(50px, 8vw, 75px)',
               width: 'auto',
@@ -202,7 +202,7 @@ function Navigation() {
                 whiteSpace: 'nowrap',
               }}
             >
-              MARIVA GLOBAL
+              DUKANI GLOBAL
             </div>
           </div>
         </a>
@@ -286,9 +286,9 @@ function Navigation() {
       {/* Mobile overlay menu */}
       <div className={`mobile-nav-overlay ${menuOpen ? 'open' : 'closed'}`}>
         <div style={{ marginBottom: '60px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <img src="/logo.png" alt="Mariva Global Logo" style={{ height: '75px', width: 'auto' }} />
+          <img src="/logo.png" alt="Dukani Global Logo" style={{ height: '75px', width: 'auto' }} />
           <div style={{ fontSize: '0.6rem', letterSpacing: '0.4em', color: '#C9A46A', fontFamily: 'Inter, sans-serif', textTransform: 'uppercase' }}>
-            MARIVA GLOBAL
+            DUKANI GLOBAL
           </div>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
@@ -381,7 +381,7 @@ function HeroSection() {
           className="section-label hero-label"
           style={{ color: '#C9A46A', marginBottom: '28px' }}
         >
-          Mariva Global · Est. 2026
+          Dukani Global · Est. 2026
         </p>
 
         <h1
@@ -414,7 +414,7 @@ function HeroSection() {
             fontWeight: 300,
           }}
         >
-          Mariva Global develops landmark real estate, luxury hospitality, and global
+          Dukani Global develops landmark real estate, luxury hospitality, and global
           investment opportunities that redefine modern living.
         </p>
 
@@ -524,7 +524,7 @@ function AboutSection() {
               maxWidth: '560px',
             }}
           >
-            Founded on the belief that exceptional developments emerge when vision, capital, and execution work as one, Mariva Global creates places designed to inspire, endure, and generate lasting value.
+            Founded on the belief that exceptional developments emerge when vision, capital, and execution work as one, Dukani Global creates places designed to inspire, endure, and generate lasting value.
           </p>
 
           {/* Our Philosophy & Our Legacy Columns */}
@@ -609,7 +609,7 @@ function AboutSection() {
           >
             <img
               src={IMG.about}
-              alt="Mariva Global architectural portfolio"
+              alt="Dukani Global architectural portfolio"
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
               loading="lazy"
             />
@@ -846,7 +846,7 @@ function DivisionsSection() {
 
 const PROJECTS = [
   {
-    name: 'Mariva One Tower',
+    name: 'Dukani One Tower',
     location: 'Dubai, UAE',
     status: 'Completed',
     year: '2023',
@@ -857,7 +857,7 @@ const PROJECTS = [
     size: 'large',
   },
   {
-    name: 'The Mariva Residences',
+    name: 'The Dukani Residences',
     location: 'London, UK',
     status: 'Completed',
     year: '2022',
@@ -868,7 +868,7 @@ const PROJECTS = [
     size: 'small',
   },
   {
-    name: 'Mariva Financial Centre',
+    name: 'Dukani Financial Centre',
     location: 'Riyadh, KSA',
     status: 'Under Construction',
     year: '2025',
@@ -1132,7 +1132,7 @@ function HospitalitySection() {
         >
           <img
             src={IMG.hospitality}
-            alt="Mariva luxury hospitality — infinity pool"
+            alt="Dukani luxury hospitality — infinity pool"
             style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
             loading="lazy"
           />
@@ -1238,7 +1238,7 @@ function StatsSection() {
       <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 'clamp(56px, 7vw, 96px)' }}>
           <p className="section-label reveal" style={{ color: '#C9A46A', marginBottom: '20px' }}>
-            Why Mariva
+            Why Dukani
           </p>
           <h2
             className="font-display reveal reveal-d1"
@@ -1301,7 +1301,7 @@ const INVESTMENT_DIVISIONS = [
     tag: '02',
   },
   {
-    title: 'Tokenisation',
+    title: 'Dukani Digital Assets',
     description: 'Fractional digital ownership unlocking liquidity in premier global real estate assets.',
     img: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&q=80',
     tag: '03',
@@ -1565,13 +1565,13 @@ const MINDS_BEHIND = [
   {
     name: 'Alia Minhas',
     role: 'Co-Chief Executive Officer',
-    bio: 'Entrepreneur, investor, and strategic business leader with experience across finance, technology, life sciences, and venture development. Leads Mariva Global\'s corporate strategy, innovation, investment activities, and long-term growth initiatives.',
+    bio: 'Entrepreneur, investor, and strategic business leader with experience across finance, technology, life sciences, and venture development. Leads Dukani Global\'s corporate strategy, innovation, investment activities, and long-term growth initiatives.',
     img: IMG.coo,
   },
   {
     name: 'Manuela Di Guevara Fabbri',
     role: 'Co-Chief Executive Officer',
-    bio: 'International entrepreneur and business executive with extensive experience leading global enterprises and developing strategic partnerships across international markets. Oversees Mariva Global\'s stakeholder relationships, business development, and global expansion strategy.',
+    bio: 'International entrepreneur and business executive with extensive experience leading global enterprises and developing strategic partnerships across international markets. Oversees Dukani Global\'s stakeholder relationships, business development, and global expansion strategy.',
     img: IMG.ceo,
   },
 ]
@@ -1580,19 +1580,19 @@ const EXECUTIVE_TEAM = [
   {
     name: 'Faisal Bin Iftikhar',
     role: 'Managing Director & Global Head of Development',
-    bio: 'Faisal Bin Iftikhar is an experienced developer and entrepreneur who leads a team of more than 200 professionals across international real estate and development projects. At Mariva Global, he leads project origination, strategic partnerships, investment opportunities, and the Group\'s global development pipeline.',
+    bio: 'Faisal Bin Iftikhar is an experienced developer and entrepreneur who leads a team of more than 200 professionals across international real estate and development projects. At Dukani Global, he leads project origination, strategic partnerships, investment opportunities, and the Group\'s global development pipeline.',
     img: IMG.faisal,
   },
   {
     name: 'Julietta Passante',
     role: 'Managing Director, Global Partnerships',
-    bio: 'Julietta Passante is an entrepreneur and international business executive with extensive experience across real estate, investments, and business development. At Mariva Global, she leads the Group\'s global partnerships, investor engagement, and stakeholder relationships.',
+    bio: 'Julietta Passante is an entrepreneur and international business executive with extensive experience across real estate, investments, and business development. At Dukani Global, she leads the Group\'s global partnerships, investor engagement, and stakeholder relationships.',
     img: IMG.julietta,
   },
   {
     name: 'Eduart Lacaj',
     role: 'Managing Director & Global Head of Construction',
-    bio: 'Eduart Lacaj is a construction executive with over 15 years of industry experience. He leads a team of more than 100 professionals and has delivered over 2,000 projects, he oversees construction, project delivery, quality, and operational excellence across Mariva Global\'s international portfolio.',
+    bio: 'Eduart Lacaj is a construction executive with over 15 years of industry experience. He leads a team of more than 100 professionals and has delivered over 2,000 projects, he oversees construction, project delivery, quality, and operational excellence across Dukani Global\'s international portfolio.',
     img: IMG.eduart,
   },
 ]
@@ -1621,7 +1621,7 @@ function LeadershipSection() {
           >
             The Minds Behind
             <br />
-            <em style={{ fontStyle: 'italic', color: '#6B6560' }}>Mariva Global</em>
+            <em style={{ fontStyle: 'italic', color: '#6B6560' }}>Dukani Global</em>
           </h2>
         </div>
 
@@ -1920,7 +1920,7 @@ function SustainabilitySection() {
                   margin: 0,
                 }}
               >
-                At Mariva Global, sustainability is expressed through timeless architecture, intelligent innovation, and a commitment to creating places of enduring significance. Every project is guided by a simple principle: build less for the moment, and more for the future.
+                At Dukani Global, sustainability is expressed through timeless architecture, intelligent innovation, and a commitment to creating places of enduring significance. Every project is guided by a simple principle: build less for the moment, and more for the future.
               </p>
               <p
                 className="reveal reveal-d4"
@@ -2034,7 +2034,7 @@ function GlobalPresenceSection() {
           <svg
             viewBox="0 0 1000 500"
             style={{ width: '100%', display: 'block' }}
-            aria-label="World map showing Mariva Global office locations"
+            aria-label="World map showing Dukani Global office locations"
           >
             {/* Simplified continent shapes */}
             {/* North America */}
@@ -2223,7 +2223,7 @@ const ENGINE_PILLARS = [
     label: 'Heart',
     title: 'Capital & Ownership',
     description:
-      'Connecting opportunity with investment through strategic partnerships, innovative capital structures, and future tokenisation platforms that broaden access to exceptional real-world assets.',
+      'Connecting opportunity with investment through strategic partnerships, innovative capital structures, and future Dukani Digital Assets platforms that broaden access to exceptional real-world assets.',
   },
   {
     tag: '03',
@@ -2234,7 +2234,7 @@ const ENGINE_PILLARS = [
   },
 ]
 
-function MarivaEngineSection() {
+function DukaniEngineSection() {
   return (
     <section
       id="engine"
@@ -2258,7 +2258,7 @@ function MarivaEngineSection() {
               textTransform: 'uppercase',
             }}
           >
-            The Mariva Engine
+            The Dukani Engine
           </h2>
         </div>
 
@@ -2436,15 +2436,15 @@ function ContactSection() {
               {[
                 {
                   city: 'Dubai (Global HQ)',
-                  address: 'Mariva One Tower, Level 42\nDowntown Dubai, UAE',
+                  address: 'Dukani One Tower, Level 42\nDowntown Dubai, UAE',
                   tel: '+971 4 XXX XXXX',
-                  email: 'global@marivaglobal.com',
+                  email: 'global@dukaniglobal.com',
                 },
                 {
                   city: 'London',
                   address: '45 Berkeley Square, Mayfair\nLondon, W1J 5AS',
                   tel: '+44 20 XXXX XXXX',
-                  email: 'london@marivaglobal.com',
+                  email: 'london@dukaniglobal.com',
                 },
               ].map((office, i) => (
                 <div
@@ -2673,7 +2673,7 @@ function SiteFooter() {
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '6px', marginBottom: '24px' }}>
               <img
                 src="/logo.png"
-                alt="Mariva Global Logo"
+                alt="Dukani Global Logo"
                 style={{
                   height: 'clamp(50px, 8vw, 75px)',
                   width: 'auto',
@@ -2693,7 +2693,7 @@ function SiteFooter() {
                     whiteSpace: 'nowrap',
                   }}
                 >
-                  MARIVA GLOBAL
+                  DUKANI GLOBAL
                 </div>
               </div>
             </div>
@@ -2776,7 +2776,7 @@ function SiteFooter() {
           {[
             {
               title: 'Company',
-              links: ['About Mariva', 'Our History', 'Leadership', 'Sustainability', 'Newsroom'],
+              links: ['About Dukani', 'Our History', 'Leadership', 'Sustainability', 'Newsroom'],
             },
             {
               title: 'Divisions',
@@ -2847,7 +2847,7 @@ function SiteFooter() {
               fontFamily: 'Inter, sans-serif',
             }}
           >
-            © 2024 Mariva Global. All rights reserved.
+            © 2024 Dukani Global. All rights reserved.
           </p>
           <div style={{ display: 'flex', gap: '24px' }}>
             {['Privacy Policy', 'Terms of Use', 'Cookie Policy'].map((item) => (
@@ -2880,7 +2880,7 @@ function SiteFooter() {
 
 // ─── Root Component ───────────────────────────────────────────────────────────
 
-function MarivaGlobal() {
+function DukaniGlobal() {
   useScrollReveal()
 
   return (
@@ -2891,7 +2891,7 @@ function MarivaGlobal() {
       <DivisionsSection />
       <PhilosophySection />
       <LeadershipSection />
-      <MarivaEngineSection />
+      <DukaniEngineSection />
       <StatsSection />
       <ProjectsSection />
       <HospitalitySection />
