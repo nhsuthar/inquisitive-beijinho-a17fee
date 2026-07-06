@@ -149,6 +149,7 @@ function Navigation() {
   const navLinks = [
     { label: 'About', href: '#about' },
     { label: 'Divisions', href: '#divisions' },
+    { label: 'Leadership', href: '#leadership' },
     { label: 'Projects', href: '#projects' },
     { label: 'Hospitality', href: '#hospitality' },
     { label: 'Investments', href: '#investments' },
