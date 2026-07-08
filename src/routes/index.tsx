@@ -493,7 +493,7 @@ function AboutSection() {
               maxWidth: '560px',
             }}
           >
-            Building Exceptional Places Through Intelligence, Capital and Design. Where Technology, Capital and Construction Converge.
+            Building exceptional places through intelligence, capital and design. Where technology, capital and construction converge.
           </p>
 
           {/* Description */}
