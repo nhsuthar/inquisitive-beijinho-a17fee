@@ -1474,7 +1474,7 @@ function PhilosophySection() {
                 fontStyle: 'italic',
               }}
             >
-              "The next generation of real assets will be shaped by artificial intelligence, digital ownership, and intelligent infrastructure. Our ambition is to build at the convergence of technology, capital, and the built environment—creating platforms and places designed for the future."
+              "The next generation of real assets will be shaped by artificial intelligence, digital ownership, and intelligent infrastructure. Our ambition is to build at the convergence of technology, capital, and the built environment, creating platforms and places designed for the future."
             </blockquote>
             <div>
               <p
