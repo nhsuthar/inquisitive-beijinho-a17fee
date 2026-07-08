@@ -165,13 +165,13 @@ function Navigation() {
           left: 0,
           right: 0,
           zIndex: 100,
-          padding: scrolled ? 'clamp(8px, 1.5vh, 12px) 5vw' : 'clamp(12px, 2.5vh, 20px) 5vw',
+          padding: scrolled ? 'clamp(6px, 1vh, 10px) 5vw' : 'clamp(10px, 2vh, 18px) 5vw',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          background: scrolled ? 'rgba(10, 10, 10, 0.97)' : 'transparent',
-          backdropFilter: scrolled ? 'blur(12px)' : 'none',
-          borderBottom: scrolled ? '1px solid rgba(201, 164, 106, 0.12)' : 'none',
+          background: scrolled ? 'rgba(10,10,10,0.97)' : 'transparent',
+          backdropFilter: scrolled ? 'blur(10px)' : 'none',
+          borderBottom: scrolled ? '1px solid rgba(201,164,106,0.15)' : '1px solid transparent',
           transition: 'background 0.5s ease, border-color 0.5s ease, backdrop-filter 0.5s ease, padding 0.5s ease',
         }}
       >
@@ -185,7 +185,7 @@ function Navigation() {
             src="/logo.png"
             alt="Dukani Global Logo"
             style={{
-              height: 'clamp(55px, 7vw, 90px)',
+              height: 'clamp(85px, 12vw, 120px)',
               width: 'auto',
               display: 'block',
             }}
@@ -271,7 +271,7 @@ function Navigation() {
       {/* Mobile overlay menu */}
       <div className={`mobile-nav-overlay ${menuOpen ? 'open' : 'closed'}`}>
         <div style={{ marginBottom: '60px', display: 'flex', alignItems: 'center' }}>
-          <img src="/logo.png" alt="Dukani Global Logo" style={{ height: '95px', width: 'auto' }} />
+          <img src="/logo.png" alt="Dukani Global Logo" style={{ height: '120px', width: 'auto' }} />
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
           {navLinks.map((link, i) => (
@@ -354,7 +354,7 @@ function HeroSection() {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'flex-end',
-          paddingTop: 'clamp(100px, 15vh, 140px)',
+          paddingTop: 'clamp(145px, 22vh, 195px)',
           paddingBottom: 'clamp(40px, 10vh, 80px)',
           paddingLeft: '7vw',
           paddingRight: '7vw',
@@ -2659,7 +2659,7 @@ function SiteFooter() {
                 src="/logo.png"
                 alt="Dukani Global Logo"
                 style={{
-                  height: 'clamp(70px, 9vw, 95px)',
+                  height: 'clamp(90px, 12vw, 120px)',
                   width: 'auto',
                   display: 'block',
                 }}
