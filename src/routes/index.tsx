@@ -178,34 +178,18 @@ function Navigation() {
         {/* Logo */}
         <a
           href="#"
-          style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px', textDecoration: 'none', lineHeight: 1.1 }}
+          style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}
           onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
         >
           <img
             src="/logo.png"
             alt="Dukani Global Logo"
             style={{
-              height: 'clamp(50px, 8vw, 75px)',
+              height: 'clamp(70px, 9vw, 95px)',
               width: 'auto',
               display: 'block',
             }}
           />
-          <div style={{ textAlign: 'center' }}>
-            <div
-              style={{
-                fontSize: 'clamp(0.6rem, 1vw, 0.72rem)',
-                letterSpacing: '0.35em',
-                color: '#C9A46A',
-                fontWeight: 500,
-                fontFamily: 'Inter, sans-serif',
-                textTransform: 'uppercase',
-                marginTop: '4px',
-                whiteSpace: 'nowrap',
-              }}
-            >
-              DUKANI GLOBAL
-            </div>
-          </div>
         </a>
 
         {/* Desktop links */}
@@ -286,11 +270,8 @@ function Navigation() {
 
       {/* Mobile overlay menu */}
       <div className={`mobile-nav-overlay ${menuOpen ? 'open' : 'closed'}`}>
-        <div style={{ marginBottom: '60px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <img src="/logo.png" alt="Dukani Global Logo" style={{ height: '75px', width: 'auto' }} />
-          <div style={{ fontSize: '0.6rem', letterSpacing: '0.4em', color: '#C9A46A', fontFamily: 'Inter, sans-serif', textTransform: 'uppercase' }}>
-            DUKANI GLOBAL
-          </div>
+        <div style={{ marginBottom: '60px', display: 'flex', alignItems: 'center' }}>
+          <img src="/logo.png" alt="Dukani Global Logo" style={{ height: '95px', width: 'auto' }} />
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
           {navLinks.map((link, i) => (
@@ -2671,32 +2652,16 @@ function SiteFooter() {
         >
           {/* Brand */}
           <div style={{ gridColumn: 'span 1' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '6px', marginBottom: '24px' }}>
+            <div style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '24px' }}>
               <img
                 src="/logo.png"
                 alt="Dukani Global Logo"
                 style={{
-                  height: 'clamp(50px, 8vw, 75px)',
+                  height: 'clamp(70px, 9vw, 95px)',
                   width: 'auto',
                   display: 'block',
                 }}
               />
-              <div style={{ textAlign: 'left' }}>
-                <div
-                  style={{
-                    fontSize: 'clamp(0.6rem, 1vw, 0.72rem)',
-                    letterSpacing: '0.35em',
-                    color: '#C9A46A',
-                    fontWeight: 500,
-                    fontFamily: 'Inter, sans-serif',
-                    textTransform: 'uppercase',
-                    marginTop: '4px',
-                    whiteSpace: 'nowrap',
-                  }}
-                >
-                  DUKANI GLOBAL
-                </div>
-              </div>
             </div>
             <p
               style={{
