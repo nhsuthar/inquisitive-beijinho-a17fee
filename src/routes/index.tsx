@@ -165,7 +165,7 @@ function Navigation() {
           left: 0,
           right: 0,
           zIndex: 100,
-          padding: scrolled ? '12px 5vw' : '20px 5vw',
+          padding: scrolled ? 'clamp(8px, 1.5vh, 12px) 5vw' : 'clamp(12px, 2.5vh, 20px) 5vw',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -185,7 +185,7 @@ function Navigation() {
             src="/logo.png"
             alt="Dukani Global Logo"
             style={{
-              height: 'clamp(70px, 9vw, 95px)',
+              height: 'clamp(55px, 7vw, 90px)',
               width: 'auto',
               display: 'block',
             }}
@@ -354,9 +354,11 @@ function HeroSection() {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'flex-end',
-          paddingBottom: '10vh',
+          paddingTop: 'clamp(100px, 15vh, 140px)',
+          paddingBottom: 'clamp(40px, 10vh, 80px)',
           paddingLeft: '7vw',
           paddingRight: '7vw',
+          boxSizing: 'border-box',
         }}
       >
         <p
