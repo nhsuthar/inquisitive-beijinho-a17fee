@@ -87,6 +87,22 @@ body {
 .hero-bg    { animation: kenBurns 24s ease-in-out infinite alternate; }
 .scroll-line { animation: scrollPulse 2.8s ease-in-out infinite; }
 
+.hero-content-container {
+  justify-content: flex-end;
+}
+@media (max-width: 768px) {
+  .hero-content-container {
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 480px) {
+  .btn-gold, .btn-outline-white {
+    padding: 11px 26px !important;
+    font-size: 0.62rem !important;
+    letter-spacing: 0.16em !important;
+  }
+}
+
 /* ── Navigation ── */
 .nav-link {
   position: relative;

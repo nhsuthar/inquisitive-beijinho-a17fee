@@ -347,15 +347,15 @@ function HeroSection() {
 
       {/* Content */}
       <div
+        className="hero-content-container"
         style={{
           position: 'relative',
           zIndex: 10,
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'flex-end',
-          paddingTop: 'clamp(145px, 22vh, 195px)',
-          paddingBottom: 'clamp(40px, 10vh, 80px)',
+          paddingTop: 'clamp(115px, 16vh, 155px)',
+          paddingBottom: 'clamp(40px, 8vh, 80px)',
           paddingLeft: '7vw',
           paddingRight: '7vw',
           boxSizing: 'border-box',
@@ -363,7 +363,7 @@ function HeroSection() {
       >
         <p
           className="section-label hero-label"
-          style={{ color: '#C9A46A', marginBottom: '28px' }}
+          style={{ color: '#C9A46A', marginBottom: 'clamp(14px, 2.5vh, 26px)' }}
         >
           Dukani Global · Est. 2026
         </p>
@@ -371,12 +371,12 @@ function HeroSection() {
         <h1
           className="font-display hero-title"
           style={{
-            fontSize: 'clamp(3rem, 6.5vw, 8rem)',
+            fontSize: 'clamp(1.95rem, 6vw, 8rem)',
             fontWeight: 300,
             color: '#F8F6F2',
             lineHeight: 1.04,
             letterSpacing: '-0.01em',
-            margin: '0 0 32px',
+            margin: '0 0 clamp(16px, 3vh, 28px)',
             maxWidth: '1000px',
           }}
         >
@@ -391,10 +391,10 @@ function HeroSection() {
           className="hero-sub"
           style={{
             maxWidth: '520px',
-            fontSize: 'clamp(0.82rem, 1.1vw, 0.95rem)',
+            fontSize: 'clamp(0.8rem, 1.1vw, 0.95rem)',
             lineHeight: 1.8,
             color: 'rgba(248, 246, 242, 0.68)',
-            marginBottom: '52px',
+            marginBottom: 'clamp(28px, 6vh, 48px)',
             fontWeight: 300,
           }}
         >
@@ -402,7 +402,7 @@ function HeroSection() {
           investment opportunities that redefine modern living.
         </p>
 
-        <div className="hero-cta" style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+        <div className="hero-cta" style={{ display: 'flex', gap: 'clamp(12px, 3vw, 20px)', flexWrap: 'wrap' }}>
           <a href="#projects" className="btn-gold">
             Explore Projects
           </a>
