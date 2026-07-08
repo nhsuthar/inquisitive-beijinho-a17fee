@@ -693,7 +693,7 @@ function DivisionsSection() {
   return (
     <section
       id="divisions"
-      style={{ background: '#0A0A0A', padding: 'clamp(80px, 10vw, 140px) 7vw' }}
+      style={{ background: '#0A0A0A', padding: 'clamp(80px, 10vw, 140px) 7vw clamp(20px, 3vw, 40px) 7vw' }}
     >
       <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
         <div
@@ -1425,7 +1425,7 @@ function PhilosophySection() {
     <section
       style={{
         background: '#0A0A0A',
-        padding: 'clamp(80px, 12vw, 160px) 7vw',
+        padding: 'clamp(20px, 3vw, 40px) 7vw clamp(80px, 12vw, 160px) 7vw',
         position: 'relative',
         overflow: 'hidden',
       }}
