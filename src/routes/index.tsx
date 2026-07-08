@@ -2846,6 +2846,82 @@ function SiteFooter() {
   )
 }
 
+// ─── Scroll To Top Component ──────────────────────────────────────────────────
+
+function ScrollToTop() {
+  const [visible, setVisible] = useState(false)
+  const [hovered, setHovered] = useState(false)
+
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.scrollY > 300) {
+        setVisible(true)
+      } else {
+        setVisible(false)
+      }
+    }
+    window.addEventListener('scroll', toggleVisibility, { passive: true })
+    return () => window.removeEventListener('scroll', toggleVisibility)
+  }, [])
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
+  }
+
+  return (
+    <button
+      onClick={scrollToTop}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        position: 'fixed',
+        bottom: 'clamp(24px, 4vw, 40px)',
+        right: 'clamp(24px, 4vw, 40px)',
+        zIndex: 90,
+        width: '48px',
+        height: '48px',
+        borderRadius: '50%',
+        background: hovered ? '#C9A46A' : 'rgba(10, 10, 10, 0.85)',
+        border: hovered ? '1px solid #C9A46A' : '1px solid rgba(201, 164, 106, 0.4)',
+        color: hovered ? '#0A0A0A' : '#C9A46A',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        cursor: 'pointer',
+        opacity: visible ? 1 : 0,
+        transform: visible ? (hovered ? 'scale(1.1) translateY(-4px)' : 'scale(1) translateY(0)') : 'scale(0.8) translateY(20px)',
+        pointerEvents: visible ? 'auto' : 'none',
+        backdropFilter: 'blur(8px)',
+        WebkitBackdropFilter: 'blur(8px)',
+        transition: 'opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, border-color 0.3s ease, color 0.3s ease',
+        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.4)',
+      }}
+      aria-label="Scroll to top"
+    >
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        style={{
+          transform: hovered ? 'translateY(-2px)' : 'translateY(0)',
+          transition: 'transform 0.3s ease',
+        }}
+      >
+        <line x1="12" y1="19" x2="12" y2="5" />
+        <polyline points="5 12 12 5 19 12" />
+      </svg>
+    </button>
+  )
+}
+
 // ─── Root Component ───────────────────────────────────────────────────────────
 
 function DukaniGlobal() {
@@ -2868,6 +2944,7 @@ function DukaniGlobal() {
       <GlobalPresenceSection />
       <ContactSection />
       <SiteFooter />
+      <ScrollToTop />
     </div>
   )
 }
