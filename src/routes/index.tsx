@@ -922,7 +922,7 @@ function ProjectsSection() {
           {/* Row 1: large + 2 small */}
           <div style={{ display: 'grid', gridTemplateColumns: '7fr 5fr', gap: '3px' }}>
             <ProjectCard project={PROJECTS[0]} delay={1} />
-            <div style={{ display: 'grid', gap: '3px' }}>
+            <div style={{ display: 'grid', gridTemplateRows: '1fr 1fr', gap: '3px', height: '100%' }}>
               <ProjectCard project={PROJECTS[1]} delay={2} compact />
               <ProjectCard project={PROJECTS[2]} delay={3} compact />
             </div>
@@ -955,7 +955,10 @@ function ProjectCard({
   return (
     <div
       className={`project-card reveal reveal-d${Math.min(delay, 6)}`}
-      style={{ aspectRatio: wide ? '16/6' : compact ? '4/3' : '4/5' }}
+      style={{
+        aspectRatio: wide ? '16/6' : compact ? 'auto' : '4/5',
+        height: '100%',
+      }}
     >
       <img
         src={project.img}
