@@ -1081,7 +1081,7 @@ function HospitalitySection() {
   return (
     <section
       id="hospitality"
-      style={{ background: '#0A0A0A', padding: 'clamp(80px, 10vw, 140px) 7vw' }}
+      style={{ background: '#0A0A0A', padding: 'clamp(80px, 10vw, 140px) 7vw clamp(20px, 3vw, 40px) 7vw' }}
     >
       <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
         <div style={{ marginBottom: 'clamp(48px, 6vw, 80px)' }}>
@@ -1299,7 +1299,7 @@ function InvestmentsSection() {
   return (
     <section
       id="investments"
-      style={{ background: '#0A0A0A', padding: 'clamp(80px, 10vw, 140px) 7vw' }}
+      style={{ background: '#0A0A0A', padding: 'clamp(20px, 3vw, 40px) 7vw clamp(80px, 10vw, 140px) 7vw' }}
     >
       <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
         <div
