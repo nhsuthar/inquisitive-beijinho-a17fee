@@ -1758,7 +1758,15 @@ function LeadershipSection() {
                 </div>
                 {/* Info */}
                 <span className="gold-line" style={{ marginBottom: '12px' }} />
-                <p className="section-label" style={{ color: '#C9A46A', marginBottom: '4px', fontSize: '0.52rem' }}>
+                <p
+                  className="section-label"
+                  style={{
+                    color: '#C9A46A',
+                    marginBottom: '4px',
+                    fontSize: '0.52rem',
+                    minHeight: '28px',
+                  }}
+                >
                   {leader.role}
                 </p>
                 <h4
