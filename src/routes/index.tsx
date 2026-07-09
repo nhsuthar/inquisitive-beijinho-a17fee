@@ -917,7 +917,7 @@ function ProjectsSection() {
           </p>
         </div>
 
-        {/* Project grid — editorial asymmetric layout */}
+        {/* Project grid - editorial asymmetric layout */}
         <div style={{ display: 'grid', gap: '3px' }}>
           {/* Row 1: large + 2 small */}
           <div style={{ display: 'grid', gridTemplateColumns: '7fr 5fr', gap: '3px' }}>
@@ -1119,7 +1119,7 @@ function HospitalitySection() {
         >
           <img
             src={IMG.hospitality}
-            alt="Dukani luxury hospitality — infinity pool"
+            alt="Dukani luxury hospitality, infinity pool"
             style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
             loading="lazy"
           />
@@ -2421,7 +2421,7 @@ function ContactSection() {
               }}
             >
               Whether you represent an institutional investor, seek a development partnership,
-              or are exploring our hospitality experiences — we welcome your enquiry.
+              or are exploring our hospitality experiences, we welcome your enquiry.
             </p>
 
             {/* Office info */}
