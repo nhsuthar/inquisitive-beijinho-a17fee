@@ -2430,16 +2430,9 @@ function ContactSection() {
             >
               {[
                 {
-                  city: 'Dubai (Global HQ)',
-                  address: 'Dukani One Tower, Level 42\nDowntown Dubai, UAE',
-                  tel: '+971 4 XXX XXXX',
+                  city: 'Abu Dhabi',
+                  address: 'Business avenue tower office 1901\nAbu Dhabi',
                   email: 'global@dukaniglobal.com',
-                },
-                {
-                  city: 'London',
-                  address: '45 Berkeley Square, Mayfair\nLondon, W1J 5AS',
-                  tel: '+44 20 XXXX XXXX',
-                  email: 'london@dukaniglobal.com',
                 },
               ].map((office, i) => (
                 <div
@@ -2475,9 +2468,11 @@ function ContactSection() {
                   >
                     {office.address}
                   </p>
-                  <p style={{ fontSize: '0.82rem', color: '#2B2B2B', margin: '0 0 4px', fontWeight: 300 }}>
-                    {office.tel}
-                  </p>
+                  {office.tel && (
+                    <p style={{ fontSize: '0.82rem', color: '#2B2B2B', margin: '0 0 4px', fontWeight: 300 }}>
+                      {office.tel}
+                    </p>
+                  )}
                   <p style={{ fontSize: '0.82rem', color: '#2B2B2B', margin: 0, fontWeight: 300 }}>
                     {office.email}
                   </p>
