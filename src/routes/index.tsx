@@ -2755,21 +2755,22 @@ function SiteFooter() {
           {[
             {
               title: 'Company',
-              links: ['About Dukani', 'Our History', 'Leadership', 'Sustainability', 'Newsroom'],
+              links: [
+                { name: 'About Dukani', href: '#about' },
+                { name: 'Leadership', href: '#leadership' },
+                { name: 'Sustainability', href: '#sustainability' },
+                { name: 'Contact Us', href: '#contact' },
+              ],
             },
             {
               title: 'Divisions',
               links: [
-                'Property Development',
-                'Luxury Hotels',
-                'Resorts',
-                'Commercial',
-                'Investment',
+                { name: 'Property Development', href: '#divisions' },
+                { name: 'Luxury Hotels', href: '#divisions' },
+                { name: 'Resorts & Retreats', href: '#divisions' },
+                { name: 'Commercial Spaces', href: '#divisions' },
+                { name: 'Dukani Digital Assets', href: '#divisions' },
               ],
-            },
-            {
-              title: 'Offices',
-              links: ['Switzerland', 'United Kingdom', 'Italy', 'Monaco', 'Saudi Arabia', 'Abu Dhabi', 'Oman'],
             },
           ].map((col) => (
             <div key={col.title}>
@@ -2781,9 +2782,9 @@ function SiteFooter() {
               </p>
               <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {col.links.map((link) => (
-                  <li key={link}>
+                  <li key={link.name}>
                     <a
-                      href="#"
+                      href={link.href}
                       style={{
                         fontSize: '0.78rem',
                         color: 'rgba(248,246,242,0.45)',
@@ -2796,7 +2797,7 @@ function SiteFooter() {
                         ((e.target as HTMLAnchorElement).style.color = 'rgba(248,246,242,0.45)')
                       }
                     >
-                      {link}
+                      {link.name}
                     </a>
                   </li>
                 ))}
