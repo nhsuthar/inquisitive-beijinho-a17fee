@@ -2685,14 +2685,136 @@ function SiteFooter() {
             >
               Building exceptional places and creating enduring value across five continents.
             </p>
-            {/* Social */}
-            <div style={{ display: 'flex', gap: '20px', marginTop: '28px', alignItems: 'center' }}>
+          </div>
+
+          {/* Company Column */}
+          <div>
+            <p
+              className="section-label"
+              style={{ color: '#C9A46A', marginBottom: '20px', fontSize: '0.55rem' }}
+            >
+              Company
+            </p>
+            <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              {[
+                { name: 'About Dukani', href: '#about' },
+                { name: 'Leadership', href: '#leadership' },
+                { name: 'Sustainability', href: '#sustainability' },
+                { name: 'Contact Us', href: '#contact' },
+              ].map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    style={{
+                      fontSize: '0.78rem',
+                      color: 'rgba(248,246,242,0.45)',
+                      textDecoration: 'none',
+                      fontWeight: 300,
+                      transition: 'color 0.3s ease',
+                    }}
+                    onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = '#F8F6F2')}
+                    onMouseLeave={(e) =>
+                      ((e.target as HTMLAnchorElement).style.color = 'rgba(248,246,242,0.45)')
+                    }
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Divisions Column */}
+          <div>
+            <p
+              className="section-label"
+              style={{ color: '#C9A46A', marginBottom: '20px', fontSize: '0.55rem' }}
+            >
+              Divisions
+            </p>
+            <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              {[
+                { name: 'Property Development', href: '#divisions' },
+                { name: 'Luxury Hotels', href: '#divisions' },
+                { name: 'Resorts & Retreats', href: '#divisions' },
+                { name: 'Commercial Spaces', href: '#divisions' },
+                { name: 'Dukani Digital Assets', href: '#divisions' },
+              ].map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    style={{
+                      fontSize: '0.78rem',
+                      color: 'rgba(248,246,242,0.45)',
+                      textDecoration: 'none',
+                      fontWeight: 300,
+                      transition: 'color 0.3s ease',
+                    }}
+                    onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = '#F8F6F2')}
+                    onMouseLeave={(e) =>
+                      ((e.target as HTMLAnchorElement).style.color = 'rgba(248,246,242,0.45)')
+                    }
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Column */}
+          <div>
+            <p
+              className="section-label"
+              style={{ color: '#C9A46A', marginBottom: '20px', fontSize: '0.55rem' }}
+            >
+              Contact
+            </p>
+            <p
+              style={{
+                fontSize: '0.78rem',
+                color: 'rgba(248,246,242,0.45)',
+                lineHeight: 1.7,
+                fontWeight: 300,
+                margin: '0 0 12px',
+                whiteSpace: 'pre-line',
+              }}
+            >
+              Business avenue tower office 1901
+              {"\n"}Abu Dhabi, UAE
+            </p>
+            <p
+              style={{
+                fontSize: '0.78rem',
+                color: 'rgba(248,246,242,0.45)',
+                fontWeight: 300,
+                margin: '0 0 20px',
+              }}
+            >
+              <a
+                href="mailto:global@dukaniglobal.com"
+                style={{
+                  color: 'inherit',
+                  textDecoration: 'none',
+                  transition: 'color 0.3s ease',
+                }}
+                onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = '#F8F6F2')}
+                onMouseLeave={(e) =>
+                  ((e.target as HTMLAnchorElement).style.color = 'rgba(248,246,242,0.45)')
+                }
+              >
+                global@dukaniglobal.com
+              </a>
+            </p>
+
+            {/* Social Links */}
+            <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
               {[
                 {
                   name: 'LinkedIn',
                   url: '#',
                   icon: (
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'block' }}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'block' }}>
                       <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
                       <rect x="2" y="9" width="4" height="12" />
                       <circle cx="4" cy="4" r="2" />
@@ -2703,7 +2825,7 @@ function SiteFooter() {
                   name: 'Instagram',
                   url: '#',
                   icon: (
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'block' }}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'block' }}>
                       <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                       <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                       <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
@@ -2714,7 +2836,7 @@ function SiteFooter() {
                   name: 'X',
                   url: '#',
                   icon: (
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'block' }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'block' }}>
                       <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
                       <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
                     </svg>
@@ -2748,60 +2870,6 @@ function SiteFooter() {
               ))}
             </div>
           </div>
-
-          {/* Quick links */}
-          {[
-            {
-              title: 'Company',
-              links: [
-                { name: 'About Dukani', href: '#about' },
-                { name: 'Leadership', href: '#leadership' },
-                { name: 'Sustainability', href: '#sustainability' },
-                { name: 'Contact Us', href: '#contact' },
-              ],
-            },
-            {
-              title: 'Divisions',
-              links: [
-                { name: 'Property Development', href: '#divisions' },
-                { name: 'Luxury Hotels', href: '#divisions' },
-                { name: 'Resorts & Retreats', href: '#divisions' },
-                { name: 'Commercial Spaces', href: '#divisions' },
-                { name: 'Dukani Digital Assets', href: '#divisions' },
-              ],
-            },
-          ].map((col) => (
-            <div key={col.title}>
-              <p
-                className="section-label"
-                style={{ color: '#C9A46A', marginBottom: '20px', fontSize: '0.55rem' }}
-              >
-                {col.title}
-              </p>
-              <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                {col.links.map((link) => (
-                  <li key={link.name}>
-                    <a
-                      href={link.href}
-                      style={{
-                        fontSize: '0.78rem',
-                        color: 'rgba(248,246,242,0.45)',
-                        textDecoration: 'none',
-                        fontWeight: 300,
-                        transition: 'color 0.3s ease',
-                      }}
-                      onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = '#F8F6F2')}
-                      onMouseLeave={(e) =>
-                        ((e.target as HTMLAnchorElement).style.color = 'rgba(248,246,242,0.45)')
-                      }
-                    >
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
         </div>
 
         {/* Bottom bar */}
