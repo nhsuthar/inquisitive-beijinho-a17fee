@@ -1581,6 +1581,7 @@ const EXECUTIVE_TEAM = [
     role: 'Managing Director & Global Head of Construction',
     bio: 'Eduart Lacaj is a construction executive with over 15 years of industry experience. He leads a team of more than 100 professionals and has delivered over 2,000 projects, he oversees construction, project delivery, quality, and operational excellence across Dukani Global\'s international portfolio.',
     img: IMG.eduart,
+    hidden: true,
   },
 ]
 
@@ -1717,11 +1718,13 @@ function LeadershipSection() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
+              gridTemplateColumns: `repeat(${EXECUTIVE_TEAM.filter(l => !l.hidden).length}, 1fr)`,
               gap: 'clamp(24px, 3.5vw, 48px)',
+              maxWidth: EXECUTIVE_TEAM.filter(l => !l.hidden).length === 2 ? '1000px' : '100%',
+              margin: '0 auto',
             }}
           >
-            {EXECUTIVE_TEAM.map((leader, i) => (
+            {EXECUTIVE_TEAM.filter(l => !l.hidden).map((leader, i) => (
               <div
                 key={leader.name}
                 className={`reveal reveal-d${i + 1}`}
