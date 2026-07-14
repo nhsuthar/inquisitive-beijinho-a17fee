@@ -303,8 +303,8 @@ function HeroSection() {
     <section
       style={{
         position: 'relative',
-        height: '100vh',
-        minHeight: '640px',
+        height: 'calc(100vh + 100px)',
+        minHeight: '740px',
         background: '#0A0A0A',
         overflow: 'hidden',
       }}

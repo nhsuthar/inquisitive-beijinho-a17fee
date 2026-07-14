@@ -88,7 +88,7 @@ body {
 .scroll-line { animation: scrollPulse 2.8s ease-in-out infinite; }
 
 .hero-content-container {
-  justify-content: flex-end;
+  justify-content: center;
 }
 @media (max-width: 768px) {
   .hero-content-container {
