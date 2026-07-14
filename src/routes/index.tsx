@@ -884,7 +884,7 @@ function ProjectsSection() {
       <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
         <div style={{ marginBottom: 'clamp(48px, 6vw, 80px)' }}>
           <p className="section-label reveal" style={{ color: '#C9A46A', marginBottom: '20px' }}>
-            Signature Projects
+            Current, Pipeline and Future
           </p>
           <h2
             className="font-display reveal reveal-d1"
