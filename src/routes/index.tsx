@@ -2026,56 +2026,14 @@ function GlobalPresenceSection() {
             style={{ width: '100%', display: 'block' }}
             aria-label="World map showing Dukani Global office locations"
           >
-            {/* Simplified continent shapes */}
-            {/* North America */}
-            <path
-              className="map-continent"
-              d="M 145 58 L 280 50 L 350 70 L 360 110 L 340 160 L 310 200 L 290 240 L 270 280 L 235 295 L 210 270 L 180 240 L 160 210 L 130 190 L 110 155 L 105 120 L 120 85 Z"
-            />
-            {/* Greenland */}
-            <path
-              className="map-continent"
-              d="M 310 25 L 370 20 L 400 45 L 390 75 L 360 85 L 320 75 L 305 50 Z"
-            />
-            {/* South America */}
-            <path
-              className="map-continent"
-              d="M 215 305 L 285 295 L 315 315 L 325 360 L 310 410 L 280 455 L 245 465 L 215 440 L 198 400 L 195 355 L 205 320 Z"
-            />
-            {/* Europe */}
-            <path
-              className="map-continent"
-              d="M 445 50 L 560 48 L 580 75 L 570 120 L 545 160 L 510 175 L 475 170 L 450 150 L 435 115 L 440 75 Z"
-            />
-            {/* Africa */}
-            <path
-              className="map-continent"
-              d="M 448 185 L 578 178 L 598 230 L 590 305 L 565 375 L 530 435 L 490 462 L 455 450 L 430 400 L 420 330 L 432 255 L 443 210 Z"
-            />
-            {/* Asia (simplified) */}
-            <path
-              className="map-continent"
-              d="M 575 45 L 740 38 L 850 42 L 930 70 L 950 130 L 940 200 L 900 265 L 850 300 L 790 315 L 720 310 L 660 285 L 600 270 L 570 225 L 560 175 L 568 110 L 570 70 Z"
-            />
-            {/* Indian subcontinent */}
-            <path
-              className="map-continent"
-              d="M 680 220 L 730 210 L 755 240 L 745 295 L 715 325 L 685 310 L 668 270 Z"
-            />
-            {/* Southeast Asia */}
-            <path
-              className="map-continent"
-              d="M 790 255 L 850 245 L 870 280 L 860 320 L 835 340 L 800 330 L 782 295 Z"
-            />
-            {/* Oceania */}
-            <path
-              className="map-continent"
-              d="M 820 345 L 935 335 L 958 380 L 950 430 L 910 460 L 860 455 L 825 420 L 810 385 Z"
-            />
-            {/* Japan */}
-            <path
-              className="map-continent"
-              d="M 882 130 L 908 120 L 920 145 L 905 168 L 883 162 Z"
+            {/* Real World Map Background Image */}
+            <image
+              href="/world-map.png"
+              x="0"
+              y="0"
+              width="1000"
+              height="500"
+              style={{ opacity: 0.8 }}
             />
 
             {/* Connection lines between offices */}
