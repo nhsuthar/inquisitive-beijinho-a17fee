@@ -1616,15 +1616,7 @@ function LeadershipSection() {
         </div>
 
         {/* Primary Founders */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(2, 1fr)',
-            gap: 'clamp(32px, 5vw, 80px)',
-            maxWidth: '1000px',
-            margin: '0 auto',
-          }}
-        >
+        <div className="leadership-grid">
           {MINDS_BEHIND.map((leader, i) => (
             <div
               key={leader.name}
@@ -1717,15 +1709,7 @@ function LeadershipSection() {
             </h3>
           </div>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: `repeat(${EXECUTIVE_TEAM.filter(l => !l.hidden).length}, 1fr)`,
-              gap: 'clamp(24px, 3.5vw, 48px)',
-              maxWidth: EXECUTIVE_TEAM.filter(l => !l.hidden).length === 2 ? '1000px' : '100%',
-              margin: '0 auto',
-            }}
-          >
+          <div className="leadership-grid">
             {EXECUTIVE_TEAM.filter(l => !l.hidden).map((leader, i) => (
               <div
                 key={leader.name}

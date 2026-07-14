@@ -425,3 +425,19 @@ body {
     scroll-snap-align: center;
   }
 }
+
+/* ── Leadership Grid ── */
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(32px, 5vw, 80px);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .leadership-grid {
+    grid-template-columns: 1fr !important;
+    gap: 48px !important;
+  }
+}
