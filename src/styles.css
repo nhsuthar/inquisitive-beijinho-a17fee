@@ -380,3 +380,48 @@ body {
 .map-dot { fill: #C9A46A; }
 .map-dot-ring { fill: none; stroke: #C9A46A; stroke-width: 1; opacity: 0; animation: mapPulse 3s ease-in-out infinite; }
 .map-connection { stroke: rgba(201, 164, 106, 0.2); stroke-width: 0.5; stroke-dasharray: 3 3; fill: none; }
+
+/* ── Projects Grid & Carousel Responsive ── */
+.projects-desktop-grid {
+  display: grid;
+  gap: 3px;
+}
+.projects-row-1 {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 3px;
+}
+.projects-row-1-sub {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 3px;
+  height: 100%;
+}
+.projects-mobile-carousel {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .projects-desktop-grid {
+    display: none;
+  }
+  .projects-mobile-carousel {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin-left: -7vw;
+    margin-right: -7vw;
+    padding-left: 7vw;
+    padding-right: 7vw;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .projects-mobile-carousel::-webkit-scrollbar {
+    display: none;
+  }
+  .projects-carousel-item {
+    flex: 0 0 82vw;
+    scroll-snap-align: center;
+  }
+}

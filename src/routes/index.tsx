@@ -910,17 +910,27 @@ function ProjectsSection() {
         </div>
 
         {/* Project grid - editorial asymmetric layout */}
-        <div style={{ display: 'grid', gap: '3px' }}>
-          {/* Row 1: large + 2 small */}
-          <div style={{ display: 'grid', gridTemplateColumns: '7fr 5fr', gap: '3px' }}>
-            <ProjectCard project={PROJECTS[0]} delay={1} />
-            <div style={{ display: 'grid', gridTemplateRows: '1fr 1fr', gap: '3px', height: '100%' }}>
-              <ProjectCard project={PROJECTS[1]} delay={2} compact />
-              <ProjectCard project={PROJECTS[2]} delay={3} compact />
+        <div className="projects-grid-container">
+          <div className="projects-desktop-grid">
+            {/* Row 1: large + 2 small */}
+            <div className="projects-row-1">
+              <ProjectCard project={PROJECTS[0]} delay={1} />
+              <div className="projects-row-1-sub">
+                <ProjectCard project={PROJECTS[1]} delay={2} compact />
+                <ProjectCard project={PROJECTS[2]} delay={3} compact />
+              </div>
             </div>
+            {/* Row 2: large */}
+            <ProjectCard project={PROJECTS[3]} delay={1} wide />
           </div>
-          {/* Row 2: large */}
-          <ProjectCard project={PROJECTS[3]} delay={1} wide />
+
+          <div className="projects-mobile-carousel">
+            {PROJECTS.map((project, idx) => (
+              <div className="projects-carousel-item" key={project.name}>
+                <ProjectCard project={project} delay={idx + 1} />
+              </div>
+            ))}
+          </div>
         </div>
 
         <div style={{ textAlign: 'center', marginTop: '64px' }}>
