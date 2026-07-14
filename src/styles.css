@@ -87,6 +87,24 @@ body {
 .hero-bg    { animation: kenBurns 24s ease-in-out infinite alternate; }
 .scroll-line { animation: scrollPulse 2.8s ease-in-out infinite; }
 
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1024 / 455;
+  min-height: 600px;
+  background: #0A0A0A;
+  overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  .hero-section {
+    aspect-ratio: auto;
+    height: calc(100vh + 100px);
+    min-height: 740px;
+  }
+}
+
 .hero-content-container {
   justify-content: center;
 }
