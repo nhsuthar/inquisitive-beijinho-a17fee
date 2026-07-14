@@ -441,3 +441,19 @@ body {
     gap: 48px !important;
   }
 }
+
+/* ── Map Scroll Container & Element ── */
+.map-scroll-container {
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.map-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .map-svg-element {
+    min-width: 850px !important;
+  }
+}

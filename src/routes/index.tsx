@@ -1980,6 +1980,18 @@ const OFFICES = [
 ]
 
 function GlobalPresenceSection() {
+  const mapContainerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (mapContainerRef.current) {
+      // Center the map scroll on Europe/Middle East on mobile viewports
+      const container = mapContainerRef.current
+      if (window.innerWidth < 768) {
+        container.scrollLeft = 280
+      }
+    }
+  }, [])
+
   return (
     <section
       style={{ background: '#F8F6F2', padding: 'clamp(80px, 10vw, 140px) 7vw' }}
@@ -2008,14 +2020,18 @@ function GlobalPresenceSection() {
 
         {/* World map SVG */}
         <div
-          className="reveal"
+          ref={mapContainerRef}
+          className="reveal map-scroll-container"
           style={{
             background: '#0A0A0A',
             padding: 0,
             position: 'relative',
+            overflowX: 'auto',
+            scrollbarWidth: 'none',
           }}
         >
           <svg
+            className="map-svg-element"
             viewBox="30.767 241.591 784.077 458.627"
             style={{ width: '100%', display: 'block' }}
             aria-label="World map showing Dukani Global office locations"

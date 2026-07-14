@@ -10,6 +10,13 @@
      viewBox="30.767 241.591 784.077 458.627"
      id="world-map">
 <title>Simple World Map</title>
+<style>
+  path {
+    fill: #161616;
+    stroke: rgba(201, 164, 106, 0.15);
+    stroke-width: 0.5;
+  }
+</style>
 <desc>
     Author: Al MacDonald
     Editor: Fritz Lekschas
