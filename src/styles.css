@@ -100,17 +100,43 @@ body {
 @media (max-width: 1024px) {
   .hero-section {
     aspect-ratio: auto;
-    height: calc(100vh + 100px);
-    min-height: 740px;
+    height: 100vh;
+    min-height: 600px;
   }
 }
 
 .hero-content-container {
   justify-content: center;
 }
+
 @media (max-width: 768px) {
   .hero-content-container {
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 100px !important;
+    padding-bottom: 60px !important;
+  }
+
+  .hero-label {
+    text-align: center;
+    align-self: center;
+  }
+
+  .hero-title {
+    text-align: center;
+    margin: 0 auto 24px !important;
+  }
+
+  .hero-sub {
+    text-align: center;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .hero-cta {
+    justify-content: center;
+    width: 100%;
   }
 }
 @media (max-width: 480px) {
