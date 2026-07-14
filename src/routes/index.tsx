@@ -1976,13 +1976,13 @@ function SustainabilitySection() {
 // ─── Global Presence ──────────────────────────────────────────────────────────
 
 const OFFICES = [
-  { city: 'Zug', country: 'SWITZERLAND', x: 495, y: 142, primary: false },
-  { city: 'London', country: 'UNITED KINGDOM', x: 472, y: 110, primary: false },
-  { city: 'Milano', country: 'ITALY', x: 504, y: 146, primary: false },
-  { city: 'Monaco', country: 'MONACO', x: 498, y: 152, primary: false },
-  { city: 'Riyadh', country: 'SAUDI ARABIA', x: 638, y: 256, primary: false },
-  { city: 'Abu Dhabi', country: 'UAE', x: 672, y: 242, primary: false },
-  { city: 'Muscat', country: 'OMAN', x: 692, y: 260, primary: false },
+  { city: 'Zug', country: 'SWITZERLAND', x: 416, y: 402, primary: false, textAnchor: 'end', dx: -8, dy: -6 },
+  { city: 'London', country: 'UNITED KINGDOM', x: 400, y: 370, primary: false, textAnchor: 'end', dx: -8, dy: -12 },
+  { city: 'Milano', country: 'ITALY', x: 423, y: 410, primary: false, textAnchor: 'start', dx: 8, dy: -6 },
+  { city: 'Monaco', country: 'MONACO', x: 419, y: 416, primary: false, textAnchor: 'start', dx: 8, dy: 14 },
+  { city: 'Riyadh', country: 'SAUDI ARABIA', x: 525, y: 460, primary: false, textAnchor: 'end', dx: -8, dy: -4 },
+  { city: 'Abu Dhabi', country: 'UAE', x: 534, y: 466, primary: false, textAnchor: 'start', dx: 8, dy: -10 },
+  { city: 'Muscat', country: 'OMAN', x: 540, y: 472, primary: false, textAnchor: 'start', dx: 8, dy: 14 },
 ]
 
 function GlobalPresenceSection() {
@@ -2017,23 +2017,23 @@ function GlobalPresenceSection() {
           className="reveal"
           style={{
             background: '#0A0A0A',
-            padding: '48px',
+            padding: 0,
             position: 'relative',
           }}
         >
           <svg
-            viewBox="0 0 1000 500"
+            viewBox="30.767 241.591 784.077 458.627"
             style={{ width: '100%', display: 'block' }}
             aria-label="World map showing Dukani Global office locations"
           >
             {/* Real World Map Background Image */}
             <image
-              href="/world-map.png"
-              x="0"
-              y="0"
-              width="1000"
-              height="500"
-              style={{ opacity: 0.8 }}
+              href="/world-map.svg"
+              x="30.767"
+              y="241.591"
+              width="784.077"
+              height="458.627"
+              style={{ opacity: 0.75 }}
             />
 
             {/* Connection lines between offices */}
@@ -2070,12 +2070,12 @@ function GlobalPresenceSection() {
                 />
                 {/* Label */}
                 <text
-                  x={office.x}
-                  y={office.y - 14}
+                  x={office.x + (office.dx || 0)}
+                  y={office.y + (office.dy || 0)}
                   fill="#C9A46A"
                   fontSize="9"
                   fontFamily="Inter, sans-serif"
-                  textAnchor="middle"
+                  textAnchor={office.textAnchor || 'middle'}
                   letterSpacing="1"
                 >
                   {office.city.toUpperCase()}
