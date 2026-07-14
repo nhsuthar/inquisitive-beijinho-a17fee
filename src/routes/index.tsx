@@ -184,8 +184,8 @@ function Navigation() {
           <img
             src="/logo.png"
             alt="Dukani Global Logo"
+            className="header-logo"
             style={{
-              height: 'clamp(85px, 12vw, 120px)',
               width: 'auto',
               display: 'block',
             }}
@@ -1980,15 +1980,12 @@ const OFFICES = [
 ]
 
 function GlobalPresenceSection() {
-  const mapContainerRef = useRef<HTMLDivElement>(null)
+  const [viewBox, setViewBox] = useState("30.767 241.591 784.077 458.627")
+  const isMobileMap = viewBox === "330 270 280 270"
 
   useEffect(() => {
-    if (mapContainerRef.current) {
-      // Center the map scroll on Europe/Middle East on mobile viewports
-      const container = mapContainerRef.current
-      if (window.innerWidth < 768) {
-        container.scrollLeft = 280
-      }
+    if (window.innerWidth < 768) {
+      setViewBox("330 270 280 270")
     }
   }, [])
 
@@ -2020,19 +2017,16 @@ function GlobalPresenceSection() {
 
         {/* World map SVG */}
         <div
-          ref={mapContainerRef}
           className="reveal map-scroll-container"
           style={{
             background: '#0A0A0A',
             padding: 0,
             position: 'relative',
-            overflowX: 'auto',
-            scrollbarWidth: 'none',
           }}
         >
           <svg
             className="map-svg-element"
-            viewBox="30.767 241.591 784.077 458.627"
+            viewBox={viewBox}
             style={{ width: '100%', display: 'block' }}
             aria-label="World map showing Dukani Global office locations"
           >
@@ -2067,7 +2061,7 @@ function GlobalPresenceSection() {
                 <circle
                   cx={office.x}
                   cy={office.y}
-                  r={office.primary ? 14 : 10}
+                  r={office.primary ? (isMobileMap ? 9 : 14) : (isMobileMap ? 6 : 10)}
                   className="map-dot-ring"
                   style={{ animationDelay: `${Math.random() * 2}s` }}
                 />
@@ -2075,7 +2069,7 @@ function GlobalPresenceSection() {
                 <circle
                   cx={office.x}
                   cy={office.y}
-                  r={office.primary ? 5 : 3.5}
+                  r={office.primary ? (isMobileMap ? 3 : 5) : (isMobileMap ? 2.2 : 3.5)}
                   className="map-dot"
                 />
                 {/* Label */}
@@ -2083,10 +2077,11 @@ function GlobalPresenceSection() {
                   x={office.x + (office.dx || 0)}
                   y={office.y + (office.dy || 0)}
                   fill="#C9A46A"
-                  fontSize="9"
+                  fontSize={isMobileMap ? "5.5" : "9"}
                   fontFamily="Inter, sans-serif"
                   textAnchor={office.textAnchor || 'middle'}
-                  letterSpacing="1"
+                  letterSpacing={isMobileMap ? "0.5" : "1"}
+                  className="map-label"
                 >
                   {office.city.toUpperCase()}
                 </text>
