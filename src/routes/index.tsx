@@ -2115,13 +2115,13 @@ function GlobalPresenceSection() {
               <p
                 className="font-display"
                 style={{
-                  fontSize: 'clamp(0.85rem, 1.2vw, 1.1rem)',
+                  fontSize: 'clamp(0.72rem, 0.95vw, 0.95rem)',
                   fontWeight: 400,
                   color: '#0A0A0A',
                   margin: '0 0 6px',
                   lineHeight: 1.2,
                   letterSpacing: '0.02em',
-                  whiteSpace: 'nowrap',
+                  whiteSpace: 'normal',
                 }}
               >
                 {office.country}
