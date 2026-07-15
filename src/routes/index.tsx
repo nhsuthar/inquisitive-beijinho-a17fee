@@ -150,9 +150,6 @@ function Navigation() {
     { label: 'About', href: '#about' },
     { label: 'Divisions', href: '#divisions' },
     { label: 'Leadership', href: '#leadership' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Hospitality', href: '#hospitality' },
-    { label: 'Investments', href: '#investments' },
     { label: 'Contact', href: '#contact' },
   ]
 
@@ -395,8 +392,8 @@ function HeroSection() {
         </p>
 
         <div className="hero-cta" style={{ display: 'flex', gap: 'clamp(12px, 3vw, 20px)', flexWrap: 'wrap' }}>
-          <a href="#projects" className="btn-gold">
-            Explore Projects
+          <a href="#divisions" className="btn-gold">
+            Explore Divisions
           </a>
           <a href="#about" className="btn-outline-white">
             Our Vision
@@ -721,11 +718,11 @@ function DivisionsSection() {
             </h2>
           </div>
           <a
-            href="#projects"
+            href="#contact"
             className="btn-outline-white reveal"
             style={{ flexShrink: 0 }}
           >
-            View All Projects
+            Partner With Us
           </a>
         </div>
 
@@ -1974,6 +1971,7 @@ const OFFICES = [
   { city: 'London', country: 'UNITED KINGDOM', x: 400, y: 370, primary: false, textAnchor: 'end', dx: -8, dy: -12 },
   { city: 'Milano', country: 'ITALY', x: 423, y: 410, primary: false, textAnchor: 'start', dx: 8, dy: -6 },
   { city: 'Monaco', country: 'MONACO', x: 419, y: 416, primary: false, textAnchor: 'start', dx: 8, dy: 14 },
+  { city: 'Lisbon', country: 'PORTUGAL', x: 377, y: 445, primary: false, textAnchor: 'end', dx: -8, dy: -6 },
   { city: 'Riyadh', country: 'SAUDI ARABIA', x: 525, y: 460, primary: false, textAnchor: 'end', dx: -8, dy: -4 },
   { city: 'Abu Dhabi', country: 'UAE', x: 534, y: 466, primary: false, textAnchor: 'start', dx: 8, dy: -10 },
   { city: 'Muscat', country: 'OMAN', x: 540, y: 472, primary: false, textAnchor: 'start', dx: 8, dy: 14 },
@@ -2039,39 +2037,9 @@ function GlobalPresenceSection() {
               height="458.627"
               style={{ opacity: 0.75 }}
             />
-
-            {/* Connection lines between offices */}
-            {OFFICES.map((from, fi) =>
-              OFFICES.slice(fi + 1).map((to) => (
-                <line
-                  key={`${from.city}-${to.city}`}
-                  x1={from.x}
-                  y1={from.y}
-                  x2={to.x}
-                  y2={to.y}
-                  className="map-connection"
-                />
-              ))
-            )}
-
-            {/* Office dots */}
+            {/* Office labels only (dots and connections removed) */}
             {OFFICES.map((office) => (
               <g key={office.city}>
-                {/* Pulse ring */}
-                <circle
-                  cx={office.x}
-                  cy={office.y}
-                  r={office.primary ? (isMobileMap ? 9 : 14) : (isMobileMap ? 6 : 10)}
-                  className="map-dot-ring"
-                  style={{ animationDelay: `${Math.random() * 2}s` }}
-                />
-                {/* Main dot */}
-                <circle
-                  cx={office.x}
-                  cy={office.y}
-                  r={office.primary ? (isMobileMap ? 3 : 5) : (isMobileMap ? 2.2 : 3.5)}
-                  className="map-dot"
-                />
                 {/* Label */}
                 <text
                   x={office.x + (office.dx || 0)}
@@ -2094,7 +2062,7 @@ function GlobalPresenceSection() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(7, minmax(130px, 1fr))',
+            gridTemplateColumns: `repeat(${OFFICES.length}, minmax(130px, 1fr))`,
             gap: '1px',
             background: 'rgba(201,164,106,0.15)',
             marginTop: '3px',
@@ -2970,9 +2938,9 @@ function DukaniGlobal() {
       <LeadershipSection />
       <DukaniEngineSection />
       <StatsSection />
-      <ProjectsSection />
-      <HospitalitySection />
-      <InvestmentsSection />
+      {/* <ProjectsSection /> */}
+      {/* <HospitalitySection /> */}
+      {/* <InvestmentsSection /> */}
       <SustainabilitySection />
       <GlobalPresenceSection />
       <ContactSection />
