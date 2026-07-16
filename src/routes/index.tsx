@@ -303,17 +303,11 @@ function HeroSection() {
         className="hero-bg"
         style={{
           position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: '1200px',
-          height: '400px',
-          maxWidth: '100%',
-          maxHeight: '100%',
+          inset: 0,
           backgroundImage: `url('${IMG.hero}')`,
           backgroundSize: 'contain',
           backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
+          backgroundPosition: 'center top',
           willChange: 'transform',
         }}
       />
