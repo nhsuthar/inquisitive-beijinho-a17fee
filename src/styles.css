@@ -103,11 +103,6 @@ body {
     height: 100vh;
     min-height: 600px;
   }
-  .hero-bg {
-    background-size: contain !important;
-    background-position: center top !important;
-    background-repeat: no-repeat !important;
-  }
 }
 
 .hero-content-container {
@@ -336,10 +331,11 @@ body {
   z-index: 200;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
-  padding: 0 10vw;
+  padding: 140px 10vw 60px;
   transition: opacity 0.4s ease, visibility 0.4s ease;
+  overflow-y: auto;
 }
 .mobile-nav-overlay.closed {
   opacity: 0;

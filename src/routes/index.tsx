@@ -267,9 +267,6 @@ function Navigation() {
 
       {/* Mobile overlay menu */}
       <div className={`mobile-nav-overlay ${menuOpen ? 'open' : 'closed'}`}>
-        <div style={{ marginBottom: '60px', display: 'flex', alignItems: 'center' }}>
-          <img src="/logo.png" alt="Dukani Global Logo" style={{ height: '120px', width: 'auto' }} />
-        </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
           {navLinks.map((link, i) => (
             <a
@@ -283,7 +280,7 @@ function Navigation() {
             </a>
           ))}
         </div>
-        <div style={{ marginTop: '60px' }}>
+        <div style={{ marginTop: '40px' }}>
           <a href="#contact" className="btn-gold" onClick={() => setMenuOpen(false)}>
             Enquire Now
           </a>
