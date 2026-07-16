@@ -306,7 +306,7 @@ function HeroSection() {
           inset: 0,
           backgroundImage: `url('${IMG.hero}')`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center 40%',
+          backgroundPosition: 'center bottom',
           willChange: 'transform',
         }}
       />
