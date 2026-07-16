@@ -90,9 +90,9 @@ body {
 .hero-section {
   position: relative;
   width: 100%;
-  height: auto;
-  aspect-ratio: 1024 / 454;
-  min-height: 454px;
+  max-width: 1200px;
+  aspect-ratio: 1200 / 533;
+  margin: 0 auto;
   background: #0A0A0A;
   overflow: hidden;
 }
