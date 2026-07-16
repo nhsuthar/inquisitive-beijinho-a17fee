@@ -2606,7 +2606,7 @@ function SiteFooter() {
                 maxWidth: '260px',
               }}
             >
-              Building exceptional places and creating enduring value across five continents.
+              Building exceptional places and creating enduring value.
             </p>
           </div>
 
