@@ -2286,6 +2286,84 @@ function DukaniEngineSection() {
   )
 }
 
+// ─── The Founders' Circle Section ─────────────────────────────────────────────
+
+function FoundersCircleSection() {
+  return (
+    <section
+      id="founders-circle"
+      style={{
+        background: '#0A0A0A',
+        padding: 'clamp(100px, 12vw, 160px) 7vw',
+        textAlign: 'center',
+        borderTop: '1px solid rgba(201, 164, 106, 0.15)',
+        borderBottom: '1px solid rgba(201, 164, 106, 0.15)',
+      }}
+    >
+      <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+        <p
+          className="section-label reveal"
+          style={{
+            color: '#C9A46A',
+            marginBottom: '24px',
+            textTransform: 'uppercase',
+            letterSpacing: '0.2em',
+            fontSize: 'clamp(0.75rem, 1vw, 0.85rem)',
+          }}
+        >
+          The Founders' Circle
+        </p>
+        <h2
+          className="font-display reveal reveal-d1"
+          style={{
+            fontSize: 'clamp(2.2rem, 5vw, 4.2rem)',
+            fontWeight: 300,
+            color: '#F8F6F2',
+            lineHeight: 1.15,
+            letterSpacing: '-0.01em',
+            margin: '0 auto 36px',
+            maxWidth: '700px',
+          }}
+        >
+          A Rare Invitation,
+          <br />
+          <em style={{ fontStyle: 'italic', color: '#C9A46A' }}>Before the World Arrives</em>
+        </h2>
+        <p
+          className="reveal reveal-d2"
+          style={{
+            fontSize: 'clamp(0.95rem, 1.3vw, 1.15rem)',
+            color: 'rgba(248, 246, 242, 0.75)',
+            fontWeight: 300,
+            lineHeight: 1.85,
+            marginBottom: '16px',
+          }}
+        >
+          Before Dukani Global opens its doors to the market, a limited circle of investors and partners will be given first access, first pricing, and first choice. This is not a public launch. It is a quiet invitation, extended to those who recognise value before it becomes obvious to everyone else.
+        </p>
+        <p
+          className="reveal reveal-d3 font-display"
+          style={{
+            fontSize: 'clamp(1.1rem, 1.5vw, 1.35rem)',
+            color: '#C9A46A',
+            fontWeight: 300,
+            fontStyle: 'italic',
+            lineHeight: 1.6,
+            marginBottom: '48px',
+          }}
+        >
+          Membership is limited by design, not by demand.
+        </p>
+        <div className="reveal reveal-d4">
+          <a href="#contact" className="btn-gold">
+            Request Private Access
+          </a>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 // ─── Contact Section ──────────────────────────────────────────────────────────
 
 function ContactSection() {
@@ -2943,6 +3021,7 @@ function DukaniGlobal() {
       {/* <InvestmentsSection /> */}
       <SustainabilitySection />
       <GlobalPresenceSection />
+      <FoundersCircleSection />
       <ContactSection />
       <SiteFooter />
       <ScrollToTop />
