@@ -10,9 +10,9 @@ const IMG = {
   hero: '/imh.jpg',
   about: '/about-group.jpg',
   divPropDev: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80',
-  divHotels: 'https://images.unsplash.com/photo-1455587734955-081b22074882?auto=format&fit=crop&w=800&q=80',
-  divResorts: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80',
-  divCommercial: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
+  divHotels: '/div-hotels.jpg',
+  divResorts: '/div-resorts.jpg',
+  divCommercial: '/div-commercial.jpg',
   divInvestment: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
   divAssets: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=800&q=80',
   proj1: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=85',
@@ -649,7 +649,7 @@ const DIVISIONS = [
   {
     title: 'Infrastructure',
     description: 'Modern transportation, energy, and civic infrastructure projects driving sustainable development.',
-    img: 'https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?auto=format&fit=crop&w=800&q=80',
+    img: '/div-infrastructure.jpg',
     tag: '05',
   },
   {
