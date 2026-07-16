@@ -297,31 +297,57 @@ function Navigation() {
 
 function HeroSection() {
   return (
-    <section
-      className="hero-section"
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        background: '#0A0A0A',
-        position: 'relative',
-        width: '100%',
-        height: 'auto',
-      }}
-    >
-      {/* Content wrapper */}
+    <section className="hero-section">
+      {/* Background image */}
+      <div
+        className="hero-bg"
+        style={{
+          position: 'absolute',
+          inset: 0,
+          backgroundImage: `url('${IMG.hero}')`,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center top',
+          willChange: 'transform',
+        }}
+      />
+
+      {/* Gradient overlay */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'linear-gradient(358deg, rgba(10, 10, 10, 0.35) 0%, rgb(108 105 105 / 75%) 100%)',
+        }}
+      />
+
+      {/* Vertical gold line accent */}
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: '5vw',
+          width: '1px',
+          height: '100px',
+          background: 'linear-gradient(to bottom, transparent, #C9A46A, transparent)',
+          opacity: 0.5,
+        }}
+      />
+
+      {/* Content */}
       <div
         className="hero-content-container"
         style={{
           position: 'relative',
           zIndex: 10,
-          paddingTop: 'clamp(120px, 15vh, 180px)',
-          paddingBottom: 'clamp(40px, 6vh, 60px)',
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          paddingTop: 'clamp(115px, 16vh, 155px)',
+          paddingBottom: 'clamp(40px, 8vh, 80px)',
           paddingLeft: '7vw',
           paddingRight: '7vw',
           boxSizing: 'border-box',
-          width: '100%',
-          maxWidth: '1400px',
-          margin: '0 auto',
         }}
       >
         <p
@@ -375,51 +401,6 @@ function HeroSection() {
         </div>
       </div>
 
-      {/* Banner image wrapper - fully responsive, zero crop */}
-      <div
-        style={{
-          width: '100%',
-          position: 'relative',
-          overflow: 'hidden',
-          aspectRatio: '1600 / 711',
-          background: '#0A0A0A',
-        }}
-      >
-        <img
-          src={IMG.hero}
-          alt="Dukani Global Panorama Skyline"
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            display: 'block',
-          }}
-        />
-        {/* Subtle gradient overlay to blend the top of the skyline image into the black background */}
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'linear-gradient(to bottom, rgba(10,10,10,0.5) 0%, transparent 30%)',
-            pointerEvents: 'none',
-          }}
-        />
-      </div>
-
-      {/* Vertical gold line accent (on top of text content area) */}
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: '5vw',
-          width: '1px',
-          height: '100px',
-          background: 'linear-gradient(to bottom, transparent, #C9A46A, transparent)',
-          opacity: 0.5,
-          zIndex: 5,
-        }}
-      />
-
       {/* Scroll indicator */}
       <div
         style={{
@@ -435,7 +416,6 @@ function HeroSection() {
           textTransform: 'uppercase',
           fontFamily: 'Inter, sans-serif',
           writingMode: 'vertical-lr',
-          zIndex: 15,
         }}
       >
         <div
