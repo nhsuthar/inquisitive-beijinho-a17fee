@@ -161,14 +161,14 @@ function Navigation() {
           top: 0,
           left: 0,
           right: 0,
-          zIndex: 100,
+          zIndex: 300,
           padding: scrolled ? 'clamp(6px, 1vh, 10px) 5vw' : 'clamp(10px, 2vh, 18px) 5vw',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          background: scrolled ? 'rgba(10,10,10,0.97)' : 'transparent',
-          backdropFilter: scrolled ? 'blur(10px)' : 'none',
-          borderBottom: scrolled ? '1px solid rgba(201,164,106,0.15)' : '1px solid transparent',
+          background: menuOpen ? 'transparent' : (scrolled ? 'rgba(10,10,10,0.97)' : 'transparent'),
+          backdropFilter: menuOpen ? 'none' : (scrolled ? 'blur(10px)' : 'none'),
+          borderBottom: menuOpen ? '1px solid transparent' : (scrolled ? '1px solid rgba(201,164,106,0.15)' : '1px solid transparent'),
           transition: 'background 0.5s ease, border-color 0.5s ease, backdrop-filter 0.5s ease, padding 0.5s ease',
         }}
       >
@@ -297,59 +297,31 @@ function Navigation() {
 
 function HeroSection() {
   return (
-    <section className="hero-section">
-      {/* Background image with Ken Burns */}
-      <div
-        className="hero-bg"
-        style={{
-          position: 'absolute',
-          inset: 0,
-          backgroundImage: `url('${IMG.hero}')`,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center top',
-          willChange: 'transform',
-        }}
-      />
-
-      {/* Gradient overlay */}
-      <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-		  background: 'linear-gradient(358deg, rgba(10, 10, 10, 0.35) 0%, rgb(108 105 105 / 75%) 100%)',
-         // background:
-           // 'linear-gradient(160deg, rgba(10,10,10,0.35) 0%, rgba(10,10,10,0.75) 100%)',
-        }}
-      />
-
-      {/* Vertical gold line accent */}
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: '5vw',
-          width: '1px',
-          height: '100px',
-          background: 'linear-gradient(to bottom, transparent, #C9A46A, transparent)',
-          opacity: 0.5,
-        }}
-      />
-
-      {/* Content */}
+    <section
+      className="hero-section"
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        background: '#0A0A0A',
+        position: 'relative',
+        width: '100%',
+        height: 'auto',
+      }}
+    >
+      {/* Content wrapper */}
       <div
         className="hero-content-container"
         style={{
           position: 'relative',
           zIndex: 10,
-          height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          paddingTop: 'clamp(115px, 16vh, 155px)',
-          paddingBottom: 'clamp(40px, 8vh, 80px)',
+          paddingTop: 'clamp(120px, 15vh, 180px)',
+          paddingBottom: 'clamp(40px, 6vh, 60px)',
           paddingLeft: '7vw',
           paddingRight: '7vw',
           boxSizing: 'border-box',
+          width: '100%',
+          maxWidth: '1400px',
+          margin: '0 auto',
         }}
       >
         <p
@@ -403,6 +375,51 @@ function HeroSection() {
         </div>
       </div>
 
+      {/* Banner image wrapper - fully responsive, zero crop */}
+      <div
+        style={{
+          width: '100%',
+          position: 'relative',
+          overflow: 'hidden',
+          aspectRatio: '1600 / 711',
+          background: '#0A0A0A',
+        }}
+      >
+        <img
+          src={IMG.hero}
+          alt="Dukani Global Panorama Skyline"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            display: 'block',
+          }}
+        />
+        {/* Subtle gradient overlay to blend the top of the skyline image into the black background */}
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'linear-gradient(to bottom, rgba(10,10,10,0.5) 0%, transparent 30%)',
+            pointerEvents: 'none',
+          }}
+        />
+      </div>
+
+      {/* Vertical gold line accent (on top of text content area) */}
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: '5vw',
+          width: '1px',
+          height: '100px',
+          background: 'linear-gradient(to bottom, transparent, #C9A46A, transparent)',
+          opacity: 0.5,
+          zIndex: 5,
+        }}
+      />
+
       {/* Scroll indicator */}
       <div
         style={{
@@ -418,6 +435,7 @@ function HeroSection() {
           textTransform: 'uppercase',
           fontFamily: 'Inter, sans-serif',
           writingMode: 'vertical-lr',
+          zIndex: 15,
         }}
       >
         <div
@@ -1969,11 +1987,11 @@ function SustainabilitySection() {
 // ─── Global Presence ──────────────────────────────────────────────────────────
 
 const OFFICES = [
-  { city: 'Zug', country: 'SWITZERLAND', x: 416, y: 402, primary: false, textAnchor: 'end', dx: -8, dy: -6 },
+  { city: 'Zug', country: 'SWITZERLAND', x: 422, y: 405, primary: false, textAnchor: 'end', dx: -8, dy: -6 },
   { city: 'London', country: 'UNITED KINGDOM', x: 400, y: 370, primary: false, textAnchor: 'end', dx: -8, dy: -12 },
   { city: 'Milano', country: 'ITALY', x: 423, y: 410, primary: false, textAnchor: 'start', dx: 8, dy: -6 },
   { city: 'Monaco', country: 'MONACO', x: 419, y: 416, primary: false, textAnchor: 'start', dx: 8, dy: 14 },
-  { city: 'Lisbon', country: 'PORTUGAL', x: 377, y: 445, primary: false, textAnchor: 'end', dx: -8, dy: -6 },
+  { city: 'Lisbon', country: 'PORTUGAL', x: 387, y: 429, primary: false, textAnchor: 'end', dx: -8, dy: -6 },
   { city: 'Riyadh', country: 'SAUDI ARABIA', x: 525, y: 460, primary: false, textAnchor: 'end', dx: -8, dy: -4 },
   { city: 'Abu Dhabi', country: 'UAE', x: 534, y: 466, primary: false, textAnchor: 'start', dx: 8, dy: -10 },
   { city: 'Muscat', country: 'OMAN', x: 540, y: 472, primary: false, textAnchor: 'start', dx: 8, dy: 14 },
