@@ -2816,7 +2816,7 @@ function SiteFooter() {
               fontFamily: 'Inter, sans-serif',
             }}
           >
-            © 2024 Dukani Global. All rights reserved.
+            © 2026 Dukani Global. All rights reserved.
           </p>
           <div style={{ display: 'flex', gap: '24px' }}>
             {['Privacy Policy', 'Terms of Use', 'Cookie Policy'].map((item) => (
