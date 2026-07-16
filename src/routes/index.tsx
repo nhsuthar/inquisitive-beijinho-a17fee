@@ -7,7 +7,7 @@ export const Route = createFileRoute('/')({
 
 // ─── Curated image collection ─────────────────────────────────────────────────
 const IMG = {
-  hero: '/imh.jpg',
+  hero: '/imh.jpeg',
   about: '/about-group.jpg',
   divPropDev: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80',
   divHotels: '/div-hotels.jpg',
@@ -305,7 +305,7 @@ function HeroSection() {
           position: 'absolute',
           inset: 0,
           backgroundImage: `url('${IMG.hero}')`,
-          backgroundSize: 'contain',
+          backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center top',
           willChange: 'transform',
@@ -317,8 +317,9 @@ function HeroSection() {
         style={{
           position: 'absolute',
           inset: 0,
-          background:
-            'linear-gradient(160deg, rgba(10,10,10,0.35) 0%, rgba(10,10,10,0.75) 100%)',
+		  background: 'linear-gradient(358deg, rgba(10, 10, 10, 0.35) 0%, rgb(108 105 105 / 75%) 100%)',
+         // background:
+           // 'linear-gradient(160deg, rgba(10,10,10,0.35) 0%, rgba(10,10,10,0.75) 100%)',
         }}
       />
 
