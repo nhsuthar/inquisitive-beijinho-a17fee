@@ -90,16 +90,13 @@ body {
 .hero-section {
   position: relative;
   width: 100%;
-  height: auto;
-  aspect-ratio: 1024 / 454;
-  min-height: 454px;
+  height: 400px;
   background: #0A0A0A;
   overflow: hidden;
 }
 
 @media (max-width: 1024px) {
   .hero-section {
-    aspect-ratio: auto;
     height: 100vh;
     min-height: 600px;
   }
@@ -107,6 +104,13 @@ body {
 
 .hero-content-container {
   justify-content: center;
+}
+
+@media (min-width: 1025px) {
+  .hero-content-container {
+    padding-top: 50px !important;
+    padding-bottom: 40px !important;
+  }
 }
 
 @media (max-width: 768px) {
