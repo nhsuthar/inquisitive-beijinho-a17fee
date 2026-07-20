@@ -486,8 +486,8 @@
   <!-- Muscat -->
   <circle cx="544" cy="472" r="3" class="city-ring" />
   <circle cx="544" cy="472" r="1.5" class="city-dot" />
-  <text x="552" y="486" text-anchor="start" class="city-name">Muscat</text>
-  <text x="552" y="492" text-anchor="start" class="country-name">OMAN</text>
+  <text x="552" y="470" text-anchor="start" class="city-name">Muscat</text>
+  <text x="552" y="476" text-anchor="start" class="country-name">OMAN</text>
 </g>
 
 </svg>
