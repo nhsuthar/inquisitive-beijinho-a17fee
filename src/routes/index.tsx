@@ -778,7 +778,7 @@ function DivisionsSection() {
                 >
                   {div.tag}
                 </span>
-                <div>
+                <div style={{ minHeight: '11rem', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
                   <span className="gold-line" style={{ marginBottom: '16px' }} />
                   <h3
                     className="font-display"
@@ -1386,7 +1386,7 @@ function InvestmentsSection() {
                 >
                   {div.tag}
                 </span>
-                <div>
+                <div style={{ minHeight: '11rem', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
                   <span className="gold-line" style={{ marginBottom: '16px' }} />
                   <h3
                     className="font-display"
