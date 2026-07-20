@@ -788,6 +788,9 @@ function DivisionsSection() {
                       color: '#F8F6F2',
                       lineHeight: 1.15,
                       margin: '0 0 12px',
+                      minHeight: '3.68rem',
+                      display: 'flex',
+                      alignItems: 'flex-start',
                     }}
                   >
                     {div.title}
@@ -1393,6 +1396,9 @@ function InvestmentsSection() {
                       color: '#F8F6F2',
                       lineHeight: 1.15,
                       margin: '0 0 12px',
+                      minHeight: '3.68rem',
+                      display: 'flex',
+                      alignItems: 'flex-start',
                     }}
                   >
                     {div.title}
