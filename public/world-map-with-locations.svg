@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1"
+     xmlns="http://www.w3.org/2000/svg"
+     x="0px" y="0px"
+     width="784.077px" height="458.627px"
+     viewBox="30.767 241.591 784.077 458.627"
+     style="background-color: #0A0A0A;">
+<style>
+  path {
+    fill: #2C2924;
+    stroke: rgba(201, 164, 106, 0.45);
+    stroke-width: 0.75;
+  }
+  .city-name {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    fill: #C9A46A;
+  }
+  .country-name {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 5px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    fill: rgba(248, 246, 242, 0.5);
+  }
+  .city-dot {
+    fill: #C9A46A;
+  }
+  .city-ring {
+    fill: none;
+    stroke: rgba(201, 164, 106, 0.5);
+    stroke-width: 0.5;
+  }
+</style>
+
+<!-- Landmass Vector Paths -->
+<g>
+
+    <path id="_somaliland" d="M512.674,502.797l3.526,2.403l1.046-0.052l8.757-3.008l0.994,3.206l-0.701,2.706l-1.893,1.503l-4.729-0.302l-6.769-4.158L512.674,502.797L512.674,502.797z"/>
+    <path id="ae" d="M528.466,468.135l0.753,3.008l8.522,0.752l0.596-6.172l1.644-0.897l0.448-2.257l-2.688,0.753l-2.99,4.521L528.466,468.135L528.466,468.135z"/>
+    <path id="af" d="M545.85,435.383l1.374,10.771l3.423,0.752l0.32,1.937l-2.455,2.049l4.573,3.691l8.885-3.198l0.709-3.786l5.593-3.491l2.145-8.091l1.599-1.722l-1.659-2.887l5.412-3.347l-0.691-0.968l-2.498,0.155l-0.226,2.299l-3.354-0.033l-0.062-3.068l-1.079-1.288l-1.815,1.649l0.052,1.515l-2.739,1.036l-5.059-0.319l-6.568,6.881L545.85,435.383L545.85,435.383z"/>
+    <path id="al" d="M450.679,420.438v3.984l1.142,2.152l0.82-0.096l1.409-2.566l-0.821-1.15l-0.319-2.844l-1.089-1.012L450.679,420.438L450.679,420.438z"/>
+    <path id="am" d="M507.47,420.549l4.149,5.411l-1.218,1.427l-2.939-0.51l-3.646-3.268l0.196-2.146L507.47,420.549L507.47,420.549z"/>
+    <g id="ao">
+        <path class="mainland" d="M437.366,547.461l2.948,11.003l-0.069,3.478l-4.313,4.633l-0.647,7.527l16.597,0.147l5.395,1.954l4.45-0.58l-2.594-3.251l0.01-9.282l5.101-0.217v-3.621l-4.142-0.172l-0.829-8.575l-1.746,0.024l-0.943-0.848l-1.027,0.054l-1.365,2.646h-5.255l-1.22-1.227l0.363-1.738l-1.436-2.101L437.366,547.461L437.366,547.461z"/>
+        <path d="M435.577,544.453l1.504,1.953l1.945-1.842l-0.571-1.909l-0.483-0.035L435.577,544.453L435.577,544.453z"/>
+    
+</g>
+
+<!-- Hardcoded City Locations -->
+<g id="locations">
+  <!-- Zug -->
+  <circle cx="425" cy="405" r="3" class="city-ring" />
+  <circle cx="425" cy="405" r="1.5" class="city-dot" />
+  <text x="417" y="399" text-anchor="end" class="city-name">Zug</text>
+  <text x="417" y="405" text-anchor="end" class="country-name">SWITZERLAND</text>
+
+  <!-- London -->
+  <circle cx="400" cy="370" r="3" class="city-ring" />
+  <circle cx="400" cy="370" r="1.5" class="city-dot" />
+  <text x="392" y="358" text-anchor="end" class="city-name">London</text>
+  <text x="392" y="364" text-anchor="end" class="country-name">UNITED KINGDOM</text>
+
+  <!-- Milano -->
+  <circle cx="427" cy="412" r="3" class="city-ring" />
+  <circle cx="427" cy="412" r="1.5" class="city-dot" />
+  <text x="435" y="406" text-anchor="start" class="city-name">Milano</text>
+  <text x="435" y="412" text-anchor="start" class="country-name">ITALY</text>
+
+  <!-- Monaco -->
+  <circle cx="420" cy="416" r="3" class="city-ring" />
+  <circle cx="420" cy="416" r="1.5" class="city-dot" />
+  <text x="428" y="430" text-anchor="start" class="city-name">Monaco</text>
+  <text x="428" y="436" text-anchor="start" class="country-name">MONACO</text>
+
+  <!-- Lisbon -->
+  <circle cx="387" cy="429" r="3" class="city-ring" />
+  <circle cx="387" cy="429" r="1.5" class="city-dot" />
+  <text x="379" y="423" text-anchor="end" class="city-name">Lisbon</text>
+  <text x="379" y="429" text-anchor="end" class="country-name">PORTUGAL</text>
+
+  <!-- Riyadh -->
+  <circle cx="515" cy="462" r="3" class="city-ring" />
+  <circle cx="515" cy="462" r="1.5" class="city-dot" />
+  <text x="507" y="458" text-anchor="end" class="city-name">Riyadh</text>
+  <text x="507" y="464" text-anchor="end" class="country-name">SAUDI ARABIA</text>
+
+  <!-- Abu Dhabi -->
+  <circle cx="534" cy="466" r="3" class="city-ring" />
+  <circle cx="534" cy="466" r="1.5" class="city-dot" />
+  <text x="542" y="456" text-anchor="start" class="city-name">Abu Dhabi</text>
+  <text x="542" y="462" text-anchor="start" class="country-name">UAE</text>
+
+  <!-- Muscat -->
+  <circle cx="544" cy="472" r="3" class="city-ring" />
+  <circle cx="544" cy="472" r="1.5" class="city-dot" />
+  <text x="552" y="486" text-anchor="start" class="city-name">Muscat</text>
+  <text x="552" y="492" text-anchor="start" class="country-name">OMAN</text>
+</g>
+</svg>
