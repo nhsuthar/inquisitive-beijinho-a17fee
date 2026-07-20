@@ -341,7 +341,7 @@ function HeroSection() {
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
-          paddingTop: 'clamp(130px, 18vh, 170px)',
+          paddingTop: 'clamp(100px, 12vh, 130px)',
           paddingBottom: 'clamp(40px, 8vh, 80px)',
           paddingLeft: '7vw',
           paddingRight: '7vw',
