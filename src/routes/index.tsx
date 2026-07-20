@@ -2027,11 +2027,14 @@ function GlobalPresenceSection() {
             position: 'relative',
           }}
         >
-          <img
-            src="/world-map-with-locations.svg"
-            alt="Dukani Global Office Locations Map"
-            style={{ width: '100%', height: 'auto', display: 'block' }}
-          />
+          <picture style={{ display: 'block', width: '100%' }}>
+            <source media="(max-width: 768px)" srcSet="/world-map-mobile.svg" />
+            <img
+              src="/world-map-with-locations.svg"
+              alt="Dukani Global Office Locations Map"
+              style={{ width: '100%', height: 'auto', display: 'block' }}
+            />
+          </picture>
         </div>
 
         {/* Office list */}
