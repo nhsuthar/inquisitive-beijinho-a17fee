@@ -444,50 +444,50 @@
   <!-- Zug -->
   <circle cx="425" cy="405" r="3" class="city-ring" />
   <circle cx="425" cy="405" r="1.5" class="city-dot" />
-  <text x="417" y="399" text-anchor="end" class="city-name">Zug</text>
-  <text x="417" y="405" text-anchor="end" class="country-name">SWITZERLAND</text>
+  <text x="419" y="403" text-anchor="end" class="city-name">Zug</text>
+  <text x="419" y="408" text-anchor="end" class="country-name">SWITZERLAND</text>
 
   <!-- London -->
   <circle cx="400" cy="370" r="3" class="city-ring" />
   <circle cx="400" cy="370" r="1.5" class="city-dot" />
-  <text x="392" y="358" text-anchor="end" class="city-name">London</text>
-  <text x="392" y="364" text-anchor="end" class="country-name">UNITED KINGDOM</text>
+  <text x="394" y="368" text-anchor="end" class="city-name">London</text>
+  <text x="394" y="373" text-anchor="end" class="country-name">UNITED KINGDOM</text>
 
   <!-- Milano -->
   <circle cx="427" cy="412" r="3" class="city-ring" />
   <circle cx="427" cy="412" r="1.5" class="city-dot" />
-  <text x="435" y="406" text-anchor="start" class="city-name">Milano</text>
-  <text x="435" y="412" text-anchor="start" class="country-name">ITALY</text>
+  <text x="433" y="410" text-anchor="start" class="city-name">Milano</text>
+  <text x="433" y="415" text-anchor="start" class="country-name">ITALY</text>
 
   <!-- Monaco -->
   <circle cx="420" cy="416" r="3" class="city-ring" />
   <circle cx="420" cy="416" r="1.5" class="city-dot" />
-  <text x="428" y="430" text-anchor="start" class="city-name">Monaco</text>
-  <text x="428" y="436" text-anchor="start" class="country-name">MONACO</text>
+  <text x="426" y="420" text-anchor="start" class="city-name">Monaco</text>
+  <text x="426" y="425" text-anchor="start" class="country-name">MONACO</text>
 
   <!-- Lisbon -->
   <circle cx="387" cy="429" r="3" class="city-ring" />
   <circle cx="387" cy="429" r="1.5" class="city-dot" />
-  <text x="379" y="423" text-anchor="end" class="city-name">Lisbon</text>
-  <text x="379" y="429" text-anchor="end" class="country-name">PORTUGAL</text>
+  <text x="381" y="427" text-anchor="end" class="city-name">Lisbon</text>
+  <text x="381" y="432" text-anchor="end" class="country-name">PORTUGAL</text>
 
   <!-- Riyadh -->
   <circle cx="515" cy="462" r="3" class="city-ring" />
   <circle cx="515" cy="462" r="1.5" class="city-dot" />
-  <text x="507" y="458" text-anchor="end" class="city-name">Riyadh</text>
-  <text x="507" y="464" text-anchor="end" class="country-name">SAUDI ARABIA</text>
+  <text x="509" y="460" text-anchor="end" class="city-name">Riyadh</text>
+  <text x="509" y="465" text-anchor="end" class="country-name">SAUDI ARABIA</text>
 
   <!-- Abu Dhabi -->
   <circle cx="534" cy="466" r="3" class="city-ring" />
   <circle cx="534" cy="466" r="1.5" class="city-dot" />
-  <text x="542" y="456" text-anchor="start" class="city-name">Abu Dhabi</text>
-  <text x="542" y="462" text-anchor="start" class="country-name">UAE</text>
+  <text x="540" y="462" text-anchor="start" class="city-name">Abu Dhabi</text>
+  <text x="540" y="467" text-anchor="start" class="country-name">UAE</text>
 
   <!-- Muscat -->
   <circle cx="544" cy="472" r="3" class="city-ring" />
   <circle cx="544" cy="472" r="1.5" class="city-dot" />
-  <text x="552" y="470" text-anchor="start" class="city-name">Muscat</text>
-  <text x="552" y="476" text-anchor="start" class="country-name">OMAN</text>
+  <text x="550" y="470" text-anchor="start" class="city-name">Muscat</text>
+  <text x="550" y="475" text-anchor="start" class="country-name">OMAN</text>
 </g>
 
 </svg>
