@@ -1971,14 +1971,14 @@ function SustainabilitySection() {
 // ─── Global Presence ──────────────────────────────────────────────────────────
 
 const OFFICES = [
-  { city: 'Zug', country: 'SWITZERLAND', x: 422, y: 405, primary: false, textAnchor: 'end', dx: -8, dy: -6 },
+  { city: 'Zug', country: 'SWITZERLAND', x: 425, y: 405, primary: false, textAnchor: 'end', dx: -8, dy: -6 },
   { city: 'London', country: 'UNITED KINGDOM', x: 400, y: 370, primary: false, textAnchor: 'end', dx: -8, dy: -12 },
-  { city: 'Milano', country: 'ITALY', x: 423, y: 410, primary: false, textAnchor: 'start', dx: 8, dy: -6 },
-  { city: 'Monaco', country: 'MONACO', x: 419, y: 416, primary: false, textAnchor: 'start', dx: 8, dy: 14 },
+  { city: 'Milano', country: 'ITALY', x: 427, y: 412, primary: false, textAnchor: 'start', dx: 8, dy: -6 },
+  { city: 'Monaco', country: 'MONACO', x: 420, y: 416, primary: false, textAnchor: 'start', dx: 8, dy: 14 },
   { city: 'Lisbon', country: 'PORTUGAL', x: 387, y: 429, primary: false, textAnchor: 'end', dx: -8, dy: -6 },
-  { city: 'Riyadh', country: 'SAUDI ARABIA', x: 525, y: 460, primary: false, textAnchor: 'end', dx: -8, dy: -4 },
+  { city: 'Riyadh', country: 'SAUDI ARABIA', x: 515, y: 462, primary: false, textAnchor: 'end', dx: -8, dy: -4 },
   { city: 'Abu Dhabi', country: 'UAE', x: 534, y: 466, primary: false, textAnchor: 'start', dx: 8, dy: -10 },
-  { city: 'Muscat', country: 'OMAN', x: 540, y: 472, primary: false, textAnchor: 'start', dx: 8, dy: 14 },
+  { city: 'Muscat', country: 'OMAN', x: 544, y: 472, primary: false, textAnchor: 'start', dx: 8, dy: 14 },
 ]
 
 function GlobalPresenceSection() {
