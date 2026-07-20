@@ -12,9 +12,9 @@
 <title>Simple World Map</title>
 <style>
   path {
-    fill: #161616;
-    stroke: rgba(201, 164, 106, 0.15);
-    stroke-width: 0.5;
+    fill: #2C2924;
+    stroke: rgba(201, 164, 106, 0.45);
+    stroke-width: 0.75;
   }
 </style>
 <desc>

@@ -2039,7 +2039,7 @@ function GlobalPresenceSection() {
               y="241.591"
               width="784.077"
               height="458.627"
-              style={{ opacity: 0.75 }}
+              style={{ opacity: 1 }}
             />
             {/* Office labels only (dots and connections removed) */}
             {OFFICES.map((office) => (
