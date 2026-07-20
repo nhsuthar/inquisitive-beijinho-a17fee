@@ -110,6 +110,12 @@ body {
 }
 
 @media (max-width: 768px) {
+  .hero-bg {
+    background-image: url('/imh-mobile.jpg') !important;
+    background-size: cover !important;
+    background-position: center top !important;
+  }
+
   .hero-content-container {
     justify-content: center;
     align-items: center;

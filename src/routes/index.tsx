@@ -8,6 +8,7 @@ export const Route = createFileRoute('/')({
 // ─── Curated image collection ─────────────────────────────────────────────────
 const IMG = {
   hero: '/imh.jpeg',
+  heroMobile: '/imh-mobile.jpg',
   about: '/about-group.jpg',
   divPropDev: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80',
   divHotels: '/div-hotels.jpg',
