@@ -416,6 +416,7 @@
 
 <style>
   .city-name {
+    text-transform: uppercase;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     font-size: 8px;
     font-weight: 500;
@@ -439,31 +440,31 @@
   }
 </style>
 
-<!-- Hardcoded City Names Only -->
+<!-- Hardcoded City Names Only (ALL CAPS) -->
 <g id="locations">
   <!-- Zug -->
-  <text x="422" y="405" text-anchor="end" class="city-name">Zug</text>
+  <text x="422" y="405" text-anchor="end" class="city-name">ZUG</text>
 
   <!-- London -->
-  <text x="400" y="368" text-anchor="middle" class="city-name">London</text>
+  <text x="400" y="368" text-anchor="middle" class="city-name">LONDON</text>
 
   <!-- Milano -->
-  <text x="428" y="412" text-anchor="start" class="city-name">Milano</text>
+  <text x="428" y="412" text-anchor="start" class="city-name">MILANO</text>
 
   <!-- Monaco -->
-  <text x="421" y="422" text-anchor="start" class="city-name">Monaco</text>
+  <text x="421" y="422" text-anchor="start" class="city-name">MONACO</text>
 
   <!-- Lisbon -->
-  <text x="384" y="429" text-anchor="end" class="city-name">Lisbon</text>
+  <text x="384" y="429" text-anchor="end" class="city-name">LISBON</text>
 
   <!-- Riyadh -->
-  <text x="515" y="462" text-anchor="middle" class="city-name">Riyadh</text>
+  <text x="515" y="462" text-anchor="middle" class="city-name">RIYADH</text>
 
   <!-- Abu Dhabi -->
-  <text x="534" y="458" text-anchor="start" class="city-name">Abu Dhabi</text>
+  <text x="534" y="458" text-anchor="start" class="city-name">ABU DHABI</text>
 
   <!-- Muscat -->
-  <text x="544" y="474" text-anchor="start" class="city-name">Muscat</text>
+  <text x="544" y="474" text-anchor="start" class="city-name">MUSCAT</text>
 </g>
 
 </svg>
