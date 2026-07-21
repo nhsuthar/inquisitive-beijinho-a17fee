@@ -182,7 +182,7 @@ function Navigation() {
           <img
             src="/logo.png"
             alt="Dukani Global Logo"
-            className="header-logo"
+            className={`header-logo ${scrolled ? 'scrolled' : ''}`}
             style={{
               width: 'auto',
               display: 'block',
@@ -341,7 +341,7 @@ function HeroSection() {
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
-          paddingTop: 'clamp(100px, 12vh, 130px)',
+          paddingTop: 'clamp(160px, 20vh, 190px)',
           paddingBottom: 'clamp(40px, 8vh, 80px)',
           paddingLeft: '7vw',
           paddingRight: '7vw',

@@ -120,7 +120,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     text-align: center;
-    padding-top: 100px !important;
+    padding-top: 140px !important;
     padding-bottom: 40px !important;
   }
 
@@ -451,11 +451,18 @@ body {
 
 /* ── Header Logo ── */
 .header-logo {
-  height: clamp(85px, 12vw, 120px);
+  height: clamp(85px, 10vw, 105px);
+  transition: height 0.4s ease;
+}
+.header-logo.scrolled {
+  height: clamp(65px, 7vw, 75px);
 }
 @media (max-width: 768px) {
   .header-logo {
-    height: 95px !important;
+    height: 75px !important;
+  }
+  .header-logo.scrolled {
+    height: 60px !important;
   }
 }
 
