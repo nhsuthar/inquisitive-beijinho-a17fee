@@ -2415,7 +2415,7 @@ function ContactSection() {
                 {
                   city: 'Abu Dhabi',
                   address: 'Business avenue tower office 1901\nAbu Dhabi',
-                  email: 'global@dukaniglobal.com',
+                  email: 'private@dukani.global',
                 },
               ].map((office, i) => (
                 <div
@@ -2772,7 +2772,7 @@ function SiteFooter() {
               }}
             >
               <a
-                href="mailto:global@dukaniglobal.com"
+                href="mailto:private@dukani.global"
                 style={{
                   color: 'inherit',
                   textDecoration: 'none',
@@ -2783,7 +2783,7 @@ function SiteFooter() {
                   ((e.target as HTMLAnchorElement).style.color = 'rgba(248,246,242,0.45)')
                 }
               >
-                global@dukaniglobal.com
+                private@dukani.global
               </a>
             </p>
 
