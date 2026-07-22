@@ -363,7 +363,7 @@ function HeroSection() {
             color: '#F8F6F2',
             lineHeight: 1.04,
             letterSpacing: '-0.01em',
-            margin: '0 0 clamp(16px, 3vh, 28px)',
+            margin: '0 0 clamp(12px, 2vh, 18px)',
             maxWidth: '1000px',
           }}
         >
@@ -381,7 +381,7 @@ function HeroSection() {
             fontSize: 'clamp(0.8rem, 1.1vw, 0.95rem)',
             lineHeight: 1.8,
             color: 'rgba(248, 246, 242, 0.68)',
-            marginBottom: 'clamp(28px, 6vh, 48px)',
+            marginBottom: 'clamp(18px, 3.5vh, 26px)',
             fontWeight: 300,
           }}
         >
