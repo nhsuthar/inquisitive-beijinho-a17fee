@@ -358,7 +358,7 @@ function HeroSection() {
         <h1
           className="font-display hero-title"
           style={{
-            fontSize: 'clamp(1.95rem, 6vw, 8rem)',
+            fontSize: 'clamp(1.95rem, 5vw, 6.5rem)',
             fontWeight: 300,
             color: '#F8F6F2',
             lineHeight: 1.04,
