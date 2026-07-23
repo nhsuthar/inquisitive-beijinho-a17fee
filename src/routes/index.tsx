@@ -318,19 +318,7 @@ function HeroSection() {
           background: 'linear-gradient(358deg, rgba(10, 10, 10, 0.35) 0%, rgb(108 105 105 / 75%) 100%)',
         }}
       />
-
-      {/* Vertical gold line accent */}
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: '5vw',
-          width: '1px',
-          height: '100px',
-          background: 'linear-gradient(to bottom, transparent, #C9A46A, transparent)',
-          opacity: 0.5,
-        }}
-      />
+      {/* Removed vertical gold line accent next to logo for scroll consistency */}
 
       {/* Content */}
       <div
