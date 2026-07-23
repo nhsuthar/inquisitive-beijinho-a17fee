@@ -13,8 +13,8 @@
 <style>
   path {
     fill: #2C2924;
-    stroke: rgba(201, 164, 106, 0.45);
-    stroke-width: 0.75;
+    stroke: rgba(201, 164, 106, 0.85);
+    stroke-width: 0.85;
   }
 </style>
 <desc>
