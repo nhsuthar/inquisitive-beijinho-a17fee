@@ -24,8 +24,8 @@ export const Route = createRootRoute({
       { property: 'og:type', content: 'website' },
     ],
     links: [
-      { rel: 'icon', type: 'image/png', href: '/favicon.png?v=2' },
-      { rel: 'shortcut icon', href: '/favicon.ico?v=2' },
+      { rel: 'icon', type: 'image/png', href: '/favicon.png?v=3' },
+      { rel: 'shortcut icon', href: '/favicon.ico?v=3' },
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
       { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' as const },
       {
