@@ -2711,43 +2711,6 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          {/* Divisions Column */}
-          <div>
-            <p
-              className="section-label"
-              style={{ color: '#C9A46A', marginBottom: '20px', fontSize: '0.55rem' }}
-            >
-              Divisions
-            </p>
-            <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              {[
-                { name: 'Property Development', href: '#divisions' },
-                { name: 'Luxury Hotels', href: '#divisions' },
-                { name: 'Resorts & Retreats', href: '#divisions' },
-                { name: 'Commercial Spaces', href: '#divisions' },
-                { name: 'Dukani Digital Assets', href: '#divisions' },
-              ].map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    style={{
-                      fontSize: '0.78rem',
-                      color: 'rgba(248,246,242,0.45)',
-                      textDecoration: 'none',
-                      fontWeight: 300,
-                      transition: 'color 0.3s ease',
-                    }}
-                    onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = '#F8F6F2')}
-                    onMouseLeave={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = 'rgba(248,246,242,0.45)')
-                    }
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
 
           {/* Contact Column */}
           <div>
