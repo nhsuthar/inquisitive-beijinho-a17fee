@@ -479,3 +479,38 @@ body {
     stroke-width: 0.3px !important;
   }
 }
+
+/* ── Hero Disclaimer (First page disclaimer footer) ── */
+.hero-disclaimer {
+  position: absolute;
+  bottom: 20px;
+  left: 7vw;
+  max-width: 45vw;
+  z-index: 20;
+}
+.hero-disclaimer p {
+  font-size: 0.46rem;
+  color: rgba(248, 246, 242, 0.32);
+  line-height: 1.5;
+  font-weight: 300;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.01em;
+}
+@media (max-width: 768px) {
+  .hero-disclaimer {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    max-width: 100%;
+    margin-top: 36px;
+    padding: 0 7vw;
+    display: block;
+    box-sizing: border-box;
+  }
+  .hero-disclaimer p {
+    font-size: 0.48rem;
+    color: rgba(248, 246, 242, 0.4);
+    text-align: center;
+  }
+}

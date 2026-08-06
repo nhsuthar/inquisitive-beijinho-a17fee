@@ -410,6 +410,13 @@ function HeroSection() {
         />
         Scroll
       </div>
+
+      {/* First page disclaimer footer */}
+      <div className="hero-disclaimer">
+        <p>
+          Dukani Global is a trading name of Dukani Global Capital Ltd. Property development activity under this name is a commercial real estate activity, is not a regulated activity, does not fall within the scope of the Firm's FCA authorisation, and is not covered by the protections of the Financial Services and Markets Act 2000, the Financial Services Compensation Scheme (FSCS), or the Financial Ombudsman Service (FOS).
+        </p>
+      </div>
     </section>
   )
 }
@@ -2401,8 +2408,8 @@ function ContactSection() {
             >
               {[
                 {
-                  city: 'Abu Dhabi',
-                  address: 'Business avenue tower office 1901\nAbu Dhabi',
+                  city: 'London',
+                  address: '45 Albemarle Street, Mayfair\nLondon, W1S 4JL\nUnited Kingdom',
                   email: 'private@dukani.global',
                 },
               ].map((office, i) => (
@@ -2611,6 +2618,8 @@ function ContactSection() {
 // ─── Footer ───────────────────────────────────────────────────────────────────
 
 function SiteFooter() {
+  const [activeLegal, setActiveLegal] = useState<string | null>(null)
+
   return (
     <footer
       style={{
@@ -2748,8 +2757,9 @@ function SiteFooter() {
                 whiteSpace: 'pre-line',
               }}
             >
-              Business avenue tower office 1901
-              {"\n"}Abu Dhabi
+              45 Albemarle Street, Mayfair
+              {"\n"}London, W1S 4JL
+              {"\n"}United Kingdom
             </p>
             <p
               style={{
@@ -2883,15 +2893,20 @@ function SiteFooter() {
               fontWeight: 300,
               margin: 0,
               fontFamily: 'Inter, sans-serif',
+              lineHeight: 1.5,
             }}
           >
-            © 2026 Dukani Global. All rights reserved.
+            Established in 2006. © 2006–2026 Dukani Global Capital Ltd, trading as Dukani Global. All rights reserved.
           </p>
-          <div style={{ display: 'flex', gap: '24px' }}>
-            {['Privacy Policy', 'Terms of Use', 'Cookie Policy'].map((item) => (
+          <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
+            {['Privacy Policy', 'Terms of Use', 'Cookie Policy', 'Disclaimer'].map((item) => (
               <a
                 key={item}
                 href="#"
+                onClick={(e) => {
+                  e.preventDefault()
+                  setActiveLegal(item)
+                }}
                 style={{
                   fontSize: '0.65rem',
                   color: 'rgba(248,246,242,0.25)',
@@ -2912,6 +2927,106 @@ function SiteFooter() {
           </div>
         </div>
       </div>
+
+      {/* Legal Modal Overlay */}
+      {activeLegal && (
+        <div
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 1000,
+            background: 'rgba(10, 10, 10, 0.85)',
+            backdropFilter: 'blur(12px)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '24px',
+          }}
+          onClick={() => setActiveLegal(null)}
+        >
+          <div
+            style={{
+              background: '#0A0A0A',
+              border: '1px solid rgba(201, 164, 106, 0.3)',
+              padding: 'clamp(32px, 5vw, 48px)',
+              maxWidth: '640px',
+              width: '100%',
+              maxHeight: '80vh',
+              overflowY: 'auto',
+              position: 'relative',
+              boxSizing: 'border-box',
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setActiveLegal(null)}
+              style={{
+                position: 'absolute',
+                top: '24px',
+                right: '24px',
+                background: 'none',
+                border: 'none',
+                color: 'rgba(248, 246, 242, 0.4)',
+                cursor: 'pointer',
+                fontSize: '1.2rem',
+                transition: 'color 0.3s',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#C9A46A')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(248, 246, 242, 0.4)')}
+            >
+              ✕
+            </button>
+
+            <span className="section-label" style={{ color: '#C9A46A', marginBottom: '16px', display: 'block', fontSize: '0.6rem' }}>
+              Dukani Global · Legal Information
+            </span>
+
+            <h3
+              className="font-display"
+              style={{
+                fontSize: '2rem',
+                color: '#F8F6F2',
+                margin: '0 0 24px',
+                fontWeight: 300,
+              }}
+            >
+              {activeLegal}
+            </h3>
+
+            <div
+              style={{
+                fontSize: '0.88rem',
+                color: 'rgba(248, 246, 242, 0.7)',
+                lineHeight: 1.8,
+                fontWeight: 300,
+                fontFamily: 'Inter, sans-serif',
+              }}
+            >
+              {activeLegal === 'Privacy Policy' && (
+                <p style={{ margin: 0 }}>
+                  Dukani Global is committed to protecting your privacy. We collect and process personal data in accordance with applicable data protection laws, including the UK GDPR and the Data Protection Act 2018. Any information you provide via our contact forms is used solely to respond to your inquiry and is never shared with third parties without your consent.
+                </p>
+              )}
+              {activeLegal === 'Terms of Use' && (
+                <p style={{ margin: 0 }}>
+                  The materials on this website are provided for general informational purposes only and do not constitute financial, investment, legal, or tax advice. No information on this website constitutes an offer, solicitation, or invitation to engage in any investment activity.
+                </p>
+              )}
+              {activeLegal === 'Cookie Policy' && (
+                <p style={{ margin: 0 }}>
+                  This website uses essential cookies to ensure optimal performance and user experience. By continuing to navigate this site, you consent to our use of these essential cookies.
+                </p>
+              )}
+              {activeLegal === 'Disclaimer' && (
+                <p style={{ margin: 0, fontWeight: 400, color: '#F8F6F2' }}>
+                  Dukani Global is a trading name of Dukani Global Capital Ltd. Property development activity under this name is a commercial real estate activity, is not a regulated activity, does not fall within the scope of the Firm's FCA authorisation, and is not covered by the protections of the Financial Services and Markets Act 2000, the Financial Services Compensation Scheme (FSCS), or the Financial Ombudsman Service (FOS).
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </footer>
   )
 }
