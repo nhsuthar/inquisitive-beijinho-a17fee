@@ -1683,7 +1683,7 @@ function LeadershipSection() {
         >
           <div style={{ marginBottom: 'clamp(32px, 5vw, 56px)' }}>
             <p className="section-label reveal" style={{ color: '#C9A46A', marginBottom: '16px' }}>
-              Executive Board
+              Executive Management & Operational Team
             </p>
             <h3
               className="font-display reveal reveal-d1"
@@ -1694,7 +1694,7 @@ function LeadershipSection() {
                 margin: 0,
               }}
             >
-              Executive Leadership Team
+              Executive Team
             </h3>
           </div>
 
@@ -2749,7 +2749,7 @@ function SiteFooter() {
               }}
             >
               Business avenue tower office 1901
-              {"\n"}Abu Dhabi, UAE
+              {"\n"}Abu Dhabi
             </p>
             <p
               style={{
