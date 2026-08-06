@@ -348,7 +348,7 @@ function HeroSection() {
           className="section-label hero-label"
           style={{ color: '#C9A46A', marginBottom: 'clamp(14px, 2.5vh, 26px)' }}
         >
-          Dukani Global · Est. 2026
+          Dukani Global
         </p>
 
         <h1
@@ -711,13 +711,6 @@ function DivisionsSection() {
               </em>
             </h2>
           </div>
-          <a
-            href="#contact"
-            className="btn-outline-white reveal"
-            style={{ flexShrink: 0 }}
-          >
-            Partner With Us
-          </a>
         </div>
 
         <div
@@ -1236,7 +1229,7 @@ function StatsSection() {
               textTransform: 'uppercase',
             }}
           >
-            Our Experience
+            Our Team's Experience
           </h2>
         </div>
 
