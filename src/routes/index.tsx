@@ -2840,6 +2840,30 @@ function SiteFooter() {
           </div>
         </div>
 
+        {/* Regulatory Disclaimer */}
+        <div
+          className="reveal"
+          style={{
+            borderTop: '1px solid rgba(201,164,106,0.1)',
+            paddingTop: '28px',
+            marginBottom: '28px',
+          }}
+        >
+          <p
+            style={{
+              fontSize: '0.62rem',
+              color: 'rgba(248,246,242,0.3)',
+              lineHeight: 1.7,
+              fontWeight: 300,
+              margin: 0,
+              fontFamily: 'Inter, sans-serif',
+              textAlign: 'left',
+            }}
+          >
+            Dukani Global is a trading name of Dukani Global Capital Ltd. Property development activity under this name is a commercial real estate activity, is not a regulated activity, does not fall within the scope of the Firm's FCA authorisation, and is not covered by the protections of the Financial Services and Markets Act 2000, the Financial Services Compensation Scheme (FSCS), or the Financial Ombudsman Service (FOS).
+          </p>
+        </div>
+
         {/* Bottom bar */}
         <div
           style={{
