@@ -418,13 +418,6 @@ function HeroSection() {
         />
         Scroll
       </div>
-
-      {/* First page disclaimer footer */}
-      <div className="hero-disclaimer">
-        <p>
-          Dukani Global is a trading name of Dukani Global Capital Ltd. Property development activity under this name is a commercial real estate activity, is not a regulated activity, does not fall within the scope of the Firm's FCA authorisation, and is not covered by the protections of the Financial Services and Markets Act 2000, the Financial Services Compensation Scheme (FSCS), or the Financial Ombudsman Service (FOS).
-        </p>
-      </div>
     </section>
   )
 }
