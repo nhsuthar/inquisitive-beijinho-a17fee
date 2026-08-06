@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 import { useEffect, useRef, useState } from 'react'
 
 export const Route = createFileRoute('/')({
@@ -132,7 +132,7 @@ function StatCounter({
 
 // ─── Navigation ───────────────────────────────────────────────────────────────
 
-function Navigation() {
+export function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -146,6 +146,9 @@ function Navigation() {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
   }, [menuOpen])
+
+  const isHome = typeof window !== 'undefined' ? window.location.pathname === '/' : true
+  const prefix = isHome ? '' : '/'
 
   const navLinks = [
     { label: 'About', href: '#about' },
@@ -175,9 +178,14 @@ function Navigation() {
       >
         {/* Logo */}
         <a
-          href="#"
+          href="/"
           style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}
-          onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+          onClick={(e) => {
+            if (isHome) {
+              e.preventDefault()
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }
+          }}
         >
           <img
             src="/logo.png"
@@ -202,7 +210,7 @@ function Navigation() {
           {navLinks.map((link) => (
             <a
               key={link.href}
-              href={link.href}
+              href={prefix + link.href}
               className="nav-link"
               style={{ color: '#F8F6F2' }}
             >
@@ -210,7 +218,7 @@ function Navigation() {
             </a>
           ))}
           <a
-            href="#contact"
+            href={prefix + '#contact'}
             className="btn-gold"
             style={{ padding: '9px 22px', fontSize: '0.6rem' }}
           >
@@ -272,7 +280,7 @@ function Navigation() {
           {navLinks.map((link, i) => (
             <a
               key={link.href}
-              href={link.href}
+              href={prefix + link.href}
               className="mobile-nav-item"
               style={{ transitionDelay: `${i * 0.05}s` }}
               onClick={() => setMenuOpen(false)}
@@ -282,7 +290,7 @@ function Navigation() {
           ))}
         </div>
         <div style={{ marginTop: '40px' }}>
-          <a href="#contact" className="btn-gold" onClick={() => setMenuOpen(false)}>
+          <a href={prefix + '#contact'} className="btn-gold" onClick={() => setMenuOpen(false)}>
             Enquire Now
           </a>
         </div>
@@ -2572,7 +2580,6 @@ function ContactSection() {
                     </option>
                     <option>Investment Opportunities</option>
                     <option>Development Partnership</option>
-                    <option>Hospitality & Reservations</option>
                     <option>Commercial Leasing</option>
                     <option>Media & Press</option>
                     <option>General Enquiry</option>
@@ -2617,8 +2624,11 @@ function ContactSection() {
 
 // ─── Footer ───────────────────────────────────────────────────────────────────
 
-function SiteFooter() {
+export function SiteFooter() {
   const [activeLegal, setActiveLegal] = useState<string | null>(null)
+
+  const isHome = typeof window !== 'undefined' ? window.location.pathname === '/' : true
+  const prefix = isHome ? '' : '/'
 
   return (
     <footer
@@ -2681,7 +2691,7 @@ function SiteFooter() {
               ].map((link) => (
                 <li key={link.name}>
                   <a
-                    href={link.href}
+                    href={prefix + link.href}
                     style={{
                       fontSize: '0.78rem',
                       color: 'rgba(248,246,242,0.45)',
@@ -2899,31 +2909,56 @@ function SiteFooter() {
             Established in 2006. © 2006–2026 Dukani Global Capital Ltd, trading as Dukani Global. All rights reserved.
           </p>
           <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
-            {['Privacy Policy', 'Terms of Use', 'Cookie Policy', 'Disclaimer'].map((item) => (
-              <a
-                key={item}
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault()
-                  setActiveLegal(item)
-                }}
-                style={{
-                  fontSize: '0.65rem',
-                  color: 'rgba(248,246,242,0.25)',
-                  textDecoration: 'none',
-                  fontFamily: 'Inter, sans-serif',
-                  transition: 'color 0.3s ease',
-                }}
-                onMouseEnter={(e) =>
-                  ((e.target as HTMLAnchorElement).style.color = 'rgba(248,246,242,0.6)')
-                }
-                onMouseLeave={(e) =>
-                  ((e.target as HTMLAnchorElement).style.color = 'rgba(248,246,242,0.25)')
-                }
-              >
-                {item}
-              </a>
-            ))}
+            {[
+              { label: 'Privacy Policy', path: '/privacy-policy' },
+              { label: 'Terms of Use', path: '/terms-of-use' },
+              { label: 'Cookie Policy', path: '/cookie-policy' },
+              { label: 'Disclaimer', path: null },
+            ].map((item) => {
+              const linkStyle = {
+                fontSize: '0.65rem',
+                color: 'rgba(248,246,242,0.25)',
+                textDecoration: 'none',
+                fontFamily: 'Inter, sans-serif',
+                transition: 'color 0.3s ease',
+              }
+              const onEnter = (e: React.MouseEvent<HTMLAnchorElement>) => {
+                e.currentTarget.style.color = 'rgba(248,246,242,0.6)'
+              }
+              const onLeave = (e: React.MouseEvent<HTMLAnchorElement>) => {
+                e.currentTarget.style.color = 'rgba(248,246,242,0.25)'
+              }
+              
+              if (item.path) {
+                return (
+                  <Link
+                    key={item.label}
+                    to={item.path}
+                    style={linkStyle}
+                    onMouseEnter={onEnter}
+                    onMouseLeave={onLeave}
+                  >
+                    {item.label}
+                  </Link>
+                )
+              } else {
+                return (
+                  <a
+                    key={item.label}
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      setActiveLegal(item.label)
+                    }}
+                    style={linkStyle}
+                    onMouseEnter={onEnter}
+                    onMouseLeave={onLeave}
+                  >
+                    {item.label}
+                  </a>
+                )
+              }
+            })}
           </div>
         </div>
       </div>
