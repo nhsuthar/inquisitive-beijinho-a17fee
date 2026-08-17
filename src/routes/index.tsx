@@ -3236,7 +3236,7 @@ function Preloader() {
         playsInline
         style={{ width: '100%', height: '100%', objectFit: 'cover' }}
       >
-        <source src="/DUKANIGLOBALINTRO.mp4" type="video/mp4" />
+        <source src="/DUKANIGLOBALINTRO.mp4?v=2" type="video/mp4" />
       </video>
       {showSoundBtn && (
         <div
