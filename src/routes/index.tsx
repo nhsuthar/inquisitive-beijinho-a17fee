@@ -2729,7 +2729,7 @@ export function SiteFooter() {
               }}
             >
               <a
-                href="mailto:private@dukani.global"
+                href="mailto:info@dukani.global"
                 style={{
                   color: 'inherit',
                   textDecoration: 'none',
@@ -2740,7 +2740,7 @@ export function SiteFooter() {
                   ((e.target as HTMLAnchorElement).style.color = 'rgba(248,246,242,0.45)')
                 }
               >
-                private@dukani.global
+                info@dukani.global
               </a>
             </p>
 
@@ -3091,6 +3091,195 @@ function ScrollToTop() {
   )
 }
 
+// ─── Preloader ─────────────────────────────────────────────────────────────────
+
+function Preloader() {
+  const [visible, setVisible] = useState(true)
+  const [showSoundBtn, setShowSoundBtn] = useState(true)
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const preloaderRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    // Check if navigation came from an internal link on the same domain
+    if (
+      typeof document !== 'undefined' &&
+      document.referrer &&
+      document.referrer.indexOf(window.location.host) !== -1
+    ) {
+      setVisible(false)
+      return
+    }
+
+    // Lock scroll while preloader is active
+    document.body.style.overflow = 'hidden'
+
+    const video = videoRef.current
+    const preloader = preloaderRef.current
+    if (!video || !preloader) return
+
+    let isDismissing = false
+    let fadeAudioInterval: ReturnType<typeof setInterval> | null = null
+
+    function dismissPreloader() {
+      if (isDismissing) return
+      isDismissing = true
+
+      // Freeze video on current frame to prevent any black screen flash
+      try {
+        video?.pause()
+      } catch (e) {}
+
+      // Smooth audio fade out over 6000ms
+      if (video && !video.muted && video.volume > 0) {
+        fadeAudioInterval = setInterval(() => {
+          if (video && video.volume > 0.01) {
+            video.volume = Math.max(0, video.volume - 0.01)
+          } else {
+            if (video) video.volume = 0
+            if (fadeAudioInterval) clearInterval(fadeAudioInterval)
+          }
+        }, 60)
+      }
+
+      // High-end cinematic zoom, blur & opacity dissolve transition (7.5s ultra-slow cross-dissolve)
+      if (preloader) {
+        preloader.style.opacity = '0'
+        preloader.style.transform = 'scale(1.15)'
+        preloader.style.filter = 'blur(28px)'
+        preloader.style.pointerEvents = 'none'
+      }
+
+      // Unlock body scroll
+      document.body.style.overflow = ''
+
+      setTimeout(() => {
+        setVisible(false)
+      }, 7500)
+    }
+
+    function enableAudio() {
+      if (video) {
+        video.muted = false
+        video.volume = 1.0
+      }
+      setShowSoundBtn(false)
+    }
+
+    // Attempt audio playback
+    video.muted = false
+    video.volume = 1.0
+
+    const playPromise = video.play()
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          setShowSoundBtn(false)
+        })
+        .catch(() => {
+          // Browser autoplay policy requires muted fallback
+          video.muted = true
+          setShowSoundBtn(true)
+          video.play().catch(dismissPreloader)
+        })
+    }
+
+    const handleEnded = () => {
+      dismissPreloader()
+    }
+
+    video.addEventListener('ended', handleEnded)
+    const fallbackTimeout = setTimeout(dismissPreloader, 120000)
+
+    return () => {
+      video.removeEventListener('ended', handleEnded)
+      clearTimeout(fallbackTimeout)
+      if (fadeAudioInterval) clearInterval(fadeAudioInterval)
+      document.body.style.overflow = ''
+    }
+  }, [])
+
+  if (!visible) return null
+
+  return (
+    <div
+      ref={preloaderRef}
+      id="site-preloader"
+      onClick={() => {
+        const video = videoRef.current
+        if (video) {
+          video.muted = false
+          video.volume = 1.0
+        }
+        setShowSoundBtn(false)
+      }}
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100vw',
+        height: '100vh',
+        zIndex: 99999,
+        background: '#070a0f',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        overflow: 'hidden',
+        willChange: 'opacity, transform, filter',
+        transition:
+          'opacity 7.5s cubic-bezier(0.1, 0.8, 0.2, 1), transform 7.5s cubic-bezier(0.1, 0.8, 0.2, 1), filter 7.5s cubic-bezier(0.1, 0.8, 0.2, 1)',
+      }}
+    >
+      <video
+        ref={videoRef}
+        id="preloader-video"
+        autoPlay
+        playsInline
+        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+      >
+        <source src="/DUKANIGLOBALINTRO.mp4" type="video/mp4" />
+      </video>
+      {showSoundBtn && (
+        <div
+          id="preloader-sound-btn"
+          onClick={(e) => {
+            e.stopPropagation()
+            const video = videoRef.current
+            if (video) {
+              video.muted = false
+              video.volume = 1.0
+            }
+            setShowSoundBtn(false)
+          }}
+          style={{
+            position: 'absolute',
+            bottom: '40px',
+            right: '40px',
+            zIndex: 100000,
+            background: 'rgba(7, 10, 15, 0.8)',
+            border: '1px solid #C9A46A',
+            color: '#C9A46A',
+            padding: '10px 20px',
+            borderRadius: '30px',
+            fontFamily: 'sans-serif',
+            fontSize: '0.75rem',
+            letterSpacing: '1.2px',
+            textTransform: 'uppercase',
+            cursor: 'pointer',
+            backdropFilter: 'blur(8px)',
+            WebkitBackdropFilter: 'blur(8px)',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            transition: 'all 0.3s ease',
+          }}
+        >
+          <span style={{ fontSize: '1rem' }}>🔊</span> UNMUTE SOUND
+        </div>
+      )}
+    </div>
+  )
+}
+
 // ─── Root Component ───────────────────────────────────────────────────────────
 
 function DukaniGlobal() {
@@ -3098,6 +3287,7 @@ function DukaniGlobal() {
 
   return (
     <div style={{ overflowX: 'hidden' }}>
+      <Preloader />
       <Navigation />
       <HeroSection />
       <AboutSection />
